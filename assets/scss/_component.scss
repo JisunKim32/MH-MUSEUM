@@ -50,6 +50,9 @@
 
 .header_white {
   background-color: transparent;
+  .container {
+    justify-content: space-between;
+  }
   .nav_menu {
     ul {
       li {
@@ -152,7 +155,6 @@ footer {
   font-family: var.$font-body;
   color: var.$color-primary;
   position: relative;
-
   .footer_container {
     width: 100%;
     max-width: 1584px;
@@ -171,6 +173,8 @@ footer {
   .footer_logo {
     width: 100%;
     height: auto;
+    text-align: left;
+    padding-top: 3.375rem;
   }
 
   .f_bottom_content {
@@ -214,6 +218,8 @@ footer {
 
   .copy_title {
     padding-top: map-get(var.$spacers, 3);
+    text-align: left;
+    padding-bottom: 2.438rem;
 
     h5 {
       font-size: map-get(map-get(var.$font-sizes, default), 'b5');
@@ -226,7 +232,7 @@ footer {
   .top_btn {
     display: flex;
     position: absolute;
-    right: 3%;
-    bottom: 0;
+    right: 9.5%;
+    bottom: 12.5%;
   }
 }

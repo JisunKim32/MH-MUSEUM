@@ -183,3 +183,18 @@ $breakpoints: (
   lg: 1024px,
   xl: 1280px,
 );
+
+// 맵에서 폰트 사이즈 값을 가져오는 함수
+@function get-font-size($size-name, $breakpoint: default) {
+  @if not map-has-key($font-sizes, $breakpoint) {
+    @warn "Breakpoint `#{$breakpoint}` not found in $font-sizes map.";
+    @return null;
+  }
+
+  @if not map-has-key(map-get($font-sizes, $breakpoint), $size-name) {
+    @warn "Font size `#{$size-name}` not found for breakpoint `#{$breakpoint}`.";
+    @return null;
+  }
+
+  @return map-get(map-get($font-sizes, $breakpoint), $size-name);
+}
