@@ -1,0 +1,67 @@
+@use './_common';
+@use './_component';
+@use './_variables';
+
+// === News-select start===
+// === News-select__title-content start ===
+
+.News-select__ {
+  padding: map-get(variables.$spacers, 14) 0;
+  background-color: variables.$color-secondary;
+  //
+  &title-content {
+    justify-content: space-between;
+  }
+  &left-title {
+    gap: 1.5rem;
+  }
+  &img-title {
+    width: 122px;
+    img {
+      width: 100%;
+    }
+  }
+  &text-title {
+    font-size: map-get(map-get(variables.$font-sizes, 'default'), 't4');
+    font-weight: variables.$font-weight-bold;
+    color: transparent;
+    -webkit-text-stroke: 1px #171717;
+    text-align: left;
+  }
+  &right-title {
+    width: 424px;
+    img {
+      width: 100%;
+    }
+  }
+  // === News-select__title-content end ===
+
+  // === News-select__btn-content start ===
+  &btn-content {
+    gap: 1.75rem;
+    .News-btn {
+      font-size: map-get(map-get(variables.$font-sizes, 'default'), 'b2');
+      text-decoration: none;
+      font-weight: variables.$font-weight-regular;
+      color: variables.$color-secondary;
+      background-color: variables.$color-primary;
+      padding: map-get(variables.$spacers, 2) map-get(variables.$spacers, 6);
+      border-radius: 10rem;
+    }
+    .Notice-btn {
+      font-size: map-get(map-get(variables.$font-sizes, 'default'), 'b2');
+      text-decoration: none;
+      font-weight: variables.$font-weight-regular;
+      color: variables.$color-primary;
+      border: 2px solid variables.$color-primary;
+      padding: map-get(variables.$spacers, 2) map-get(variables.$spacers, 6);
+      border-radius: 10rem;
+    }
+  }
+  // === News-select__btn-content end ===
+
+  // === News-select__cardnews-content start ===
+
+  // === News-select__cardnews-content end ===
+}
+// === News-select end ===

@@ -1,0 +1,117 @@
+@charset "utf-8";
+@import 'variables';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/GangwonEduPower.woff2');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: pretendard;
+  font-size: 16px;
+}
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+  text-decoration: none;
+}
+a {
+  list-style: none;
+  text-decoration: none;
+}
+// === font common ===
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  line-height: 140%;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+// Font Sizes
+.container {
+  width: 100%;
+  max-width: 1584px;
+  padding: 0 0.75rem;
+  margin: auto;
+  text-align: center;
+}
+/* container */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.col {
+  position: relative;
+  width: 100%;
+  padding: 0 0.938rem;
+}
+.d-flex {
+  display: flex;
+}
+.align-item-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.text-center {
+  text-align: center;
+}
+.m-auto {
+  margin: auto;
+}
+// logo style
+.desktop_logo {
+  background-image: url('../images/desktop_logo.svg');
+}
+.mobile_logo {
+  background-image: url('../images/mobile_logo.svg');
+}
+.col-1 {
+  width: 8.33333%;
+}
+.col-2 {
+  width: 16.66667%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33333%;
+}
+.col-5 {
+  width: 41.66667%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33333%;
+}
+.col-8 {
+  width: 66.66667%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33333%;
+}
+.col-11 {
+  width: 91.66667%;
+}
+.col-12 {
+  width: 100%;
+}
