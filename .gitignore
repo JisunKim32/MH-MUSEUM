@@ -1,0 +1,12 @@
+# .gitignore
+# 1. 컴파일된 CSS 파일 무시
+# assets/css/ 폴더 안의 모든 .css와 .css.map 파일을 무시합니다.
+/assets/css/*.css
+/assets/css/*.css.map
+# 2. SCSS 컴파일 캐시 폴더 무시
+.sass-cache/
+# 3. Node.js 의존성 폴더 무시 (만약 사용한다면)
+node_modules/
+# 4. 운영체제(OS) 자동 생성 파일 무시
+.DS_Store
+Thumbs.db
