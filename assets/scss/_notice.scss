@@ -1,6 +1,7 @@
-@use './_common' as com;
-@use './_component' as cp;
-@use './_variables' as var;
+@use 'variables' as var;
+@use 'responsitve' as resp;
+@use 'common' as com;
+@use 'component' as cp;
 
 // === News-select start===
 // === News-select__title start ===
@@ -9,6 +10,9 @@
   background-color: var.$color-secondary;
   &title {
     margin-bottom: map-get(var.$spacers, 14);
+    @include resp.respond-to(xs) {
+      margin-bottom: map-get(var.$spacers, 2);
+    }
     .title-content {
       justify-content: space-between;
       .left-title {
