@@ -9,9 +9,6 @@
   background-color: var.$color-secondary;
   &title {
     margin-bottom: map-get(var.$spacers, 14);
-    // @include respond-to(md) {
-    //   margin-bottom: map-get(var.$spacers, 8);
-    // }
     .title-content {
       justify-content: space-between;
       .left-title {
