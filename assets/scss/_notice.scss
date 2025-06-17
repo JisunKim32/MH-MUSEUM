@@ -3,7 +3,7 @@
 @use './_variables' as var;
 
 // === News-select start===
-// === News-select__title start ====
+// === News-select__title start ===
 .News-select__ {
   padding: map-get(var.$spacers, 14) 0;
   background-color: var.$color-secondary;
