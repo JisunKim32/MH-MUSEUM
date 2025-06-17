@@ -10,10 +10,6 @@
   background-color: var.$color-secondary;
   &title {
     margin-bottom: map-get(var.$spacers, 14);
-    @include resp.respond-to(xs) {
-      margin-bottom: map-get(var.$spacers, 2);
-      background-color: red;
-    }
     .title-content {
       justify-content: space-between;
       .left-title {
@@ -38,6 +34,12 @@
           width: 100%;
         }
       }
+    }
+  }
+  @include resp.respond-to('xs') {
+    &title {
+      margin-bottom: map-get(var.$spacers, 2);
+      background-color: red;
     }
   }
   // === News-select__title end ===
