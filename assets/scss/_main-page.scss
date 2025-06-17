@@ -16,7 +16,7 @@
     margin: auto;
     padding: 1.75rem 0 0 0;
     .circle_img {
-      width: 653px;
+      width: 635px;
       img {
         width: 100%;
       }
@@ -43,6 +43,23 @@
         font-size: var.get-font-size(b3);
         padding-top: 3rem;
       }
+      @include resp.respond-to(xs) {
+        h1 {
+          font-weight: 200;
+          font-size: var.get-font-size(h4, sm);
+        }
+
+        h2 {
+          font-weight: 600;
+          font-size: var.get-font-size(h3, sm);
+        }
+
+        p {
+          font-weight: 200;
+          font-size: var.get-font-size(b3, sm);
+          padding-top: 3rem;
+        }
+      }
     }
   }
   .scroll_down_btn {
@@ -60,25 +77,6 @@
       margin: auto;
       width: auto;
       height: auto;
-    }
-  }
-  @include resp.respond-to(xs) {
-    .title_content {
-      h1 {
-        font-weight: 200;
-        font-size: var.get-font-size(b3, sm);
-      }
-
-      h2 {
-        font-weight: 600;
-        font-size: var.get-font-size(h3);
-      }
-
-      p {
-        font-weight: 200;
-        font-size: var.get-font-size(b3);
-        padding-top: 3rem;
-      }
     }
   }
 }
