@@ -7,7 +7,6 @@
 .News-select__ {
   padding: map-get(var.$spacers, 14) 0;
   background-color: var.$color-secondary;
-  //
   &title {
     margin-bottom: map-get(var.$spacers, 14);
     // @include respond-to(md) {
@@ -47,7 +46,7 @@
     .btn-content {
       gap: 1.75rem;
       .News-btn {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b2');
+        font-size: var.get-font-size(b2);
         text-decoration: none;
         font-weight: var.$font-weight-regular;
         color: var.$color-secondary;
@@ -56,7 +55,7 @@
         border-radius: 10rem;
       }
       .Notice-btn {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b2');
+        font-size: var.get-font-size(b2);
         text-decoration: none;
         font-weight: var.$font-weight-regular;
         color: var.$color-primary;
@@ -94,14 +93,14 @@
             padding-right: map-get(var.$spacers, 15);
             .category {
               display: inline-block;
-              font-size: map-get(map-get(var.$font-sizes, 'default'), 'b3');
+              font-size: var.get-font-size(b3);
               font-weight: var.$font-weight-light;
               color: var.$color-primary;
               padding-top: map-get(var.$spacers, 3);
               line-height: var.$line-height-160;
             }
             .card-news-body {
-              font-size: map-get(map-get(var.$font-sizes, 'default'), 'b2');
+              font-size: var.get-font-size(b2);
               font-weight: var.$font-weight-regular;
               color: var.$color-primary;
               padding-top: map-get(var.$spacers, 2);
@@ -109,7 +108,7 @@
             }
             .date {
               display: inline-block;
-              font-size: map-get(map-get(var.$font-sizes, 'default'), 'b4');
+              font-size: var.get-font-size(b4);
               font-weight: var.$font-weight-regular;
               color: var.$color-gray-500;
               padding-top: map-get(var.$spacers, 5);
@@ -133,7 +132,7 @@
         gap: map-get(var.$spacers, 1);
         .plus-btn-text {
           p {
-            font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+            font-size: var.get-font-size(b3);
             color: var.$color-primary;
             font-weight: var.$font-weight-light;
             line-height: var.$line-height-160;
@@ -171,7 +170,7 @@
           }
         }
         .text-title {
-          font-size: map-get(map-get(var.$font-sizes, 'default'), 't4');
+          font-size: var.get-font-size(t4);
           font-weight: var.$font-weight-bold;
           color: transparent;
           -webkit-text-stroke: 1px #171717;
@@ -195,7 +194,7 @@
     .btn-content {
       gap: 1.75rem;
       .News-btn {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b2');
+        font-size: var.get-font-size(b2);
         text-decoration: none;
         font-weight: var.$font-weight-regular;
         color: var.$color-primary;
@@ -209,7 +208,7 @@
         }
       }
       .Notice-btn {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b2');
+        font-size: var.get-font-size(b2);
         text-decoration: none;
         font-weight: var.$font-weight-regular;
         color: var.$color-secondary;
@@ -234,7 +233,7 @@
         gap: map-get(var.$spacers, 1);
         .plus-btn-text {
           p {
-            font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+            font-size: var.get-font-size(b3);
             color: var.$color-primary;
             font-weight: var.$font-weight-light;
             line-height: var.$line-height-160;
@@ -264,7 +263,7 @@
             th {
               box-sizing: border-box;
               border-bottom: 1px solid var.$color-gray-400;
-              font-size: map-get(map-get(var.$font-sizes, 'default'), 'b2');
+              font-size: var.get-font-size(b2);
               font-weight: var.$font-weight-medium;
               color: var.$color-primary;
               line-height: var.$line-height-140;
