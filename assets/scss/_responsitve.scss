@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 // 올바른 믹스인 이름: respond-to
 @mixin respond-to($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
