@@ -23,7 +23,7 @@
           }
         }
         .text-title {
-          font-size: map-get(map-get(var.$font-sizes, 'default'), 't4');
+          font-size: var.get-font-size(t4);
           font-weight: var.$font-weight-bold;
           color: transparent;
           -webkit-text-stroke: 1px #171717;
@@ -284,7 +284,7 @@
               box-sizing: border-box;
               border-bottom: 1px solid var.$color-gray-400;
               padding: map-get(var.$spacers, 5) 0;
-              font-size: map-get(map-get(var.$font-sizes, 'default'), 'b3');
+              font-size: var.get-font-size(b3);
               font-weight: var.$font-weight-regular;
               color: var.$color-primary;
               line-height: var.$line-height-160;
@@ -293,7 +293,7 @@
               text-align: left;
             }
             .date {
-              font-size: map-get(map-get(var.$font-sizes, 'default'), 'b4');
+              font-size: var.get-font-size(b4);
               font-weight: var.$font-weight-regular;
               color: var.$color-gray-500;
               line-height: var.$line-height-160;
@@ -316,7 +316,7 @@
       text-align: left;
       padding: map-get(var.$spacers, 14) 0;
       h2 {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'h2');
+        font-size: var.get-font-size(h2);
         font-weight: var.$font-weight-medium;
         color: var.$color-primary;
         line-height: var.$line-height-140;
@@ -325,7 +325,7 @@
     .date {
       justify-content: space-between;
       p {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b4');
+        font-size: var.get-font-size(b4);
         font-weight: var.$font-weight-light;
         color: var.$color-gray-500;
         line-height: var.$line-height-140;
@@ -346,7 +346,7 @@
       .text-title {
         display: inline-block;
         padding: map-get(var.$spacers, 7) 0;
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b3');
+        font-size: var.get-font-size(b3);
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
         color: var.$color-gray-700;
@@ -354,7 +354,7 @@
       .text {
         p {
           text-align: left;
-          font-size: map-get(map-get(var.$font-sizes, 'default'), 'b3');
+          font-size: var.get-font-size(b3);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
           color: var.$color-gray-700;
@@ -368,7 +368,7 @@
   &text-next {
     .post-link {
       a {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b2');
+        font-size: var.get-font-size(b2);
         font-weight: var.$font-weight-regular;
         line-height: var.$line-height-160;
         color: var.$color-primary;
@@ -382,7 +382,7 @@
       .d-btn {
         padding: 1.125rem 5.5rem;
         font-family: var.$font-body;
-        font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+        font-size: var.get-font-size(b3);
         border-radius: 50px;
         line-height: var.$line-height-160;
         cursor: pointer;
@@ -404,7 +404,7 @@
       text-align: left;
       padding: map-get(var.$spacers, 14) 0;
       h2 {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'h2');
+        font-size: var.get-font-size(h2);
         font-weight: var.$font-weight-medium;
         color: var.$color-primary;
         line-height: var.$line-height-140;
@@ -413,7 +413,7 @@
     .date {
       justify-content: space-between;
       p {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b4');
+        font-size: var.get-font-size(b4);
         font-weight: var.$font-weight-light;
         color: var.$color-gray-500;
         line-height: var.$line-height-140;
@@ -428,7 +428,7 @@
       .text-title {
         display: inline-block;
         padding: map-get(var.$spacers, 7) 0;
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b3');
+        font-size: var.get-font-size(b3);
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
         color: var.$color-gray-700;
@@ -436,7 +436,7 @@
       .text {
         p {
           text-align: left;
-          font-size: map-get(map-get(var.$font-sizes, 'default'), 'b3');
+          font-size: var.get-font-size(b3);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
           color: var.$color-gray-700;
@@ -450,7 +450,7 @@
   &text-next {
     .post-link {
       a {
-        font-size: map-get(map-get(var.$font-sizes, 'default'), 'b2');
+        font-size: var.get-font-size(b2);
         font-weight: var.$font-weight-regular;
         line-height: var.$line-height-160;
         color: var.$color-primary;
@@ -464,7 +464,7 @@
       .d-btn {
         padding: 1.125rem 5.5rem;
         font-family: var.$font-body;
-        font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+        font-size: var.get-font-size(b3);
         border-radius: 50px;
         line-height: var.$line-height-160;
         cursor: pointer;
