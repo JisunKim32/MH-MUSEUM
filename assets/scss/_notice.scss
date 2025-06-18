@@ -8,12 +8,6 @@
 .News-select__ {
   padding: map-get(var.$spacers, 14) 0;
   background-color: var.$color-secondary;
-  @include resp.respond-to(xs) {
-    &title {
-      margin-bottom: map-get(var.$spacers, 2);
-      background-color: red;
-    }
-  }
   &title {
     margin-bottom: map-get(var.$spacers, 14);
     .title-content {
@@ -40,6 +34,12 @@
           width: 100%;
         }
       }
+    }
+  }
+  @include resp.respond-to('xs') {
+    &title {
+      margin-bottom: map-get(var.$spacers, 2);
+      background-color: red;
     }
   }
   // === News-select__title end ===
@@ -82,14 +82,39 @@
     .news-list {
       display: flex;
       flex-wrap: wrap;
-      gap: map-get(var.$spacers, 16) map-get(var.$spacers, 4);
+      gap: 2rem 1rem;
+      padding: 0;
+      margin: 0;
       .news-item {
-        flex: 0 0 calc(33.333% - 1rem);
+        // 3열
+        width: calc(33.333% - 1rem); // PC 3개
+        // 태블릿: 2열
+        @include resp.respond-to(lg) {
+          width: calc(50% - 1rem);
+        }
+        // 모바일: 1열
+        @include resp.respond-to(sm) {
+          width: 100%;
+        }
         a {
           .card-news-img {
             width: 504px;
-            img {
+            margin: 0 auto;
+            max-width: 100%;
+            // 1280px 이하 (2.5열 느낌)
+            @include resp.respond-to(xl) {
+              width: 100%; // 2.5개씩 (적당히 넉넉하게)
+              .card-news-img {
+                width: 460px; // 이미지도 약간 축소
+              }
+            }
+            @include resp.respond-to(lg) {
+              width: 100%; // 컬럼 폭에 맞게 꽉 차게
+              max-width: 420px; // 예시로, 필요하면 최대폭 제한
+            }
+            @include resp.respond-to(sm) {
               width: 100%;
+              max-width: 100%; // 모바일에서는 li 너비에 꽉 차게
             }
           }
           .card-news-desc {
