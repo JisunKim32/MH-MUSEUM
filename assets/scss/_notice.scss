@@ -4,7 +4,6 @@
 @use 'component' as cp;
 
 // === News-select start===
-// === News-select__title start ===
 .News-select__ {
   padding: map-get(var.$spacers, 14) 0;
   background-color: var.$color-secondary;
@@ -34,12 +33,6 @@
           width: 100%;
         }
       }
-    }
-  }
-  @include resp.respond-to('xs') {
-    &title {
-      margin-bottom: map-get(var.$spacers, 2);
-      background-color: red;
     }
   }
   // === News-select__title end ===
@@ -83,43 +76,46 @@
       display: flex;
       flex-wrap: wrap;
       gap: 2rem 1rem;
-      padding: 0;
-      margin: 0;
       .news-item {
-        // 3열
-        width: calc(33.333% - 1rem); // PC 3개
+        // PC: 3열 - 컨테이너 너비에 맞춰 자동 조정
+        flex: 1 1 calc(33.333% - (1rem * 2 / 3));
+        min-width: 280px;
+        max-width: calc(33.333% - (1rem * 2 / 3));
+
         // 태블릿: 2열
         @include resp.respond-to(lg) {
-          width: calc(50% - 1rem);
+          flex: 1 1 calc(50% - (1rem * 1 / 2));
+          max-width: calc(50% - (1rem * 1 / 2));
         }
+
         // 모바일: 1열
         @include resp.respond-to(sm) {
-          width: 100%;
+          flex: 1 1 100%;
+          max-width: 100%;
+          min-width: unset;
         }
+
         a {
           .card-news-img {
-            width: 504px;
+            width: 100%; // 부모 컨테이너 너비에 맞춰 자동 조정
             margin: 0 auto;
-            max-width: 100%;
-            // 1280px 이하 (2.5열 느낌)
-            @include resp.respond-to(xl) {
-              width: 100%; // 2.5개씩 (적당히 넉넉하게)
-              .card-news-img {
-                width: 460px; // 이미지도 약간 축소
-              }
-            }
-            @include resp.respond-to(lg) {
-              width: 100%; // 컬럼 폭에 맞게 꽉 차게
-              max-width: 420px; // 예시로, 필요하면 최대폭 제한
-            }
-            @include resp.respond-to(sm) {
+
+            img {
               width: 100%;
-              max-width: 100%; // 모바일에서는 li 너비에 꽉 차게
+              height: auto; // 비율 유지
+              max-width: 100%;
             }
           }
+
           .card-news-desc {
             text-align: left;
             padding-right: map-get(var.$spacers, 15);
+
+            // 반응형에서 패딩도 조정
+            @include resp.respond-to(sm) {
+              padding-right: map-get(var.$spacers, 8);
+            }
+
             .category {
               display: inline-block;
               font-size: var.get-font-size(b3);
@@ -149,6 +145,7 @@
     }
   }
   // === News-select__cardnews end ===
+
   // === News-select__viewmore start ===
   &viewmore {
     .viewmore-btn {
