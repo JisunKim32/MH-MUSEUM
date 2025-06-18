@@ -17,7 +17,7 @@
     margin: auto;
     padding: 1.75rem 0 0 0;
     .circle_img {
-      max-width: 635px;
+      width: 635px;
       img {
         width: 100%;
       }
@@ -31,7 +31,7 @@
       h1 {
         font-weight: 200;
         font-size: var.get-font-size(h3);
-        @include resp.respond-to(md) {
+        @include resp.respond-to(xl) {
           font-size: var.get-font-size(h3, sm);
         }
       }
