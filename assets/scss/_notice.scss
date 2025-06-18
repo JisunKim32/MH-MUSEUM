@@ -8,6 +8,12 @@
 .News-select__ {
   padding: map-get(var.$spacers, 14) 0;
   background-color: var.$color-secondary;
+  @include resp.respond-to(xs) {
+    &title {
+      margin-bottom: map-get(var.$spacers, 2);
+      background-color: red;
+    }
+  }
   &title {
     margin-bottom: map-get(var.$spacers, 14);
     .title-content {
@@ -34,12 +40,6 @@
           width: 100%;
         }
       }
-    }
-  }
-  @include resp.respond-to('xs') {
-    &title {
-      margin-bottom: map-get(var.$spacers, 2);
-      background-color: red;
     }
   }
   // === News-select__title end ===
