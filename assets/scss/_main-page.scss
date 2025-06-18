@@ -2,6 +2,18 @@
 @use 'responsitve' as resp;
 @use 'common' as com;
 @use 'component' as cp;
+.fp-watermark {
+  display: none !important;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.fp-table {
+  justify-content: inherit;
+}
+// header finish
 // main_section
 .main_section {
   background-color: var.$color-black;
@@ -10,6 +22,7 @@
   align-items: center;
   overflow: hidden;
   text-align: center;
+  //height: 937px;
   .title_content_wrapper {
     color: #fff;
     line-height: var.$line-height-140;
