@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  text-align: center;
   .title_content_wrapper {
     color: #fff;
     line-height: var.$line-height-140;
@@ -16,7 +17,7 @@
     margin: auto;
     padding: 1.75rem 0 0 0;
     .circle_img {
-      width: 635px;
+      max-width: 635px;
       img {
         width: 100%;
       }
@@ -26,7 +27,6 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      text-align: center;
       transform: translate(-50%, -50%);
       h1 {
         font-weight: 200;
@@ -39,6 +39,9 @@
       h2 {
         font-weight: 600;
         font-size: var.get-font-size(h3);
+        @include resp.respond-to(md) {
+          font-size: var.get-font-size(h3, sm);
+        }
       }
 
       p {
