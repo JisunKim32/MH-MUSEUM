@@ -12,28 +12,24 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- test -->
+    <header class="main_header_dark">
+      <div class="container">
+        <div class="d-logo">
+          <a href="#">
+            <img src="assets/images/desktop_logo_white.svg" alt="logo-white" />
+          </a>
+        </div>
+        <nav class="nav_menu">
+          <ul class="d-flex">
+            <li><a href="#" class="menu-history">History</a></li>
+            <li><a href="#" class="menu-notice">Notice</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <div id="fullpage">
       <div class="section">
         <section class="main_section">
-          <header class="header_white">
-            <div class="container">
-              <div class="d-logo">
-                <a href="#">
-                  <img
-                    src="assets/images/desktop_logo_white.svg"
-                    alt="logo-white"
-                  />
-                </a>
-              </div>
-              <nav class="nav_menu">
-                <ul class="d-flex">
-                  <li><a href="#" class="menu-history">History</a></li>
-                  <li><a href="#" class="menu-notice">Notice</a></li>
-                </ul>
-              </nav>
-            </div>
-          </header>
           <div class="container">
             <div class="row">
               <div class="col-12 title_content_wrapper">
@@ -293,7 +289,7 @@
       <!-- main_section03 finish -->
       <div class="section fp-auto-height">
         <div class="myContent intro footer">
-          <footer>
+          <footer class="main_footer">
             <div class="container">
               <div class="row">
                 <div class="col-3">
@@ -348,14 +344,6 @@
     <script>
       AOS.init();
     </script>
-    <script>
-      var myFullpage = new fullpage('#fullpage', {
-        anchors: ['anchor1', 'anchor2', 'anchor3'],
-        // Get your license at https://alvarotrigo.com/fullPage/pricing
-        licenseKey: 'xxxxxxxxxxxxxxxxxxxxxxxxx',
-        // Optional
-        menu: '#menu',
-      });
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
