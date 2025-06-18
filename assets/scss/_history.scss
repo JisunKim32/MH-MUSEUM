@@ -1,3 +1,145 @@
-@use "./_common";
-@use "./_component";
-@use "./_variables";
+@use 'variables' as var;
+@use 'responsitve' as resp;
+@use 'common' as com;
+@use 'component' as cp;
+
+.fp-watermark {
+   display: none !important;
+}
+
+.header_dark{
+   width: 100%;
+   position: fixed;
+   top: 0;
+   background-color: var.$color-primary;
+   align-items: center;
+   z-index: 100;
+   .nav_menu{
+      ul{
+         gap: 0 28px;
+         li{
+            a{
+               color: var.$color-white;
+            }
+         }
+      }
+   }
+}
+
+.history-select{
+   background: var.$color-primary;
+
+   &__sec01{
+      // justify-content: first baseline;
+      .container{
+         margin: 87px auto;
+         .row{
+            gap: 0;
+         }
+      }
+      .history-select__bar{
+         display: flex;
+         justify-content: right;
+         margin-bottom: map-get(var.$spacers, 13);
+      }
+      .sec01__content{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      .content-title{
+         span{
+            font-family: var.$font-point;
+            font-size: var.get-font-size(t2);
+            font-weight: var.$font-weight-regular;
+            line-height: var.$line-height-120;
+            letter-spacing: var.$letter-spacing-3;
+            color: transparent;
+            -webkit-text-stroke: 1px var.$color-white;
+         }
+      }
+      .main-content{
+         max-width: 1184px;
+         width: 100%;
+         align-items: center;
+         overflow: hidden;
+         position: relative;
+
+         .mySwiper{
+            max-width: 950px;
+            width: 100%;
+         }
+
+         .swiper-box{
+            max-width: 950px;
+            width: 100%;
+            // margin: 0 63px 0 67px;
+            // overflow: hidden;
+            .swiper-slide{
+               max-width: 290px;
+               width: 100% !important;
+               .slide__content-title{
+                  span{
+                     font-family: var.$font-point;
+                     font-size: var.get-font-size(t3);
+                     font-weight: var.$font-weight-regular;
+                     line-height: var.$line-height-120;
+                     letter-spacing: var.$letter-spacing-3;
+                     color: transparent;
+                     -webkit-text-stroke: 1px var.$color-white;
+                     display: flex;
+                     justify-content: left;
+                     padding: map-get(var.$spacers, 8) 0;
+                  }
+                  &::before{
+                     content: '';
+                     display: block;
+                     width: 290px;
+                     height: 1px;
+                     background-color: var.$color-white;
+                  }
+                  &::after{
+                     content: '';
+                     display: block;
+                     width: 81px;
+                     height: 1px;
+                     background-color: var.$color-white;
+                  }
+               }
+               .slide__content-body{
+                  padding-top: 47px;
+                  p{
+                     font-family: var.$font-body;
+                     font-size: var.get-font-size(b3);
+                     font-weight: var.$font-weight-light;
+                     line-height: var.$line-height-120;
+                     letter-spacing: var.$letter-spacing-3;
+                     color: var.$color-white;
+                     text-align: left;
+                     padding-bottom: map-get(var.$spacers, 3);
+                     &:last-child{
+                        padding-bottom: 0;
+                     }
+                  }
+               }
+            }
+         }
+         button{
+            max-width: 52px;
+            width: 100%;
+            background: none;
+            border: none;
+         }
+         .swiper-button-next{
+            &::after{
+               display: none;
+            }
+         }
+         .swiper-button-prev{
+            &::after{
+               display: none;
+            }
+         }
+      }
+   }
+}
