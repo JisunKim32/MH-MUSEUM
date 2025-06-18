@@ -55,7 +55,7 @@
 }
 
 .header_white {
-  background-color: transparent;
+  background-color: var.$color-secondary;
   .container {
     justify-content: space-between;
   }
@@ -63,11 +63,11 @@
     ul {
       li {
         &:not(:last-child)::after {
-          background-color: var.$color-secondary;
+          background-color: rgba(var.$color-primary, 0.5);
         }
 
         a {
-          color: var.$color-secondary;
+          color: var.$color-primary;
         }
       }
     }
