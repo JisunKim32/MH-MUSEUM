@@ -7,14 +7,26 @@
 .News-select__ {
   padding: map-get(var.$spacers, 14) 0;
   background-color: var.$color-secondary;
+  @include resp.respond-to(xs) {
+    padding: map-get(var.$spacers, 8) 0;
+  }
   &title {
     margin-bottom: map-get(var.$spacers, 14);
+    @include resp.respond-to(xs) {
+      margin-bottom: map-get(var.$spacers, 6);
+    }
     .title-content {
       justify-content: space-between;
       .left-title {
         gap: map-get(var.$spacers, 4);
+        @include resp.respond-to(xs) {
+          gap: map-get(var.$spacers, 2);
+        }
         .img-title {
           width: 122px;
+          @include resp.respond-to(xs) {
+            width: 66px;
+          }
           img {
             width: 100%;
           }
@@ -25,6 +37,9 @@
           color: transparent;
           -webkit-text-stroke: 1px #171717;
           text-align: left;
+          @include resp.respond-to(xs) {
+            font-size: var.get-font-size(t4);
+          }
         }
       }
       .right-title {
@@ -115,7 +130,6 @@
             @include resp.respond-to(sm) {
               padding-right: map-get(var.$spacers, 8);
             }
-
             .category {
               display: inline-block;
               font-size: var.get-font-size(b3);
@@ -123,6 +137,9 @@
               color: var.$color-primary;
               padding-top: map-get(var.$spacers, 3);
               line-height: var.$line-height-160;
+              @include resp.respond-to(xs) {
+                font-size: var.get-font-size(b2);
+              }
             }
             .card-news-body {
               font-size: var.get-font-size(b2);
