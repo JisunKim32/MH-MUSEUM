@@ -13,6 +13,24 @@ new fullpage('#fullpage', {
    autoScrolling: true,
    fitToSection: true,
    // normalScrollElements: '.section-normal'
+   // Optional
+   menu: '#menu',
+   anchors: ['firstPage', 'secondPage', 'thirdPage', 'footerPage'],
+
+//    afterLoad: function(origin, destination, direction){
+//     let menu = document.getElementById('menu');
+
+//     // 푸터 섹션의 앵커 이름을 'footerPage'로 가정
+//     if(destination.anchor == 'footerPage'){
+//         // 푸터 섹션일 때 메뉴 숨기기 (예시)
+//         menu.style.opacity = '0';
+//         menu.style.visibility = 'hidden';
+//     } else {
+//         // 다른 섹션일 때 메뉴 다시 보이기
+//         menu.style.opacity = '1';
+//         menu.style.visibility = 'visible';
+//     }
+// }
  });
 
 
