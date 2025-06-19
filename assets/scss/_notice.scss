@@ -2,7 +2,12 @@
 @use 'responsitve' as resp;
 @use 'common' as com;
 @use 'component' as cp;
-
+* {
+  background: var.$color-secondary;
+}
+header {
+  position: sticky;
+}
 // === News-select start===
 .News-select__ {
   padding: map-get(var.$spacers, 14) 0;
@@ -32,18 +37,27 @@
           }
         }
         .text-title {
-          font-size: var.get-font-size(t4);
-          font-weight: var.$font-weight-bold;
-          color: transparent;
-          -webkit-text-stroke: 1px #171717;
-          text-align: left;
-          @include resp.respond-to(xs) {
+          span {
+            display: block;
             font-size: var.get-font-size(t4);
+            font-weight: var.$font-weight-bold;
+            line-height: var.$line-height-140;
+            color: transparent;
+            -webkit-text-stroke: 1px #171717;
+            text-align: left;
+            @include resp.respond-to(xs) {
+              font-size: var.get-font-size(t4, xs);
+              letter-spacing: var.$letter-spacing-3;
+              -webkit-text-stroke: 0.5px #171717;
+            }
           }
         }
       }
       .right-title {
         width: 424px;
+        @include resp.respond-to(xs) {
+          display: none;
+        }
         img {
           width: 100%;
         }
@@ -57,14 +71,23 @@
     padding-bottom: map-get(var.$spacers, 11);
     .btn-content {
       gap: 1.75rem;
+      @include resp.respond-to(xs) {
+        gap: 1rem;
+      }
       .News-btn {
         font-size: var.get-font-size(b2);
-        text-decoration: none;
         font-weight: var.$font-weight-regular;
         color: var.$color-secondary;
+        line-height: var.$line-height-140;
         background-color: var.$color-primary;
         padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
         border-radius: 10rem;
+        text-decoration: none;
+        align-items: center;
+        @include resp.respond-to(xs) {
+          font-size: var.get-font-size(b2, xs);
+          padding: map-get(var.$spacers, 2) map-get(var.$spacers, 4);
+        }
       }
       .Notice-btn {
         font-size: var.get-font-size(b2);
