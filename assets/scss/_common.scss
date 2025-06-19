@@ -118,30 +118,30 @@ span {
 }
 @include resp.respond-to(xl) {
   .container {
-    max-width: 1280px;
+    min-width: 1280px;
   }
 }
 
 @include resp.respond-to(lg) {
   .container {
-    max-width: 1024px;
+    min-width: 1024px;
   }
 }
 
 @include resp.respond-to(md) {
   .container {
-    max-width: 768px;
+    min-width: 768px;
   }
 }
 
 @include resp.respond-to(sm) {
   .container {
-    max-width: 576px;
+    min-width: 576px;
   }
 }
 
 @include resp.respond-to(xs) {
   .container {
-    max-width: 375px;
+    min-width: 375px;
   }
 }
