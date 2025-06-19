@@ -22,7 +22,7 @@ header {
   align-items: center;
   overflow: hidden;
   text-align: center;
-  //height: 937px;
+  height: 937px;
   .title_content_wrapper {
     color: #fff;
     line-height: var.$line-height-140;
@@ -211,13 +211,13 @@ header {
 .main_section03 {
   background-color: var.$color-primary;
   padding-top: map-get(var.$spacers, 15);
-  padding-bottom: 5.875rem;
-
   .align-item-center {
     align-items: center;
     justify-content: space-between;
   }
-
+  .main_content {
+    padding-bottom: 5.875rem;
+  }
   .main_section03_text_title {
     text-align: left;
 
