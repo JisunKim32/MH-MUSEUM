@@ -9,6 +9,7 @@
   height: 100px;
   display: flex;
   align-items: center;
+  width: 100%;
 
   .container {
     width: 100%;
@@ -93,7 +94,7 @@
   }
 }
 .main_header_dark {
-  background-color: #000;
+  background-color: transparent;
   color: var.$color-secondary;
 
   .nav_menu {
@@ -178,7 +179,8 @@ footer {
   background: var.$color-secondary;
   font-family: var.$font-body;
   color: var.$color-primary;
-  position: relative;
+  width: 100%;
+  position: fixed;
 
   .container {
     width: 100%;

@@ -6,9 +6,9 @@
   display: none !important;
 }
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 900;
 }
 .fp-table {
   justify-content: inherit;
