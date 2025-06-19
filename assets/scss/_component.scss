@@ -179,6 +179,7 @@ footer {
   font-family: var.$font-body;
   color: var.$color-primary;
   position: relative;
+
   .container {
     width: 100%;
     max-width: 1584px;
@@ -187,12 +188,6 @@ footer {
     padding: 0 0.75rem;
     position: relative;
     justify-content: space-between;
-  }
-
-  .footer_main_content {
-    padding: 3.563rem 11.25rem;
-    width: 100%;
-    text-align: left;
   }
 
   .footer_logo {
@@ -209,10 +204,8 @@ footer {
 
   .footer_text {
     display: flex;
-    padding-top: 5.438rem;
     list-style: none;
     margin: 0;
-    padding-left: 0;
     flex-wrap: wrap;
 
     li {
@@ -242,95 +235,8 @@ footer {
   }
 
   .copy_title {
-    padding-top: map-get(var.$spacers, 3);
-    padding-bottom: 2.438rem;
-    text-align: left;
-
-    h5 {
-      font-size: map-get(map-get(var.$font-sizes, default), 'b5');
-      line-height: var.$line-height-140;
-      font-weight: var.$font-weight-light;
-      letter-spacing: var.$letter-spacing-3;
-    }
-  }
-
-  .top_btn {
-    display: flex;
-    position: absolute;
-    right: 0.5%;
-    bottom: 10.5%;
-  }
-}
-.main_footer {
-  background-color: var.$color-secondary;
-  font-family: var.$font-body;
-  color: var.$color-primary;
-  position: relative;
-  .container {
-    width: 100%;
-    max-width: 1584px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 0.75rem;
-    position: relative;
-    justify-content: space-between;
-  }
-
-  .footer_main_content {
-    padding: 3.563rem 11.25rem;
-    width: 100%;
-    text-align: left;
-  }
-
-  .footer_logo {
-    width: 100%;
-    height: auto;
-    padding-top: 3.375rem;
-    text-align: left;
-  }
-
-  .f_bottom_content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .footer_text {
-    display: flex;
-    padding-top: 5.438rem;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    flex-wrap: wrap;
-
-    li {
-      font-size: map-get(map-get(var.$font-sizes, default), 'b5');
-      line-height: var.$line-height-140;
-      font-weight: var.$font-weight-light;
-      position: relative;
-      padding-right: map-get(var.$spacers, 4);
-
-      &.phone {
-        padding-left: 0;
-      }
-
-      &:not(:last-child)::after {
-        content: '';
-        display: block;
-        position: absolute;
-        right: 8%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 12px;
-        background-color: rgba(var.$color-primary, 0.5);
-        z-index: 1;
-      }
-    }
-  }
-
-  .copy_title {
-    padding-top: map-get(var.$spacers, 3);
-    padding-bottom: 2.438rem;
+    padding: map-get(var.$spacers, 1) 0;
+    margin-bottom: 1.813rem;
     text-align: left;
 
     h5 {
