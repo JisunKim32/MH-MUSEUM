@@ -8,17 +8,22 @@
 }
 // === News-select start===
 .News-select__ {
-  padding: map-get(var.$spacers, 5) 0;
+  padding: map-get(var.$spacers, 8) 0;
   background-color: var.$color-secondary;
   &title {
     margin-bottom: map-get(var.$spacers, 5);
     .title-content {
       justify-content: space-between;
       .left-title {
-        gap: map-get(var.$spacers, 4);
-
+        gap: map-get(var.$spacers, 2);
         .img-title {
           width: 66px;
+          @include resp.respond-to(sm) {
+            width: 76px;
+          }
+          @include resp.respond-to(md) {
+            width: 86px;
+          }
           img {
             width: 100%;
           }
@@ -31,14 +36,18 @@
             font-weight: var.$font-weight-bold;
             line-height: var.$line-height-140;
             color: transparent;
-            -webkit-text-stroke: 0.7px #171717;
+            -webkit-text-stroke: 0.6px #171717;
             text-align: left;
+            @include resp.respond-to(sm) {
+              // 폰트
+              font-size: 42px;
+            }
           }
         }
       }
       .right-title {
         width: 424px;
-
+        display: none;
         img {
           width: 100%;
         }
@@ -49,28 +58,36 @@
 
   // === News-select__btn start ===
   &btn {
-    padding-bottom: map-get(var.$spacers, 11);
+    padding-bottom: map-get(var.$spacers, 5);
     .btn-content {
-      gap: 1.75rem;
-
+      gap: map-get(var.$spacers, 2);
       .News-btn {
-        font-size: var.get-font-size(b2);
+        font-size: var.get-font-size(b2, xs);
+        @include resp.respond-to(sm) {
+          // 폰트
+          font-size: 18px;
+        }
         font-weight: var.$font-weight-regular;
+        line-height: var.$line-height-120;
         color: var.$color-secondary;
-        line-height: var.$line-height-140;
         background-color: var.$color-primary;
-        padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
+        padding: map-get(var.$spacers, 2) map-get(var.$spacers, 4);
         border-radius: 10rem;
         text-decoration: none;
         align-items: center;
       }
       .Notice-btn {
-        font-size: var.get-font-size(b2);
+        font-size: var.get-font-size(b2, xs);
+        @include resp.respond-to(sm) {
+          // 폰트
+          font-size: 18px;
+        }
         text-decoration: none;
         font-weight: var.$font-weight-regular;
+        line-height: var.$line-height-120;
         color: var.$color-primary;
-        border: 2px solid var.$color-primary;
-        padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
+        border: 1px solid var.$color-primary;
+        padding: map-get(var.$spacers, 2) map-get(var.$spacers, 4);
         border-radius: 10rem;
         &:hover {
           background-color: var.$color-primary;
@@ -84,7 +101,7 @@
 
   // === News-select__cardnews start ===
   &cardnews {
-    margin-bottom: map-get(var.$spacers, 11);
+    margin-bottom: map-get(var.$spacers, 8);
     .news-list {
       display: flex;
       flex-wrap: wrap;
@@ -95,49 +112,54 @@
         max-width: 100%;
         a {
           .card-news-img {
-            width: 100%; // 부모 컨테이너 너비에 맞춰 자동 조정
+            width: 100%;
             margin: 0 auto;
-
             img {
               width: 100%;
-              height: auto; // 비율 유지
+              height: auto;
               max-width: 100%;
             }
           }
-
           .card-news-desc {
             text-align: left;
-            padding-right: map-get(var.$spacers, 15);
-
-            // 반응형에서 패딩도 조정
+            padding-right: map-get(var.$spacers, 7);
             @include resp.respond-to(sm) {
-              padding-right: map-get(var.$spacers, 8);
+              padding-right: map-get(var.$spacers, 12);
             }
             .category {
               display: inline-block;
-              font-size: var.get-font-size(b3);
+              font-size: var.get-font-size(b2, xs);
               font-weight: var.$font-weight-light;
               color: var.$color-primary;
-              padding-top: map-get(var.$spacers, 3);
+              padding-top: map-get(var.$spacers, 1);
               line-height: var.$line-height-160;
-              @include resp.respond-to(xs) {
-                font-size: var.get-font-size(b2);
+              @include resp.respond-to(sm) {
+                // 폰트
+                font-size: 16px;
               }
             }
             .card-news-body {
-              font-size: var.get-font-size(b2);
+              font-size: var.get-font-size(b1, xs);
               font-weight: var.$font-weight-regular;
               color: var.$color-primary;
               padding-top: map-get(var.$spacers, 2);
               line-height: var.$line-height-160;
+              @include resp.respond-to(sm) {
+                // 폰트
+                font-size: 18px;
+              }
             }
             .date {
               display: inline-block;
-              font-size: var.get-font-size(b4);
+              font-size: var.get-font-size(b2, xs);
               font-weight: var.$font-weight-regular;
               color: var.$color-gray-500;
-              padding-top: map-get(var.$spacers, 5);
+              padding-top: map-get(var.$spacers, 3);
               line-height: var.$line-height-160;
+              @include resp.respond-to(sm) {
+                // 폰트
+                font-size: 16px;
+              }
             }
           }
         }
@@ -172,11 +194,17 @@
         gap: map-get(var.$spacers, 1);
         .plus-btn-text {
           p {
-            font-size: var.get-font-size(b3);
+            font-size: var.get-font-size(b1, xs);
             color: var.$color-primary;
             font-weight: var.$font-weight-light;
             line-height: var.$line-height-160;
+            font-family: 'Pretendard Variable', 'Pretendard', -apple-system,
+              BlinkMacSystemFont, system-ui, sans-serif;
             letter-spacing: var.$letter-spacing-3;
+            @include resp.respond-to(sm) {
+              // 폰트
+              font-size: 18px;
+            }
           }
         }
         .plus-btn-img {
