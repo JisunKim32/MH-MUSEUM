@@ -35,6 +35,14 @@
 
    &__sec01 {
       // justify-content: first baseline;
+      .section-inner {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;  // 수직 중앙
+         align-items: center;      // 수평 중앙
+         height: 100%;
+         width: 100%;
+       }
       .container {
          margin: 87px auto;
          .row {
