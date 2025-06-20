@@ -1,7 +1,7 @@
-@use 'variables' as var;
-@use 'responsitve' as resp;
-@use 'common' as com;
-@use 'component' as cp;
+@use "variables" as var;
+@use "responsitve" as resp;
+@use "common" as com;
+@use "component" as cp;
 * {
   background: var.$color-secondary;
 }
@@ -114,25 +114,10 @@ header {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem 1rem;
+      box-sizing: border-box;
       .news-item {
-        // PC: 3열 - 컨테이너 너비에 맞춰 자동 조정
-        flex: 1 1 calc(33.333% - (1rem * 2 / 3));
-        min-width: 280px;
-        max-width: calc(33.333% - (1rem * 2 / 3));
-
-        // 태블릿: 2열
-        @include resp.respond-to(lg) {
-          flex: 1 1 calc(50% - (1rem * 1 / 2));
-          max-width: calc(50% - (1rem * 1 / 2));
-        }
-
-        // 모바일: 1열
-        @include resp.respond-to(sm) {
-          flex: 1 1 100%;
-          max-width: 100%;
-          min-width: unset;
-        }
-
+        flex: 1 1 100%;
+        max-width: 100%;
         a {
           .card-news-img {
             width: 100%; // 부모 컨테이너 너비에 맞춰 자동 조정
@@ -180,6 +165,21 @@ header {
               line-height: var.$line-height-160;
             }
           }
+        }
+      }
+      // 2열 (md ~ lg)
+      @include resp.respond-to(md) {
+        .news-item {
+          flex: 1 1 calc(50% - 0.5rem);    // gap/2만큼 빼줌
+          max-width: calc(50% - 0.5rem);
+        }
+      }
+
+      // 3열 (xl ~ xxl)
+      @include resp.respond-to(xl) {
+        .news-item {
+          flex: 1 1 calc(33.3333% - 0.67rem); // gap/3만큼 빼줌
+          max-width: calc(33.3333% - 0.67rem);
         }
       }
     }
