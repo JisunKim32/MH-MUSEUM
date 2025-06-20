@@ -10,8 +10,14 @@
 .News-select__ {
   padding: map-get(var.$spacers, 8) 0;
   background-color: var.$color-secondary;
+  @include resp.respond-to(xxl) {
+    padding: map-get(var.$spacers, 22) 0;
+  }
   &title {
-    margin-bottom: map-get(var.$spacers, 5);
+    padding-bottom: map-get(var.$spacers, 5);
+    @include resp.respond-to(xxl) {
+      padding-bottom: map-get(var.$spacers, 22);
+    }
     .title-content {
       justify-content: space-between;
       .left-title {
@@ -62,6 +68,9 @@
       .right-title {
         width: 424px;
         display: none;
+        @include resp.respond-to(sm) {
+          display: block;
+        }
         img {
           width: 100%;
         }
