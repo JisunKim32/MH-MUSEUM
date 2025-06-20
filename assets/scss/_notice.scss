@@ -3,33 +3,22 @@
 @use 'common' as com;
 @use 'component' as cp;
 
-header {
+.main_header_dark {
   position: sticky;
 }
 // === News-select start===
 .News-select__ {
-  padding: map-get(var.$spacers, 14) 0;
+  padding: map-get(var.$spacers, 5) 0;
   background-color: var.$color-secondary;
-  @include resp.respond-to(xs) {
-    padding: map-get(var.$spacers, 8) 0;
-  }
   &title {
-    margin-bottom: map-get(var.$spacers, 14);
-    @include resp.respond-to(xs) {
-      margin-bottom: map-get(var.$spacers, 6);
-    }
+    margin-bottom: map-get(var.$spacers, 5);
     .title-content {
       justify-content: space-between;
       .left-title {
         gap: map-get(var.$spacers, 4);
-        @include resp.respond-to(xs) {
-          gap: map-get(var.$spacers, 2);
-        }
+
         .img-title {
-          width: 122px;
-          @include resp.respond-to(xs) {
-            width: 66px;
-          }
+          width: 66px;
           img {
             width: 100%;
           }
@@ -37,25 +26,19 @@ header {
         .text-title {
           span {
             display: block;
-            font-size: var.get-font-size(t4);
+            font-size: var.get-font-size(t4, xs);
+            letter-spacing: var.$letter-spacing-3;
             font-weight: var.$font-weight-bold;
             line-height: var.$line-height-140;
             color: transparent;
-            -webkit-text-stroke: 1px #171717;
+            -webkit-text-stroke: 0.7px #171717;
             text-align: left;
-            @include resp.respond-to(xs) {
-              font-size: var.get-font-size(t4, xs);
-              letter-spacing: var.$letter-spacing-3;
-              -webkit-text-stroke: 0.5px #171717;
-            }
           }
         }
       }
       .right-title {
         width: 424px;
-        @include resp.respond-to(xs) {
-          display: none;
-        }
+
         img {
           width: 100%;
         }
@@ -69,9 +52,7 @@ header {
     padding-bottom: map-get(var.$spacers, 11);
     .btn-content {
       gap: 1.75rem;
-      @include resp.respond-to(xs) {
-        gap: 1rem;
-      }
+
       .News-btn {
         font-size: var.get-font-size(b2);
         font-weight: var.$font-weight-regular;
@@ -82,10 +63,6 @@ header {
         border-radius: 10rem;
         text-decoration: none;
         align-items: center;
-        @include resp.respond-to(xs) {
-          font-size: var.get-font-size(b2, xs);
-          padding: map-get(var.$spacers, 2) map-get(var.$spacers, 4);
-        }
       }
       .Notice-btn {
         font-size: var.get-font-size(b2);
@@ -172,7 +149,6 @@ header {
           max-width: calc(50% - 0.5rem);
         }
       }
-
       // 3열 (xl ~ xxl)
       @include resp.respond-to(xl) {
         .news-item {
