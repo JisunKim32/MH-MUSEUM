@@ -1,10 +1,8 @@
-@use "variables" as var;
-@use "responsitve" as resp;
-@use "common" as com;
-@use "component" as cp;
-* {
-  background: var.$color-secondary;
-}
+@use 'variables' as var;
+@use 'responsitve' as resp;
+@use 'common' as com;
+@use 'component' as cp;
+
 header {
   position: sticky;
 }
@@ -170,7 +168,7 @@ header {
       // 2열 (md ~ lg)
       @include resp.respond-to(md) {
         .news-item {
-          flex: 1 1 calc(50% - 0.5rem);    // gap/2만큼 빼줌
+          flex: 1 1 calc(50% - 0.5rem); // gap/2만큼 빼줌
           max-width: calc(50% - 0.5rem);
         }
       }
