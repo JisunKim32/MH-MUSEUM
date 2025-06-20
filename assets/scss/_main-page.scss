@@ -9,8 +9,6 @@
   position: fixed;
   top: 0;
   z-index: 900;
-
-  background: #000 !important;
 }
 .fp-table {
   justify-content: inherit;
@@ -18,7 +16,6 @@
 // header finish
 // main_section
 .section {
-  background: var.$color-black !important;
   .main_section {
     font-family: var.$font-body;
     justify-content: center;
