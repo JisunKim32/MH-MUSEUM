@@ -5,13 +5,12 @@
 .fp-watermark {
   display: none !important;
 }
-header {
+.main_header_dark {
   position: fixed;
   top: 0;
   z-index: 900;
-  .main_header_dark {
-    background: #000;
-  }
+
+  background: #000 !important;
 }
 .fp-table {
   justify-content: inherit;
