@@ -12,9 +12,6 @@
   width: 100%;
 
   .container {
-    width: 100%;
-    max-width: 1584px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -164,6 +161,7 @@
     align-items: center;
     gap: 1.5rem;
     padding: 0.625rem 1rem 0.625rem 2.5rem;
+    background-color: transparent;
   }
 
   .t-btn p {
@@ -175,16 +173,14 @@
   }
 }
 // footer
-footer {
+.footer_main_content {
   background: var.$color-secondary;
   font-family: var.$font-body;
   color: var.$color-primary;
   width: 100%;
-  position: fixed;
+  position: relative;
 
   .container {
-    width: 100%;
-    max-width: 1584px;
     display: flex;
     flex-wrap: wrap;
     padding: 0 0.75rem;
@@ -254,5 +250,6 @@ footer {
     position: absolute;
     right: 0.5%;
     bottom: 10.5%;
+    background-color: transparent;
   }
 }
