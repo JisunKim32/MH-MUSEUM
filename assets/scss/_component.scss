@@ -2,8 +2,9 @@
 @import 'common';
 
 // header
-.header_white,
-.header_dark,
+.history_detail_header,
+.notice_header,
+.history_header,
 .main_header_dark {
   font-family: var.$font-body;
   height: 100px;
@@ -52,7 +53,8 @@
   }
 }
 
-.header_white {
+.history_detail_header,
+.notice_header {
   background-color: var.$color-secondary;
   .container {
     justify-content: space-between;
@@ -71,26 +73,8 @@
     }
   }
 }
-
-.header_dark {
-  background-color: #171717;
-  color: var.$color-primary;
-
-  .nav_menu {
-    ul {
-      li {
-        &:not(:last-child)::after {
-          background-color: rgba(var.$color-primary, 0.5);
-        }
-
-        a {
-          color: var.$color-primary;
-        }
-      }
-    }
-  }
-}
-.main_header_dark {
+.main_header_dark,
+.history_header {
   background-color: transparent;
   color: var.$color-secondary;
 
@@ -188,7 +172,7 @@
     justify-content: space-between;
   }
 
-  .footer__row{
+  .footer__row {
     gap: 0;
   }
 
