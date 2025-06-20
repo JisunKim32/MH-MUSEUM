@@ -14,7 +14,8 @@ body {
   font-size: 16px;
   background-color: #000;
 }
-ul, li {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -24,13 +25,20 @@ a {
 }
 
 // === font common ===
-h1, h2, h3, h4, h5, h6, p, a, span {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
   line-height: 140%;
   letter-spacing: 0;
   margin: 0;
   padding: 0;
 }
-
 
 .container {
   width: 100%;
@@ -39,13 +47,24 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   margin-right: auto;
   margin-left: auto;
   max-width: 100%;
-  // xs는 따로 안함
-
-  @include resp.respond-to(sm) { max-width: 540px; }
-  @include resp.respond-to(md) { max-width: 720px; }
-  @include resp.respond-to(lg) { max-width: 960px; }
-  @include resp.respond-to(xl) { max-width: 1140px; }
-  @include resp.respond-to(xxl) { max-width: 1320px; }
+  @include resp.respond-to(sm) {
+    max-width: 540px;
+  }
+  @include resp.respond-to(md) {
+    max-width: 720px;
+  }
+  @include resp.respond-to(lg) {
+    max-width: 960px;
+  }
+  @include resp.respond-to(xl) {
+    max-width: 1140px;
+  }
+  @include resp.respond-to(xxl) {
+    max-width: 1320px;
+  }
+  @include resp.respond-to(xxxl) {
+    max-width: 1560px;
+  }
 }
 
 .row {
@@ -59,19 +78,42 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   width: 100%;
   padding: 0 0.938rem;
 }
-.col-1 {width: 8.33333%;}
-.col-2 {width: 16.66667%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33333%;}
-.col-5 {width: 41.66667%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33333%;}
-.col-8 {width: 66.66667%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33333%;}
-.col-11 {width: 91.66667%;}
-.col-12 {width: 100%;}
-
+.col-1 {
+  width: 8.33333%;
+}
+.col-2 {
+  width: 16.66667%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33333%;
+}
+.col-5 {
+  width: 41.66667%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33333%;
+}
+.col-8 {
+  width: 66.66667%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33333%;
+}
+.col-11 {
+  width: 91.66667%;
+}
+.col-12 {
+  width: 100%;
+}
 
 // === common css ===
 .d-flex {
