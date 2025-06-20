@@ -19,9 +19,10 @@
     text-align: center;
     height: 937px;
     padding-top: map-get(var.$spacers, 18);
-    @include resp.respond-to(sm) {
+    @include resp.respond-to(xs) {
       padding-top: map-get(var.$spacers, 23);
     }
+
     @include resp.respond-to(xxxl) {
       padding-top: map-get(var.$spacers, 18);
     }
@@ -36,7 +37,7 @@
         margin: auto;
         img {
           width: 635px;
-          @include resp.respond-to(sm) {
+          @include resp.respond-to(xs) {
             width: 276px;
           }
           @include resp.respond-to(xxxl) {
@@ -54,7 +55,7 @@
           font-weight: 200;
           font-size: var.get-font-size(h3);
           white-space: nowrap;
-          @include resp.respond-to(sm) {
+          @include resp.respond-to(xs) {
             line-height: var.$line-height-140;
             font-size: var.get-font-size(h4, xs);
           }
@@ -67,7 +68,7 @@
         h2 {
           font-weight: 600;
           font-size: var.get-font-size(h3);
-          @include resp.respond-to(sm) {
+          @include resp.respond-to(xs) {
             font-size: var.get-font-size(h4, xs);
           }
           @include resp.respond-to(xxxl) {
@@ -79,7 +80,7 @@
           font-weight: 200;
           font-size: var.get-font-size(b3);
           padding-top: 3rem;
-          @include resp.respond-to(sm) {
+          @include resp.respond-to(xs) {
             font-size: var.get-font-size(b3, xs);
             padding-top: 1.688rem;
           }
@@ -99,7 +100,7 @@
         font-size: var.get-font-size(b4);
         color: var.$color-secondary;
 
-        @include resp.respond-to(sm) {
+        @include resp.respond-to(xs) {
           padding-top: map-get(var.$spacers, 29);
         }
         @include resp.respond-to(xxxl) {
@@ -125,7 +126,7 @@
   .sec01_title {
     text-align: left;
     padding-top: 7.938rem;
-    @include resp.respond-to(sm) {
+    @include resp.respond-to(xs) {
       padding-top: map-get(var.$spacers, 8);
     }
     @include resp.respond-to(xxxl) {
@@ -137,7 +138,7 @@
       font-weight: var.$font-weight-bold;
       letter-spacing: var.$letter-spacing-3;
       line-height: var.$line-height-120;
-      @include resp.respond-to(sm) {
+      @include resp.respond-to(xs) {
         font-size: var.get-font-size(h1, xs);
       }
       @include resp.respond-to(xxxl) {
@@ -152,7 +153,7 @@
       line-height: var.$line-height-120;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: var.$color-black;
-      @include resp.respond-to(sm) {
+      @include resp.respond-to(xs) {
         font-size: var.get-font-size(h1, xs);
       }
       @include resp.respond-to(xxxl) {
@@ -167,13 +168,15 @@
     position: absolute;
     top: 34%;
     left: 40%;
-    @include resp.respond-to(sm) {
+    @include resp.respond-to(xs) {
       margin: 3.375rem 0;
+      position: inherit;
+      text-align: center;
     }
     img {
       width: auto;
       height: auto;
-      @include resp.respond-to(sm) {
+      @include resp.respond-to(xs) {
         height: 54px;
       }
     }
@@ -184,15 +187,24 @@
   }
   .justify-end {
     justify-content: end;
-    .sec01_content_title {
+    .col .sec01_content_title {
       text-align: left;
       position: relative;
       top: 50%;
+      @include resp.respond-to(xs) {
+        margin: 3.375rem 0;
+        position: inherit;
+      }
       p {
         color: #262425;
         font-size: var.get-font-size(b2);
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
+        @include resp.respond-to(xs) {
+          font-size: 1rem;
+          font-weight: var.$font-weight-light;
+          line-height: var.$line-height-160;
+        }
       }
     }
   }
@@ -217,6 +229,14 @@
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: var.$color-secondary;
         color: transparent;
+        @include resp.respond-to(xs) {
+          font-size: var.get-font-size(b3, xs);
+          padding-top: 1.688rem;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(b3);
+          padding-top: 1.688rem;
+        }
       }
     }
     .sec02_bar {
