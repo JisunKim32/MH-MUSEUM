@@ -86,7 +86,8 @@
         }
         @include resp.respond-to(xxl) {
           // 폰트
-          font-size: var.get-font-size(b);
+          font-size: var.get-font-size(b1);
+          padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
         }
         font-weight: var.$font-weight-regular;
         line-height: var.$line-height-120;
@@ -102,6 +103,11 @@
         @include resp.respond-to(sm) {
           // 폰트
           font-size: 18px;
+        }
+        @include resp.respond-to(xxl) {
+          // 폰트
+          font-size: var.get-font-size(b1);
+          padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
         }
         text-decoration: none;
         font-weight: var.$font-weight-regular;
@@ -161,6 +167,10 @@
                 // 폰트
                 font-size: 16px;
               }
+              @include resp.respond-to(xxl) {
+                font-size: var.get-font-size(b3);
+                padding-top: map-get(var.$spacers, 3);
+              }
             }
             .card-news-body {
               font-size: var.get-font-size(b1, xs);
@@ -171,6 +181,9 @@
               @include resp.respond-to(sm) {
                 // 폰트
                 font-size: 18px;
+              }
+              @include resp.respond-to(xxl) {
+                font-size: var.get-font-size(b2);
               }
             }
             .date {
@@ -183,6 +196,10 @@
               @include resp.respond-to(sm) {
                 // 폰트
                 font-size: 16px;
+              }
+              @include resp.respond-to(xxl) {
+                font-size: var.get-font-size(b4);
+                padding-top: map-get(var.$spacers, 5);
               }
             }
           }
@@ -222,12 +239,14 @@
             color: var.$color-primary;
             font-weight: var.$font-weight-light;
             line-height: var.$line-height-160;
-            font-family: 'Pretendard Variable', 'Pretendard', -apple-system,
-              BlinkMacSystemFont, system-ui, sans-serif;
             letter-spacing: var.$letter-spacing-3;
             @include resp.respond-to(sm) {
               // 폰트
               font-size: 18px;
+            }
+            @include resp.respond-to(xxl) {
+              // 폰트
+              font-size: var.get-font-size(b3);
             }
           }
         }
