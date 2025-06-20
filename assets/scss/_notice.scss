@@ -3,7 +3,7 @@
 @use 'common' as com;
 @use 'component' as cp;
 
-.main_header_dark {
+.notice_header {
   position: sticky;
 }
 // === News-select start===
@@ -16,6 +16,9 @@
       justify-content: space-between;
       .left-title {
         gap: map-get(var.$spacers, 2);
+        @include resp.respond-to(xxl) {
+          gap: map-get(var.$spacers, 4);
+        }
         .img-title {
           width: 66px;
           @include resp.respond-to(sm) {
@@ -23,6 +26,9 @@
           }
           @include resp.respond-to(md) {
             width: 86px;
+          }
+          @include resp.respond-to(xxl) {
+            width: 122px;
           }
           img {
             width: 100%;
@@ -41,6 +47,14 @@
             @include resp.respond-to(sm) {
               // 폰트
               font-size: 42px;
+            }
+            @include resp.respond-to(xl) {
+              // 폰트
+              font-size: 52px;
+              -webkit-text-stroke: 1px #171717;
+            }
+            @include resp.respond-to(xxl) {
+              font-size: var.get-font-size(t4);
             }
           }
         }
@@ -61,11 +75,18 @@
     padding-bottom: map-get(var.$spacers, 5);
     .btn-content {
       gap: map-get(var.$spacers, 2);
+      @include resp.respond-to(xl) {
+        gap: map-get(var.$spacers, 4);
+      }
       .News-btn {
         font-size: var.get-font-size(b2, xs);
         @include resp.respond-to(sm) {
           // 폰트
           font-size: 18px;
+        }
+        @include resp.respond-to(xxl) {
+          // 폰트
+          font-size: var.get-font-size(b);
         }
         font-weight: var.$font-weight-regular;
         line-height: var.$line-height-120;
@@ -102,6 +123,9 @@
   // === News-select__cardnews start ===
   &cardnews {
     margin-bottom: map-get(var.$spacers, 8);
+    @include resp.respond-to(xxl) {
+      margin-bottom: map-get(var.$spacers, 11);
+    }
     .news-list {
       display: flex;
       flex-wrap: wrap;
