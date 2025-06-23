@@ -460,12 +460,15 @@
       -webkit-text-stroke-color: var.$color-black;
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(h1, xs);
+        -webkit-text-stroke-width: 0.7px;
       }
       @include resp.respond-to(md) {
         font-size: var.get-font-size(t3, xs);
+        -webkit-text-stroke-width: 0.7px;
       }
       @include resp.respond-to(lg) {
         font-size: var.get-font-size(t2, xs);
+        -webkit-text-stroke-width: 1px;
       }
       @include resp.respond-to(xl) {
         font-size: var.get-font-size(p1, xs);
@@ -480,7 +483,7 @@
   }
   .sec01_bar {
     position: absolute;
-    top: 29%;
+    top: 38%;
     left: 42%;
     @include resp.respond-to(xs) {
       top: 21%;
@@ -499,7 +502,7 @@
       left: 34%;
     }
     @include resp.respond-to(xxxl) {
-      top: 29%;
+      top: 38%;
       left: 42%;
     }
     img {
@@ -523,8 +526,8 @@
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
         position: absolute;
-        top: 50%;
-        right: 8%;
+        top: 44%;
+        right: 3%;
         @include resp.respond-to(xs) {
           font-size: 1rem;
           font-weight: var.$font-weight-light;
@@ -575,7 +578,7 @@
           font-size: var.get-font-size(b2);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 38%;
+          top: 50%;
           right: 3%;
           padding: 0 1.625rem;
         }
@@ -587,12 +590,28 @@
 // main_section02
 .main_section02 {
   background-color: var.$color-primary;
-  padding-top: map-get(var.$spacers, 15);
+  padding-top: map-get(var.$spacers, 22);
   text-align: left;
   .justify-between {
     justify-content: space-between;
     align-items: center;
     .h-logo-white {
+      width: 100%;
+      img {
+        width: 82px;
+        @include resp.respond-to(xs) {
+          width: 50px;
+        }
+        @include resp.respond-to(lg) {
+          width: 60px;
+        }
+        @include resp.respond-to(xxl) {
+          width: 70px;
+        }
+        @include resp.respond-to(xxxl) {
+          width: 82px;
+        }
+      }
       span {
         padding-top: 3rem;
         padding-left: map-get(var.$spacers, 4);
@@ -604,12 +623,33 @@
         -webkit-text-stroke-color: var.$color-secondary;
         color: transparent;
         @include resp.respond-to(xs) {
-          font-size: var.get-font-size(b3, xs);
-          padding-top: 1.688rem;
+          font-size: var.get-font-size(t2, xs);
+          -webkit-text-stroke-width: 0.7px;
+          padding-top: map-get(var.$spacers, 6);
+          padding-left: 0.5rem;
+        }
+        @include resp.respond-to(md) {
+          font-size: var.get-font-size(h3);
+          -webkit-text-stroke-width: 0.7px;
+          padding-top: map-get(var.$spacers, 6);
+          padding-left: 0.5rem;
+        }
+        @include resp.respond-to(lg) {
+          font-size: var.get-font-size(t1, xs);
+          -webkit-text-stroke-width: 1px;
+          padding-top: map-get(var.$spacers, 9);
+          padding-left: 0.5rem;
+        }
+        @include resp.respond-to(xxl) {
+          font-size: var.get-font-size(h1);
+          -webkit-text-stroke-width: 1px;
+          padding-top: map-get(var.$spacers, 9);
+          padding-left: 0.5rem;
         }
         @include resp.respond-to(xxxl) {
-          font-size: var.get-font-size(b3);
-          padding-top: 1.688rem;
+          font-size: 5.375rem;
+          padding-top: 3rem;
+          padding-left: map-get(var.$spacers, 4);
         }
       }
     }
@@ -617,6 +657,35 @@
       width: auto;
       height: auto;
       margin: 0;
+      @include resp.respond-to(xs) {
+        margin-top: map-get(var.$spacers, 24);
+      }
+      @include resp.respond-to(lg) {
+        margin-top: map-get(var.$spacers, 16);
+      }
+      @include resp.respond-to(xxxl) {
+        margin: 0;
+      }
+    }
+  }
+  .History_arrow_right {
+    img {
+      width: 52px;
+      @include resp.respond-to(xs) {
+        width: 40px;
+      }
+      @include resp.respond-to(md) {
+        width: 43px;
+      }
+      @include resp.respond-to(lg) {
+        width: 46px;
+      }
+      @include resp.respond-to(xxl) {
+        width: 50px;
+      }
+      @include resp.respond-to(xxxl) {
+        width: 52px;
+      }
     }
   }
   .history_box01 {
@@ -625,7 +694,16 @@
     justify-content: space-between;
     margin-top: 8.625rem;
     align-items: center;
-    h1 {
+    @include resp.respond-to(xs) {
+      margin-top: map-get(var.$spacers, 26);
+    }
+    @include resp.respond-to(lg) {
+      margin-top: map-get(var.$spacers, 23);
+    }
+    @include resp.respond-to(xxxl) {
+      margin-top: 8.625rem;
+    }
+    span {
       font-family: var.$font-point;
       font-size: 8rem;
       letter-spacing: var.$letter-spacing-3;
@@ -635,6 +713,31 @@
       color: transparent;
       padding: 1.75rem 0;
       font-weight: normal;
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(t3, xs);
+        -webkit-text-stroke-width: 0.7px;
+        padding: map-get(var.$spacers, 8) 0;
+      }
+      @include resp.respond-to(md) {
+        font-size: var.get-font-size(h2);
+        -webkit-text-stroke-width: 0.7px;
+        padding: map-get(var.$spacers, 8) 0;
+      }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(t3);
+        -webkit-text-stroke-width: 1px;
+        padding: map-get(var.$spacers, 6) 0;
+      }
+      @include resp.respond-to(xxl) {
+        font-size: var.get-font-size(t2);
+        -webkit-text-stroke-width: 1px;
+        padding: map-get(var.$spacers, 6) 0;
+      }
+      @include resp.respond-to(xxxl) {
+        font-size: 8rem;
+        -webkit-text-stroke-width: 1px;
+        padding: 1.75rem 0;
+      }
     }
   }
   .history_box02 {
@@ -642,7 +745,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: map-get(var.$spacers, 15);
-    h1 {
+    .letter-spacing-8 {
       font-family: var.$font-point;
       font-size: 8rem;
       letter-spacing: var.$letter-spacing-8;
@@ -652,6 +755,31 @@
       padding: 1.75rem 0;
       color: transparent;
       font-weight: normal;
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(t3, xs);
+        -webkit-text-stroke-width: 0.7px;
+        padding: map-get(var.$spacers, 8) 0;
+      }
+      @include resp.respond-to(md) {
+        font-size: var.get-font-size(h2);
+        -webkit-text-stroke-width: 0.7px;
+        padding: map-get(var.$spacers, 8) 0;
+      }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(t3);
+        -webkit-text-stroke-width: 1px;
+        padding: map-get(var.$spacers, 6) 0;
+      }
+      @include resp.respond-to(xxl) {
+        font-size: var.get-font-size(t2);
+        -webkit-text-stroke-width: 1px;
+        padding: map-get(var.$spacers, 6) 0;
+      }
+      @include resp.respond-to(xxxl) {
+        font-size: 8rem;
+        -webkit-text-stroke-width: 1px;
+        padding: 1.75rem 0;
+      }
     }
     span {
       font-family: var.$font-point;
@@ -661,143 +789,274 @@
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: var.$color-secondary;
       padding: 1.75rem 0;
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(t3, xs);
+        -webkit-text-stroke-width: 0.7px;
+      }
+      @include resp.respond-to(md) {
+        font-size: var.get-font-size(h2);
+        -webkit-text-stroke-width: 0.7px;
+        padding: map-get(var.$spacers, 8) 0;
+      }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(t3);
+        -webkit-text-stroke-width: 1px;
+        padding: map-get(var.$spacers, 6) 0;
+      }
+      @include resp.respond-to(xxl) {
+        font-size: var.get-font-size(t2);
+        -webkit-text-stroke-width: 1px;
+        padding: map-get(var.$spacers, 6) 0;
+      }
+      @include resp.respond-to(xxxl) {
+        font-size: 8rem;
+        -webkit-text-stroke-width: 1px;
+        padding: 1.75rem 0;
+      }
     }
   }
 }
 // main_section02 finish
 .main_section03 {
   background-color: var.$color-primary;
-  padding-top: map-get(var.$spacers, 15);
+  padding-top: map-get(var.$spacers, 22);
   .align-item-center {
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
+    @include resp.respond-to(xs) {
+    }
   }
-  .main_content {
-    padding-bottom: 5.875rem;
+
+  @include resp.respond-to(md) {
   }
-  .main_section03_text_title {
-    text-align: left;
-    .news_main_title,
-    .notice_main_title {
+}
+.main_content {
+  padding-bottom: 5.875rem;
+}
+.main_section03_title {
+  width: 100%;
+  img {
+    @include resp.respond-to(xs) {
+      width: 103px;
+    }
+    @include resp.respond-to(md) {
+    }
+    @include resp.respond-to(lg) {
+    }
+    @include resp.respond-to(xxl) {
+    }
+    @include resp.respond-to(xxxl) {
+      width: 123px;
+    }
+  }
+}
+.main_section03_text_title {
+  text-align: left;
+  @include resp.respond-to(xs) {
+    width: 103px;
+  }
+  @include resp.respond-to(md) {
+  }
+  @include resp.respond-to(lg) {
+  }
+  @include resp.respond-to(xxl) {
+  }
+  @include resp.respond-to(xxxl) {
+    width: 123px;
+  }
+  .news_main_title {
+    padding-bottom: 0;
+    @include resp.respond-to(xs) {
+      padding-bottom: 1.2rem;
+    }
+    @include resp.respond-to(md) {
+    }
+    @include resp.respond-to(lg) {
+    }
+    @include resp.respond-to(xxl) {
+    }
+    @include resp.respond-to(xxxl) {
+      padding-bottom: 0;
+    }
+  }
+  .news_main_title,
+  .notice_main_title {
+    padding-left: map-get(var.$spacers, 4);
+    font-size: 5.375rem;
+    font-weight: var.$font-weight-bold;
+    letter-spacing: var.$letter-spacing-3;
+    line-height: var.$line-height-120;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var.$color-secondary;
+    color: transparent;
+    @include resp.respond-to(xs) {
+      padding-left: map-get(var.$spacers, 1);
+      font-size: var.get-font-size(t2, xs);
+      -webkit-text-stroke-width: 0.7px;
+    }
+    @include resp.respond-to(md) {
+      font-size: var.get-font-size(h2);
+    }
+    @include resp.respond-to(lg) {
+      font-size: var.get-font-size(t3);
+      -webkit-text-stroke-width: 1px;
+    }
+    @include resp.respond-to(xxl) {
+      font-size: var.get-font-size(t2);
+    }
+    @include resp.respond-to(xxxl) {
       padding-left: map-get(var.$spacers, 4);
       font-size: 5.375rem;
-      font-weight: var.$font-weight-bold;
-      letter-spacing: var.$letter-spacing-3;
-      line-height: var.$line-height-120;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: var.$color-secondary;
-      color: transparent;
-    }
-    span {
-      display: block;
     }
   }
+  span {
+    display: block;
+  }
+}
 
-  .bar_title {
-    flex-direction: column;
-
-    img {
-      width: auto;
-      height: auto;
+.bar_title {
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  margin: 0;
+  .sec02_bar {
+    width: 424px;
+    @include resp.respond-to(xs) {
+      width: 162px;
     }
+    @include resp.respond-to(md) {
+    }
+    @include resp.respond-to(lg) {
+    }
+    @include resp.respond-to(xxl) {
+    }
+    @include resp.respond-to(xxxl) {
+      width: 424px;
+    }
+  }
+}
 
-    .view_btn {
-      justify-content: end;
-      align-items: center;
-      margin-top: 1.75rem;
+img {
+  width: auto;
+  height: auto;
+}
 
-      h2 {
-        padding-right: map-get(var.$spacers, 3);
-        font-family: var.$font-body;
-        font-size: var.get-font-size(b3);
-        font-weight: var.$font-weight-extralight;
-        color: var.$color-white;
+.view_btn {
+  justify-content: end;
+  align-items: center;
+  margin-top: 1.75rem;
+
+  h2 {
+    padding-right: map-get(var.$spacers, 3);
+    font-family: var.$font-body;
+    font-size: var.get-font-size(b3);
+    font-weight: var.$font-weight-extralight;
+    color: var.$color-white;
+  }
+}
+.news_content,
+.notice_content {
+  .row {
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      display: none;
+    }
+  }
+}
+
+@include resp.respond-to(md) {
+  .news_content,
+  .notice_content {
+    .row {
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        display: flex;
       }
     }
   }
+}
+.content_wrapper {
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
-  .content_wrapper {
-    justify-content: space-between;
-    align-items: flex-start;
+.news_text_wrap {
+  justify-content: space-between;
+}
+
+.news_title {
+  padding-top: map-get(var.$spacers, 18);
+  padding-bottom: map-get(var.$spacers, 3);
+  justify-content: space-between;
+
+  h1 {
+    font-family: var.$font-body;
+    font-size: var.get-font-size(h4);
+    font-weight: var.$font-weight-medium;
+    color: var.$color-secondary;
+    letter-spacing: var.$letter-spacing-3;
+    line-height: var.$line-height-160;
+    margin-right: map-get(var.$spacers, 7);
+  }
+}
+.notice_title {
+  padding-top: map-get(var.$spacers, 18);
+  padding-bottom: map-get(var.$spacers, 3);
+  justify-content: space-between;
+
+  h1 {
+    font-family: var.$font-body;
+    font-size: var.get-font-size(h4);
+    font-weight: var.$font-weight-medium;
+    color: var.$color-secondary;
+    letter-spacing: var.$letter-spacing-3;
+    line-height: var.$line-height-160;
+    margin-right: map-get(var.$spacers, 7);
+  }
+}
+
+.news_text {
+  justify-content: space-between;
+  align-items: center;
+  padding: map-get(var.$spacers, 5) 0;
+  white-space: nowrap;
+
+  h1 {
+    font-family: var.$font-body;
+    font-size: var.get-font-size(b3);
+    font-weight: var.$font-weight-regular;
+    color: var.$color-secondary;
+    line-height: var.$line-height-160;
   }
 
-  .news_text_wrap {
-    justify-content: space-between;
+  p {
+    font-family: var.$font-body;
+    font-size: var.get-font-size(b4);
+    font-weight: var.$font-weight-light;
+    color: #717171;
+    line-height: var.$line-height-160;
+  }
+}
+
+.notice_text {
+  justify-content: space-between;
+  align-items: center;
+  padding: map-get(var.$spacers, 5) 0;
+  white-space: nowrap;
+  h1 {
+    font-family: var.$font-body;
+    font-size: var.get-font-size(b3);
+    font-weight: var.$font-weight-regular;
+    color: var.$color-secondary;
+    line-height: var.$line-height-160;
   }
 
-  .news_title {
-    padding-top: 8.625rem;
-    padding-bottom: map-get(var.$spacers, 3);
-    justify-content: space-between;
-
-    h1 {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(h4);
-      font-weight: var.$font-weight-medium;
-      color: var.$color-secondary;
-      letter-spacing: var.$letter-spacing-3;
-      line-height: var.$line-height-160;
-      margin-right: map-get(var.$spacers, 7);
-    }
-  }
-  .notice_title {
-    padding-top: 8.625rem;
-    padding-bottom: map-get(var.$spacers, 3);
-    justify-content: space-between;
-
-    h1 {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(h4);
-      font-weight: var.$font-weight-medium;
-      color: var.$color-secondary;
-      letter-spacing: var.$letter-spacing-3;
-      line-height: var.$line-height-160;
-      margin-right: map-get(var.$spacers, 7);
-    }
-  }
-
-  .news_text {
-    justify-content: space-between;
-    align-items: center;
-    padding: 2.063rem 0;
-    white-space: nowrap;
-
-    h1 {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(b3);
-      font-weight: var.$font-weight-regular;
-      color: var.$color-secondary;
-      line-height: var.$line-height-160;
-    }
-
-    p {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(b4);
-      font-weight: var.$font-weight-light;
-      color: #717171;
-      line-height: var.$line-height-160;
-    }
-  }
-
-  .notice_text {
-    justify-content: space-between;
-    align-items: center;
-    padding: 2.063rem 0;
-    white-space: nowrap;
-    h1 {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(b3);
-      font-weight: var.$font-weight-regular;
-      color: var.$color-secondary;
-      line-height: var.$line-height-160;
-    }
-
-    p {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(b4);
-      font-weight: var.$font-weight-light;
-      color: #717171;
-      line-height: var.$line-height-160;
-    }
+  p {
+    font-family: var.$font-body;
+    font-size: var.get-font-size(b4);
+    font-weight: var.$font-weight-light;
+    color: #717171;
+    line-height: var.$line-height-160;
   }
 }
