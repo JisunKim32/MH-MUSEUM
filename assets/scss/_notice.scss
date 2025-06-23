@@ -3,19 +3,28 @@
 @use 'common' as com;
 @use 'component' as cp;
 
-.main_header_dark {
+.notice_header {
   position: sticky;
 }
 // === News-select start===
 .News-select__ {
   padding: map-get(var.$spacers, 8) 0;
   background-color: var.$color-secondary;
+  @include resp.respond-to(xxl) {
+    padding: map-get(var.$spacers, 22) 0;
+  }
   &title {
-    margin-bottom: map-get(var.$spacers, 5);
+    padding-bottom: map-get(var.$spacers, 5);
+    @include resp.respond-to(xxl) {
+      padding-bottom: map-get(var.$spacers, 22);
+    }
     .title-content {
       justify-content: space-between;
       .left-title {
         gap: map-get(var.$spacers, 2);
+        @include resp.respond-to(xxl) {
+          gap: map-get(var.$spacers, 4);
+        }
         .img-title {
           width: 66px;
           @include resp.respond-to(sm) {
@@ -23,6 +32,9 @@
           }
           @include resp.respond-to(md) {
             width: 86px;
+          }
+          @include resp.respond-to(xxl) {
+            width: 122px;
           }
           img {
             width: 100%;
@@ -42,12 +54,23 @@
               // 폰트
               font-size: 42px;
             }
+            @include resp.respond-to(xl) {
+              // 폰트
+              font-size: 52px;
+              -webkit-text-stroke: 1px #171717;
+            }
+            @include resp.respond-to(xxl) {
+              font-size: var.get-font-size(t4);
+            }
           }
         }
       }
       .right-title {
         width: 424px;
         display: none;
+        @include resp.respond-to(sm) {
+          display: block;
+        }
         img {
           width: 100%;
         }
@@ -59,13 +82,24 @@
   // === News-select__btn start ===
   &btn {
     padding-bottom: map-get(var.$spacers, 5);
+    @include resp.respond-to(xxl) {
+      padding-bottom: map-get(var.$spacers, 11);
+    }
     .btn-content {
       gap: map-get(var.$spacers, 2);
+      @include resp.respond-to(xl) {
+        gap: map-get(var.$spacers, 4);
+      }
       .News-btn {
         font-size: var.get-font-size(b2, xs);
         @include resp.respond-to(sm) {
           // 폰트
           font-size: 18px;
+        }
+        @include resp.respond-to(xxl) {
+          // 폰트
+          font-size: var.get-font-size(b1);
+          padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
         }
         font-weight: var.$font-weight-regular;
         line-height: var.$line-height-120;
@@ -81,6 +115,11 @@
         @include resp.respond-to(sm) {
           // 폰트
           font-size: 18px;
+        }
+        @include resp.respond-to(xxl) {
+          // 폰트
+          font-size: var.get-font-size(b1);
+          padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
         }
         text-decoration: none;
         font-weight: var.$font-weight-regular;
@@ -102,6 +141,12 @@
   // === News-select__cardnews start ===
   &cardnews {
     margin-bottom: map-get(var.$spacers, 8);
+    @include resp.respond-to(xxl) {
+      margin-bottom: map-get(var.$spacers, 11);
+    }
+    @include resp.respond-to(xxxl) {
+      margin-bottom: map-get(var.$spacers, 14);
+    }
     .news-list {
       display: flex;
       flex-wrap: wrap;
@@ -137,6 +182,10 @@
                 // 폰트
                 font-size: 16px;
               }
+              @include resp.respond-to(xxl) {
+                font-size: var.get-font-size(b3);
+                padding-top: map-get(var.$spacers, 3);
+              }
             }
             .card-news-body {
               font-size: var.get-font-size(b1, xs);
@@ -147,6 +196,9 @@
               @include resp.respond-to(sm) {
                 // 폰트
                 font-size: 18px;
+              }
+              @include resp.respond-to(xxl) {
+                font-size: var.get-font-size(b2);
               }
             }
             .date {
@@ -159,6 +211,10 @@
               @include resp.respond-to(sm) {
                 // 폰트
                 font-size: 16px;
+              }
+              @include resp.respond-to(xxl) {
+                font-size: var.get-font-size(b4);
+                padding-top: map-get(var.$spacers, 5);
               }
             }
           }
@@ -193,17 +249,19 @@
         cursor: pointer;
         gap: map-get(var.$spacers, 1);
         .plus-btn-text {
-          p {
+          span {
             font-size: var.get-font-size(b1, xs);
             color: var.$color-primary;
             font-weight: var.$font-weight-light;
             line-height: var.$line-height-160;
-            font-family: 'Pretendard Variable', 'Pretendard', -apple-system,
-              BlinkMacSystemFont, system-ui, sans-serif;
             letter-spacing: var.$letter-spacing-3;
             @include resp.respond-to(sm) {
               // 폰트
               font-size: 18px;
+            }
+            @include resp.respond-to(xxl) {
+              // 폰트
+              font-size: var.get-font-size(b3);
             }
           }
         }
@@ -222,53 +280,108 @@
 
 // === Notice-select start===
 .Notice-select__ {
-  padding: map-get(var.$spacers, 14) 0;
+  padding: map-get(var.$spacers, 8) 0;
   background-color: var.$color-secondary;
-  //
+  @include resp.respond-to(xxl) {
+    padding: map-get(var.$spacers, 22) 0;
+  }
   &title {
-    margin-bottom: map-get(var.$spacers, 14);
+    padding-bottom: map-get(var.$spacers, 5);
+    @include resp.respond-to(xxl) {
+      padding-bottom: map-get(var.$spacers, 22);
+    }
     .title-content {
       justify-content: space-between;
       .left-title {
-        gap: map-get(var.$spacers, 4);
+        gap: map-get(var.$spacers, 2);
+        @include resp.respond-to(xxl) {
+          gap: map-get(var.$spacers, 4);
+        }
         .img-title {
-          width: 122px;
+          width: 66px;
+          @include resp.respond-to(sm) {
+            width: 76px;
+          }
+          @include resp.respond-to(md) {
+            width: 86px;
+          }
+          @include resp.respond-to(xxl) {
+            width: 122px;
+          }
           img {
             width: 100%;
           }
         }
         .text-title {
-          font-size: var.get-font-size(t4);
-          font-weight: var.$font-weight-bold;
-          color: transparent;
-          -webkit-text-stroke: 1px #171717;
-          text-align: left;
+          span {
+            display: block;
+            font-size: var.get-font-size(t4, xs);
+            letter-spacing: var.$letter-spacing-3;
+            font-weight: var.$font-weight-bold;
+            line-height: var.$line-height-140;
+            color: transparent;
+            -webkit-text-stroke: 0.6px #171717;
+            text-align: left;
+            @include resp.respond-to(sm) {
+              // 폰트
+              font-size: 42px;
+            }
+            @include resp.respond-to(xl) {
+              // 폰트
+              font-size: 52px;
+              -webkit-text-stroke: 1px #171717;
+            }
+            @include resp.respond-to(xxl) {
+              font-size: var.get-font-size(t4);
+            }
+          }
         }
       }
       .right-title {
         width: 424px;
+        display: none;
+        @include resp.respond-to(sm) {
+          display: block;
+        }
         img {
           width: 100%;
         }
       }
     }
   }
-  // === Notice-select__title end ===
+  // === News-select__title end ===
 
-  // === Notice-select__btn start ===
+  // === News-select__btn start ===
   &btn {
-    padding-bottom: map-get(var.$spacers, 11);
-    border-bottom: 2px solid var.$color-primary;
+    padding-bottom: map-get(var.$spacers, 5);
+    border-bottom: 1px solid var.$color-primary;
+    @include resp.respond-to(xxl) {
+      padding-bottom: map-get(var.$spacers, 11);
+    }
     .btn-content {
-      gap: 1.75rem;
+      gap: map-get(var.$spacers, 2);
+      @include resp.respond-to(xl) {
+        gap: map-get(var.$spacers, 4);
+      }
       .News-btn {
-        font-size: var.get-font-size(b2);
-        text-decoration: none;
+        font-size: var.get-font-size(b2, xs);
+        @include resp.respond-to(sm) {
+          // 폰트
+          font-size: 18px;
+        }
+        @include resp.respond-to(xxl) {
+          // 폰트
+          font-size: var.get-font-size(b1);
+          padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
+        }
         font-weight: var.$font-weight-regular;
+        line-height: var.$line-height-120;
         color: var.$color-primary;
-        border: 2px solid var.$color-primary;
-        padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
+        border: 1px solid var.$color-primary;
+        padding: map-get(var.$spacers, 2) map-get(var.$spacers, 4);
         border-radius: 10rem;
+        text-decoration: none;
+        align-items: center;
         &:hover {
           background-color: var.$color-primary;
           color: var.$color-secondary;
@@ -276,12 +389,23 @@
         }
       }
       .Notice-btn {
-        font-size: var.get-font-size(b2);
+        font-size: var.get-font-size(b2, xs);
+        @include resp.respond-to(sm) {
+          // 폰트
+          font-size: 18px;
+        }
+        @include resp.respond-to(xxl) {
+          // 폰트
+          font-size: var.get-font-size(b1);
+          padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
+        }
         text-decoration: none;
         font-weight: var.$font-weight-regular;
+        line-height: var.$line-height-120;
         color: var.$color-secondary;
         background-color: var.$color-primary;
-        padding: map-get(var.$spacers, 2) map-get(var.$spacers, 6);
+
+        padding: map-get(var.$spacers, 2) map-get(var.$spacers, 4);
         border-radius: 10rem;
       }
     }
@@ -289,53 +413,71 @@
   // === Notice-select__btn end ===
 
   // === Notice-select__cardNotice start ==
-  // === Notice-select__viewmore start ===
-  &viewmore {
-    .viewmore-btn {
-      button {
-        margin: auto;
-        background: none;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        gap: map-get(var.$spacers, 1);
-        .plus-btn-text {
-          p {
-            font-size: var.get-font-size(b3);
-            color: var.$color-primary;
-            font-weight: var.$font-weight-light;
-            line-height: var.$line-height-160;
-            letter-spacing: var.$letter-spacing-3;
-          }
-        }
-        .plus-btn-img {
-          width: 32px;
-          img {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-  // === Notice-select__viewmore end ===
 
   // === Notice-select__table start ===
   &table-list {
     .table-content {
+      flex-direction: column;
       table {
         border-collapse: collapse;
-        margin-bottom: map-get(var.$spacers, 12);
+        margin-bottom: map-get(var.$spacers, 8);
+        @include resp.respond-to(xxl) {
+          margin-bottom: map-get(var.$spacers, 11);
+        }
+        @include resp.respond-to(xxxl) {
+          margin-bottom: map-get(var.$spacers, 14);
+        }
+        colgroup {
+          .tb-col-1 {
+            width: 6.75rem;
+            @include resp.respond-to(sm) {
+              width: 10.75rem;
+            }
+            @include resp.respond-to(xxxl) {
+              width: 6.75rem;
+            }
+          }
+          .tb-col-2 {
+            width: 14rem;
+            @include resp.respond-to(xxxl) {
+              width: 18rem;
+            }
+          }
+          .tb-col-3 {
+            width: 65.5rem;
+            @include resp.respond-to(xxxl) {
+              width: 49.5rem;
+            }
+          }
+          .tb-col-4 {
+            width: 14rem;
+            @include resp.respond-to(xxxl) {
+              width: 18rem;
+            }
+          }
+          .tb-col-5 {
+            width: 6.75rem;
+          }
+        }
         thead {
           tr {
             box-sizing: border-box;
             th {
               box-sizing: border-box;
               border-bottom: 1px solid var.$color-gray-400;
-              font-size: var.get-font-size(b2);
+              font-size: var.get-font-size(b1, xs);
               font-weight: var.$font-weight-medium;
               color: var.$color-primary;
               line-height: var.$line-height-140;
-              padding: map-get(var.$spacers, 5) 0;
+              padding: map-get(var.$spacers, 3) 0;
+              @include resp.respond-to(xl) {
+                padding: map-get(var.$spacers, 5) 0;
+                // 폰트
+                font-size: 18px;
+              }
+              @include resp.respond-to(xxxl) {
+                font-size: var.get-font-size(b2);
+              }
             }
             .text-left {
               text-align: left;
@@ -351,20 +493,57 @@
             td {
               box-sizing: border-box;
               border-bottom: 1px solid var.$color-gray-400;
-              padding: map-get(var.$spacers, 5) 0;
-              font-size: var.get-font-size(b3);
+              padding: map-get(var.$spacers, 3) 0;
+              font-size: var.get-font-size(b2, xs);
+              font-weight: var.$font-weight-light;
+              color: var.$color-primary;
+              line-height: var.$line-height-160;
+              @include resp.respond-to(xl) {
+                padding: map-get(var.$spacers, 5) 0;
+                // 폰트
+                font-size: 18px;
+              }
+              @include resp.respond-to(xxxl) {
+                font-size: var.get-font-size(b3);
+              }
+            }
+            .text-title {
+              box-sizing: border-box;
+              border-bottom: 1px solid var.$color-gray-400;
+              padding: map-get(var.$spacers, 3) 0;
+              font-size: var.get-font-size(b2, xs);
               font-weight: var.$font-weight-regular;
               color: var.$color-primary;
               line-height: var.$line-height-160;
+              @include resp.respond-to(xl) {
+                padding: map-get(var.$spacers, 5) 0;
+                // 폰트
+                font-size: 18px;
+              }
+              @include resp.respond-to(xxxl) {
+                font-size: var.get-font-size(b3);
+              }
             }
             .text-left {
               text-align: left;
             }
             .date {
-              font-size: var.get-font-size(b4);
+              font-size: var.get-font-size(b3, xs);
               font-weight: var.$font-weight-regular;
               color: var.$color-gray-500;
               line-height: var.$line-height-160;
+              @include resp.respond-to(sm) {
+                // 폰트
+                font-size: 14px;
+              }
+              @include resp.respond-to(xl) {
+                padding: map-get(var.$spacers, 5) 0;
+                // 폰트
+                font-size: 16px;
+              }
+              @include resp.respond-to(xxxl) {
+                font-size: var.get-font-size(b4);
+              }
             }
           }
         }
@@ -372,36 +551,106 @@
     }
   }
   // === Notice-select__table end ===
+
+  // === Notice-select__viewmore start ===
+  &viewmore {
+    .viewmore-btn {
+      button {
+        margin: auto;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        gap: map-get(var.$spacers, 1);
+        .plus-btn-text {
+          span {
+            font-size: var.get-font-size(b1, xs);
+            color: var.$color-primary;
+            font-weight: var.$font-weight-light;
+            line-height: var.$line-height-160;
+            letter-spacing: var.$letter-spacing-3;
+            @include resp.respond-to(sm) {
+              // 폰트
+              font-size: 18px;
+            }
+            @include resp.respond-to(xxl) {
+              // 폰트
+              font-size: var.get-font-size(b3);
+            }
+          }
+        }
+        .plus-btn-img {
+          width: 32px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  // === Notice-select__viewmore end ===
 }
 // === Notice-select end ===
 
 // = News-detail start ===
 .News-detail__ {
-  padding: map-get(var.$spacers, 11) 0;
+  padding: map-get(var.$spacers, 5) 0 map-get(var.$spacers, 8) 0;
   background-color: var.$color-secondary;
+  @include resp.respond-to(xl) {
+    padding: map-get(var.$spacers, 22) 0 map-get(var.$spacers, 11) 0;
+  }
   &title-content {
+    gap: map-get(var.$spacers, 5);
+    @include resp.respond-to(xl) {
+      gap: map-get(var.$spacers, 11);
+    }
+    .col-8 {
+      width: 100%;
+      @include resp.respond-to(xl) {
+        width: 66.66667%;
+      }
+    }
     .title {
       text-align: left;
-      padding: map-get(var.$spacers, 14) 0;
       h2 {
-        font-size: var.get-font-size(h2);
+        font-size: var.get-font-size(h3, xs);
         font-weight: var.$font-weight-medium;
         color: var.$color-primary;
         line-height: var.$line-height-140;
+        @include resp.respond-to(xl) {
+          // 폰트
+          font-size: 44px;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(h2);
+        }
       }
     }
     .date {
       justify-content: space-between;
-      p {
-        font-size: var.get-font-size(b4);
+      span {
+        display: inline-block;
+        font-size: var.get-font-size(b2, xs);
         font-weight: var.$font-weight-light;
         color: var.$color-gray-500;
         line-height: var.$line-height-140;
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(b4);
+        }
       }
     }
   }
   &textarea {
-    padding: map-get(var.$spacers, 7) 0;
+    padding: map-get(var.$spacers, 5) 0;
+    @include resp.respond-to(xl) {
+      padding: map-get(var.$spacers, 8) 0;
+    }
+    .col-8 {
+      width: 100%;
+      @include resp.respond-to(xl) {
+        width: 66.66667%;
+      }
+    }
     .text-form {
       border-top: 2px solid var.$color-primary;
       border-bottom: 1px solid var.$color-gray-500;
@@ -412,20 +661,27 @@
         }
       }
       .text-title {
-        display: inline-block;
+        display: block;
         padding: map-get(var.$spacers, 7) 0;
-        font-size: var.get-font-size(b3);
+        font-size: var.get-font-size(b1, xs);
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
         color: var.$color-gray-700;
+        text-align: center;
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(b3);
+        }
       }
       .text {
         p {
           text-align: left;
-          font-size: var.get-font-size(b3);
+          font-size: var.get-font-size(b1, xs);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
           color: var.$color-gray-700;
+          @include resp.respond-to(xxxl) {
+            font-size: var.get-font-size(b3);
+          }
         }
       }
       .stack-l {
@@ -434,29 +690,63 @@
     }
   }
   &text-next {
+    .col-8 {
+      width: 100%;
+      @include resp.respond-to(xl) {
+        width: 66.66667%;
+      }
+    }
     .post-link {
       a {
-        font-size: var.get-font-size(b2);
-        font-weight: var.$font-weight-regular;
-        line-height: var.$line-height-160;
-        color: var.$color-primary;
-        gap: map-get(var.$spacers, 10);
+        gap: map-get(var.$spacers, 9);
+        .prev-title {
+          width: 17%;
+          font-size: var.get-font-size(b1, xs);
+          font-weight: var.$font-weight-medium;
+          line-height: var.$line-height-160;
+          color: var.$color-primary;
+          @include resp.respond-to(xxxl) {
+            font-size: var.get-font-size(b2);
+          }
+        }
+        .prev-text {
+          font-size: var.get-font-size(b1, xs);
+          font-weight: var.$font-weight-regular;
+          line-height: var.$line-height-160;
+          color: var.$color-primary;
+          @include resp.respond-to(xxxl) {
+            font-size: var.get-font-size(b2);
+          }
+        }
       }
     }
   }
   &detail-btn {
-    padding: map-get(var.$spacers, 14) 0 map-get(var.$spacers, 22) 0;
+    padding-top: map-get(var.$spacers, 8);
+    @include resp.respond-to(xl) {
+      padding-top: map-get(var.$spacers, 11);
+    }
+    @include resp.respond-to(xxxl) {
+      padding-top: map-get(var.$spacers, 14);
+    }
     .detail_btn {
+      text-align: center;
       .d-btn {
-        padding: 1.125rem 5.5rem;
-        font-family: var.$font-body;
-        font-size: var.get-font-size(b3);
-        border-radius: 50px;
-        line-height: var.$line-height-160;
-        cursor: pointer;
-        background-color: var.$color-primary;
-        color: var.$color-secondary;
+        font-size: var.get-font-size(b1, xs);
         font-weight: var.$font-weight-medium;
+        line-height: var.$line-height-160;
+        padding: 0.75rem 2.625rem;
+        border-radius: 50px;
+        color: var.$color-secondary;
+        background-color: var.$color-primary;
+        cursor: pointer;
+        @include resp.respond-to(xl) {
+          padding: 0.75rem 3.625rem;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(b3);
+          padding: 1.125rem 5.5rem;
+        }
       }
     }
   }
@@ -465,49 +755,94 @@
 
 // = Notice-detail start ===
 .Notice-detail__ {
-  padding: map-get(var.$spacers, 11) 0;
+  padding: map-get(var.$spacers, 5) 0 map-get(var.$spacers, 8) 0;
   background-color: var.$color-secondary;
+  @include resp.respond-to(xl) {
+    padding: map-get(var.$spacers, 22) 0 map-get(var.$spacers, 11) 0;
+  }
   &title-content {
+    gap: map-get(var.$spacers, 5);
+    @include resp.respond-to(xl) {
+      gap: map-get(var.$spacers, 11);
+    }
+    .col-8 {
+      width: 100%;
+      @include resp.respond-to(xl) {
+        width: 66.66667%;
+      }
+    }
     .title {
       text-align: left;
-      padding: map-get(var.$spacers, 14) 0;
       h2 {
-        font-size: var.get-font-size(h2);
+        font-size: var.get-font-size(h3, xs);
         font-weight: var.$font-weight-medium;
         color: var.$color-primary;
         line-height: var.$line-height-140;
+        @include resp.respond-to(xl) {
+          // 폰트
+          font-size: 44px;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(h2);
+        }
       }
     }
     .date {
       justify-content: space-between;
-      p {
-        font-size: var.get-font-size(b4);
+      span {
+        display: inline-block;
+        font-size: var.get-font-size(b2, xs);
         font-weight: var.$font-weight-light;
         color: var.$color-gray-500;
         line-height: var.$line-height-140;
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(b4);
+        }
       }
     }
   }
   &textarea {
-    padding: map-get(var.$spacers, 7) 0;
+    padding: map-get(var.$spacers, 5) 0;
+    @include resp.respond-to(xl) {
+      padding: map-get(var.$spacers, 8) 0;
+    }
+    .col-8 {
+      width: 100%;
+      @include resp.respond-to(xl) {
+        width: 66.66667%;
+      }
+    }
     .text-form {
       border-top: 2px solid var.$color-primary;
       border-bottom: 1px solid var.$color-gray-500;
+      .text-form__img {
+        padding-top: map-get(var.$spacers, 7);
+        img {
+          width: 100%;
+        }
+      }
       .text-title {
-        display: inline-block;
+        display: block;
         padding: map-get(var.$spacers, 7) 0;
-        font-size: var.get-font-size(b3);
+        font-size: var.get-font-size(b1, xs);
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
         color: var.$color-gray-700;
+        text-align: center;
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(b3);
+        }
       }
       .text {
         p {
           text-align: left;
-          font-size: var.get-font-size(b3);
+          font-size: var.get-font-size(b1, xs);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
           color: var.$color-gray-700;
+          @include resp.respond-to(xxxl) {
+            font-size: var.get-font-size(b3);
+          }
         }
       }
       .stack-l {
@@ -516,31 +851,145 @@
     }
   }
   &text-next {
+    .col-8 {
+      width: 100%;
+      @include resp.respond-to(xl) {
+        width: 66.66667%;
+      }
+    }
     .post-link {
       a {
-        font-size: var.get-font-size(b2);
-        font-weight: var.$font-weight-regular;
-        line-height: var.$line-height-160;
-        color: var.$color-primary;
-        gap: map-get(var.$spacers, 10);
+        gap: map-get(var.$spacers, 9);
+        .prev-title {
+          width: 17%;
+          font-size: var.get-font-size(b1, xs);
+          font-weight: var.$font-weight-medium;
+          line-height: var.$line-height-160;
+          color: var.$color-primary;
+          @include resp.respond-to(xxxl) {
+            font-size: var.get-font-size(b2);
+          }
+        }
+        .prev-text {
+          font-size: var.get-font-size(b1, xs);
+          font-weight: var.$font-weight-regular;
+          line-height: var.$line-height-160;
+          color: var.$color-primary;
+          @include resp.respond-to(xxxl) {
+            font-size: var.get-font-size(b2);
+          }
+        }
       }
     }
   }
   &detail-btn {
-    padding: map-get(var.$spacers, 14) 0 map-get(var.$spacers, 22) 0;
+    padding-top: map-get(var.$spacers, 8);
+    @include resp.respond-to(xl) {
+      padding-top: map-get(var.$spacers, 11);
+    }
+    @include resp.respond-to(xxxl) {
+      padding-top: map-get(var.$spacers, 14);
+    }
     .detail_btn {
+      text-align: center;
       .d-btn {
-        padding: 1.125rem 5.5rem;
-        font-family: var.$font-body;
-        font-size: var.get-font-size(b3);
-        border-radius: 50px;
-        line-height: var.$line-height-160;
-        cursor: pointer;
-        background-color: var.$color-primary;
-        color: var.$color-secondary;
+        font-size: var.get-font-size(b1, xs);
         font-weight: var.$font-weight-medium;
+        line-height: var.$line-height-160;
+        padding: 0.75rem 2.625rem;
+        border-radius: 50px;
+        color: var.$color-secondary;
+        background-color: var.$color-primary;
+        cursor: pointer;
+        @include resp.respond-to(xl) {
+          padding: 0.75rem 3.625rem;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(b3);
+          padding: 1.125rem 5.5rem;
+        }
       }
     }
   }
 }
+
+// .Notice-detail__ {
+//   padding: map-get(var.$spacers, 11) 0;
+//   background-color: var.$color-secondary;
+//   &title-content {
+//     .title {
+//       text-align: left;
+//       padding: map-get(var.$spacers, 14) 0;
+//       h2 {
+//         font-size: var.get-font-size(h2);
+//         font-weight: var.$font-weight-medium;
+//         color: var.$color-primary;
+//         line-height: var.$line-height-140;
+//       }
+//     }
+//     .date {
+//       justify-content: space-between;
+//       p {
+//         font-size: var.get-font-size(b4);
+//         font-weight: var.$font-weight-light;
+//         color: var.$color-gray-500;
+//         line-height: var.$line-height-140;
+//       }
+//     }
+//   }
+//   &textarea {
+//     padding: map-get(var.$spacers, 7) 0;
+//     .text-form {
+//       border-top: 2px solid var.$color-primary;
+//       border-bottom: 1px solid var.$color-gray-500;
+//       .text-title {
+//         display: inline-block;
+//         padding: map-get(var.$spacers, 7) 0;
+//         font-size: var.get-font-size(b3);
+//         font-weight: var.$font-weight-light;
+//         line-height: var.$line-height-160;
+//         color: var.$color-gray-700;
+//       }
+//       .text {
+//         p {
+//           text-align: left;
+//           font-size: var.get-font-size(b3);
+//           font-weight: var.$font-weight-light;
+//           line-height: var.$line-height-160;
+//           color: var.$color-gray-700;
+//         }
+//       }
+//       .stack-l {
+//         height: 4vmax;
+//       }
+//     }
+//   }
+//   &text-next {
+//     .post-link {
+//       a {
+//         font-size: var.get-font-size(b2);
+//         font-weight: var.$font-weight-regular;
+//         line-height: var.$line-height-160;
+//         color: var.$color-primary;
+//         gap: map-get(var.$spacers, 10);
+//       }
+//     }
+//   }
+//   &detail-btn {
+//     padding: map-get(var.$spacers, 14) 0 map-get(var.$spacers, 22) 0;
+//     .detail_btn {
+//       .d-btn {
+//         padding: 1.125rem 5.5rem;
+//         font-family: var.$font-body;
+//         font-size: var.get-font-size(b3);
+//         border-radius: 50px;
+//         line-height: var.$line-height-160;
+//         cursor: pointer;
+//         background-color: var.$color-primary;
+//         color: var.$color-secondary;
+//         font-weight: var.$font-weight-medium;
+//       }
+//     }
+//   }
+// }
 // = Notice-detail end ===
