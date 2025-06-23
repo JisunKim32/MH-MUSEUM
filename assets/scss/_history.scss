@@ -302,6 +302,7 @@
 }
 // === history-select end ===
 
+
 // === history-content ===
 .header__history-content {
    background-color: transparent;
@@ -309,14 +310,27 @@
 
 .menu {
    position: fixed;
-   bottom: 53px;
+   bottom: 37px;
    left: 16px;
    z-index: 99;
    display: flex;
    gap: 15px 58px;
    flex-direction: column;
+   @include resp.respond-to(sm) {
+      left: 36.5px;
+   }
+   @include resp.respond-to(md) {
+      left: 55.5px;
+   }
    @include resp.respond-to(lg) {
       flex-direction: row;
+      left: 37.5px;
+   }
+   @include resp.respond-to(xl) {
+      left: 81.5px;
+   }
+   @include resp.respond-to(xxl) {
+      left: 59.5px;
    }
    @include resp.respond-to(xxxl) {
       left: 180px;
@@ -339,7 +353,7 @@
          width: 74px;
          height: 2px;
          background-color: var.$color-white;
-         margin-top: 17px;
+         
          z-index: 151;
          transform: scaleX(0);
          transform-origin: left;
@@ -350,6 +364,7 @@
       }
       &.active:after {
          transform: scaleX(1);
+         margin-top: 17px;
       }
       &:last-child {
          display: none;
@@ -358,7 +373,7 @@
 }
 
 .history-content {
-   // position: relative;
+   position: relative;
 
    &__sec01 {
       background-image: url("../images/_Content_img1.png");
@@ -368,6 +383,12 @@
 
       .section-inner {
          padding-bottom: 147px;
+         @include resp.respond-to(sm) {
+            padding-bottom: 100px;
+         }
+         @include resp.respond-to(lg) {
+            padding-bottom: 0;
+         }
       }
 
       .sec01__content {
@@ -389,15 +410,35 @@
                line-height: var.$line-height-120;
                letter-spacing: var.$letter-spacing-3;
                color: var.$color-white;
-               @include resp.respond-to(lg) {
-                  font-size: var.get-font-size(t3, default);
+               @include resp.respond-to(md) {
+                  font-size: 45px;
                   line-height: var.$line-height-140;
+               }
+               @include resp.respond-to(lg) {
+                  font-size: 55px;
+                  line-height: var.$line-height-140;
+               }
+               @include resp.respond-to(xl) {
+                  font-size: 66px;
+               }
+               @include resp.respond-to(xxl) {
+                  font-size: 76px;
+               }
+               @include resp.respond-to(xxxl) {
+                  font-size: var.get-font-size(t3, default);
                }
             }
          }
          .content-body {
+            @include resp.respond-to(md) {
+               width: 80%;
+            }
             @include resp.respond-to(lg) {
+               width: 45%;
+            }
+            @include resp.respond-to(xl) {
                width: 41.66667%;
+               // width: 636/1560=;
             }
             p {
                font-family: var.$font-body;
@@ -488,6 +529,7 @@
          flex-direction: row;
       }
       .col-6 {
+         width: 100%;
          @include resp.respond-to(lg) {
             width: calc(50% - 0.75rem); // gap의 절반을 뺌
          }
@@ -514,9 +556,21 @@
             font-weight: var.$font-weight-medium;
             line-height: var.$line-height-140;
             color: var.$color-primary;
-            @include resp.respond-to(lg) {
-               font-size: var.get-font-size(h1, default);
+            @include resp.respond-to(md) {
+               font-size: 48px;
                line-height: var.$line-height-160;
+            }
+            @include resp.respond-to(lg) {
+               font-size: 52px;
+            }
+            @include resp.respond-to(xl) {
+               font-size: 60px;
+            }
+            @include resp.respond-to(xxl) {
+               font-size: 66px;
+            }
+            @include resp.respond-to(xxxl) {
+               font-size: var.get-font-size(h1, default);
             }
          }
          span {
@@ -529,9 +583,15 @@
             align-items: center;
             gap: 0 16px;
 
-            @include resp.respond-to(lg) {
-               font-size: var.get-font-size(b1, default);
+            @include resp.respond-to(md) {
+               font-size: 18px;
                line-height: var.$line-height-160;
+            }
+            @include resp.respond-to(xl) {
+               font-size: 22px;
+            }
+            @include resp.respond-to(xxl) {
+               font-size: var.get-font-size(b1, default);
             }
 
             &::before {
@@ -553,14 +613,19 @@
    }
 
    &__right-content {
-      padding-top: 24px;
       @include resp.respond-to(lg) {
          max-width: 680px;
          width: 100%;
-         padding-top: 78px;
+         padding-top: 94px;
+      }
+      @include resp.respond-to(xl) {
+         padding-top: 107px;
       }
       @include resp.respond-to(xxl) {
-         padding-top: 171px;
+         padding-top: 155px;
+      }
+      @include resp.respond-to(xxxl) {
+         padding-top: 162px;
       }
       .content-text {
          p {
@@ -569,7 +634,16 @@
             font-weight: var.$font-weight-regular;
             line-height: var.$line-height-160;
             color: var.$color-primary;
+            @include resp.respond-to(md) {
+               font-size: 18px;
+            }
             @include resp.respond-to(lg) {
+               font-size: 20px;
+            }
+            @include resp.respond-to(xl) {
+               font-size: 22px;
+            }
+            @include resp.respond-to(xxl) {
                font-size: var.get-font-size(b1, default);
             }
          }
