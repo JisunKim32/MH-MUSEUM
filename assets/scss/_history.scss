@@ -310,13 +310,16 @@
 .menu {
    position: fixed;
    bottom: 53px;
-   left: 180px;
+   left: 16px;
    z-index: 99;
    display: flex;
-   gap: 24px 58px;
+   gap: 15px 58px;
    flex-direction: column;
    @include resp.respond-to(lg) {
       flex-direction: row;
+   }
+   @include resp.respond-to(xxxl) {
+      left: 180px;
    }
 
    li {
@@ -363,6 +366,10 @@
       background-position: center;
       background-repeat: no-repeat;
 
+      .section-inner {
+         padding-bottom: 147px;
+      }
+
       .sec01__content {
          display: flex;
          flex-direction: column;
@@ -389,7 +396,9 @@
             }
          }
          .content-body {
-            width: 41.66667%;
+            @include resp.respond-to(lg) {
+               width: 41.66667%;
+            }
             p {
                font-family: var.$font-body;
                font-size: var.get-font-size(b1, xs);
@@ -402,12 +411,22 @@
             }
             .v-max {
                height: 4vmax;
+               @include resp.respond-to(lg) {
+                  height: 5vmax;
+               }
             }
             button {
-               width: 52px;
-               height: 52px;
+               width: 40px;
+               height: 40px;
                background: none;
                border: none;
+               @include resp.respond-to(lg) {
+                  width: 52px;
+                  height: 52px;
+               }
+               img{
+                  width: 100%;
+               }
             }
          }
       }
