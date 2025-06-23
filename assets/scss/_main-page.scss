@@ -8,6 +8,191 @@
 .fp-table {
   justify-content: inherit;
 }
+.main_header_dark {
+  z-index: 10001;
+  .d-logo {
+    img {
+      width: 100%;
+      @include resp.respond-to(xs) {
+        width: 72%;
+      }
+      @include resp.respond-to(sm) {
+        width: 72%;
+      }
+      @include resp.respond-to(md) {
+        width: 72%;
+      }
+      @include resp.respond-to(lg) {
+        width: 85%;
+      }
+      @include resp.respond-to(xl) {
+        width: 90%;
+      }
+      @include resp.respond-to(xxl) {
+        width: 100%;
+      }
+      @include resp.respond-to(xxxl) {
+        width: 100%;
+      }
+    }
+  }
+
+  // 데스크톱용 nav_menu 스타일
+  .nav_menu.desktop-nav {
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        position: relative;
+        &:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          right: 0%;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 15px;
+          background-color: rgba(var.$color-secondary, 0.5); // 구분선 색상
+        }
+        a {
+          font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+          font-weight: var.$font-weight-light;
+          color: var.$color-white; // 텍스트 색상
+        }
+        .menu-history {
+          padding-right: 24px;
+        }
+        .menu-notice {
+          padding-left: 24px;
+        }
+      }
+    }
+  }
+
+  .menu-wrap {
+    display: none;
+    width: 19px;
+    height: 19px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10000;
+
+    .line {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: var.$color-secondary;
+      border-radius: 2px;
+      left: 0;
+      transition: all 0.3s ease;
+      transform-origin: 50% 50%;
+    }
+
+    .line:first-child {
+      top: 0;
+      transition: 0.3s;
+    }
+    .line:nth-child(2) {
+      top: 9px;
+      transform: none;
+    }
+    .line:last-child {
+      top: 18px;
+      transition: 0.3s;
+    }
+  }
+
+  // 햄버거 클릭 시 X 모양 변환
+  .menu-wrap.open {
+    .line:first-child {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .line:nth-child(2) {
+      opacity: 0;
+    }
+    .line:last-child {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+
+  // 768px 이하 (모바일) 미디어 쿼리
+  @media (max-width: 768px) {
+    .nav_menu.desktop-nav {
+      display: none;
+    }
+    .menu-wrap {
+      display: block;
+    }
+  }
+}
+
+// menu_overlay 스타일
+.menu_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  // 모바일용 nav_menu 스타일
+  .nav_menu.mobile-nav {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      position: relative;
+      &::after {
+        content: none !important;
+      }
+    }
+
+    a {
+      color: var.$color-white;
+      font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+      font-weight: var.$font-weight-light;
+      line-height: var.$line-height-160;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #c3c2be;
+      }
+    }
+    .menu-history {
+      margin-bottom: 3.625rem;
+    }
+  }
+}
+
+.menu_overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 // header finish
 // main_section
 .section {
@@ -18,13 +203,14 @@
     overflow: hidden;
     text-align: center;
     height: 937px;
-    padding-top: map-get(var.$spacers, 18);
-    @include resp.respond-to(xs) {
-      padding-top: map-get(var.$spacers, 23);
-    }
+    .row {
+      @include resp.respond-to(xs) {
+        gap: 0;
+      }
 
-    @include resp.respond-to(xxxl) {
-      padding-top: map-get(var.$spacers, 18);
+      @include resp.respond-to(xxxl) {
+        gap: 1.5rem;
+      }
     }
     .title_content_wrapper {
       color: #fff;
@@ -32,6 +218,16 @@
       position: relative;
       margin: auto;
       justify-content: center;
+      margin-top: map-get(var.$spacers, 18);
+      @include resp.respond-to(xs) {
+        margin-top: 15.625rem;
+      }
+      @include resp.respond-to(lg) {
+        margin-top: map-get(var.$spacers, 15);
+      }
+      @include resp.respond-to(xxxl) {
+        margin-top: map-get(var.$spacers, 18);
+      }
       .circle_img {
         width: 100%;
         margin: auto;
@@ -53,7 +249,7 @@
             width: 500px;
           }
           @include resp.respond-to(xxl) {
-            width: 550px;
+            width: 635px;
           }
           @include resp.respond-to(xxxl) {
             width: 635px;
@@ -70,32 +266,26 @@
           font-weight: 200;
           font-size: var.get-font-size(h3);
           white-space: nowrap;
+          line-height: var.$line-height-140;
           @include resp.respond-to(xs) {
-            line-height: var.$line-height-140;
             font-size: var.get-font-size(h4, xs);
           }
           @include resp.respond-to(sm) {
-            line-height: var.$line-height-140;
-            font-size: var.get-font-size(h4, xs);
+            font-size: var.get-font-size(b1);
           }
           @include resp.respond-to(md) {
-            line-height: var.$line-height-140;
-            font-size: var.get-font-size(h4, xs);
+            font-size: var.get-font-size(h3, xs);
           }
           @include resp.respond-to(lg) {
-            line-height: var.$line-height-140;
-            font-size: var.get-font-size(h4, xs);
+            font-size: var.get-font-size(h2, xs);
           }
           @include resp.respond-to(xl) {
-            line-height: var.$line-height-140;
-            font-size: var.get-font-size(h4, xs);
+            font-size: var.get-font-size(h1, xs);
           }
           @include resp.respond-to(xxl) {
-            line-height: var.$line-height-140;
-            font-size: var.get-font-size(h4, xs);
+            font-size: var.get-font-size(h3);
           }
           @include resp.respond-to(xxxl) {
-            line-height: var.$line-height-140;
             font-size: var.get-font-size(h3);
           }
         }
@@ -103,8 +293,24 @@
         h2 {
           font-weight: 600;
           font-size: var.get-font-size(h3);
+          line-height: var.$line-height-140;
           @include resp.respond-to(xs) {
             font-size: var.get-font-size(h4, xs);
+          }
+          @include resp.respond-to(sm) {
+            font-size: var.get-font-size(b1);
+          }
+          @include resp.respond-to(md) {
+            font-size: var.get-font-size(h3, xs);
+          }
+          @include resp.respond-to(lg) {
+            font-size: var.get-font-size(h2, xs);
+          }
+          @include resp.respond-to(xl) {
+            font-size: var.get-font-size(h1, xs);
+          }
+          @include resp.respond-to(xxl) {
+            font-size: var.get-font-size(h3);
           }
           @include resp.respond-to(xxxl) {
             font-size: var.get-font-size(h3);
@@ -117,11 +323,31 @@
           padding-top: 3rem;
           @include resp.respond-to(xs) {
             font-size: var.get-font-size(b3, xs);
-            padding-top: 1.688rem;
+            padding-top: map-get(var.$spacers, 3);
+          }
+          @include resp.respond-to(sm) {
+            font-size: var.get-font-size(b2, xs);
+            padding-top: map-get(var.$spacers, 3);
+          }
+          @include resp.respond-to(md) {
+            font-size: var.get-font-size(b1, xs);
+            padding-top: map-get(var.$spacers, 3);
+          }
+          @include resp.respond-to(lg) {
+            font-size: var.get-font-size(b4);
+            padding-top: map-get(var.$spacers, 4);
+          }
+          @include resp.respond-to(xl) {
+            font-size: var.get-font-size(b3);
+            padding-top: map-get(var.$spacers, 5);
+          }
+          @include resp.respond-to(xxl) {
+            font-size: var.get-font-size(b3);
+            padding-top: map-get(var.$spacers, 6);
           }
           @include resp.respond-to(xxxl) {
             font-size: var.get-font-size(b3);
-            padding-top: 1.688rem;
+            padding-top: 3rem;
           }
         }
       }
@@ -129,18 +355,49 @@
     .scroll_down_btn {
       margin: auto;
       text-align: center;
+      margin-top: 1.75rem;
+      @include resp.respond-to(xs) {
+        margin-top: map-get(var.$spacers, 29);
+      }
+      @include resp.respond-to(lg) {
+        margin-top: map-get(var.$spacers, 18);
+      }
+      @include resp.respond-to(xl) {
+        margin-top: map-get(var.$spacers, 9);
+      }
+      @include resp.respond-to(xxl) {
+        margin-top: map-get(var.$spacers, 5);
+      }
+      @include resp.respond-to(xxxl) {
+        margin-top: 1.75rem;
+      }
       p {
         font-family: var.$font-body;
         font-weight: 200;
         font-size: var.get-font-size(b4);
         color: var.$color-secondary;
+        margin-bottom: 1.375rem;
 
         @include resp.respond-to(xs) {
-          padding-top: map-get(var.$spacers, 29);
+          font-size: var.get-font-size(b2, xs);
+        }
+        @include resp.respond-to(sm) {
+          font-size: var.get-font-size(b2, xs);
+        }
+        @include resp.respond-to(md) {
+          font-size: var.get-font-size(b2, xs);
+        }
+        @include resp.respond-to(lg) {
+          font-size: var.get-font-size(b2, xs);
+        }
+        @include resp.respond-to(xl) {
+          font-size: var.get-font-size(b2, xs);
+        }
+        @include resp.respond-to(xxl) {
           font-size: var.get-font-size(b2, xs);
         }
         @include resp.respond-to(xxxl) {
-          padding: 1.75rem 0 1.375rem 0;
+          font-size: var.get-font-size(b4);
         }
       }
 
@@ -161,29 +418,41 @@
   position: relative;
   .sec01_title {
     text-align: left;
-    padding-top: 7.938rem;
+    margin-top: 7.938rem;
     @include resp.respond-to(xs) {
-      padding-top: map-get(var.$spacers, 8);
+      margin-top: map-get(var.$spacers, 22);
     }
     @include resp.respond-to(xxxl) {
-      padding-top: 7.938rem;
+      margin-top: 7.938rem;
     }
     .first_text {
       color: var.$color-black;
-      font-size: 5.375rem;
+      font-size: var.get-font-size(t3);
       font-weight: var.$font-weight-bold;
       letter-spacing: var.$letter-spacing-3;
       line-height: var.$line-height-120;
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(h1, xs);
       }
+      @include resp.respond-to(md) {
+        font-size: var.get-font-size(t3, xs);
+      }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(t2, xs);
+      }
+      @include resp.respond-to(xl) {
+        font-size: var.get-font-size(p1, xs);
+      }
+      @include resp.respond-to(xxl) {
+        font-size: var.get-font-size(t4);
+      }
       @include resp.respond-to(xxxl) {
-        font-size: 5.375rem;
+        font-size: var.get-font-size(t3);
       }
     }
     span {
       color: transparent;
-      font-size: 5.375rem;
+      font-size: var.get-font-size(t3);
       font-weight: var.$font-weight-bold;
       letter-spacing: var.$letter-spacing-3;
       line-height: var.$line-height-120;
@@ -192,22 +461,46 @@
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(h1, xs);
       }
+      @include resp.respond-to(md) {
+        font-size: var.get-font-size(t3, xs);
+      }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(t2, xs);
+      }
+      @include resp.respond-to(xl) {
+        font-size: var.get-font-size(p1, xs);
+      }
+      @include resp.respond-to(xxl) {
+        font-size: var.get-font-size(t4);
+      }
       @include resp.respond-to(xxxl) {
-        font-size: 5.375rem;
+        font-size: var.get-font-size(t3);
       }
     }
   }
   .sec01_bar {
-    // margin: map-get(var.$spacers, 6) 0;
-    // text-align: center;
-    // padding-right: 500px;
     position: absolute;
-    top: 34%;
-    left: 40%;
+    top: 29%;
+    left: 42%;
     @include resp.respond-to(xs) {
-      margin: 3.375rem 0;
-      position: inherit;
-      text-align: center;
+      top: 21%;
+      left: 50%;
+    }
+    @include resp.respond-to(lg) {
+      top: 21%;
+      left: 34%;
+    }
+    @include resp.respond-to(xl) {
+      top: 21%;
+      left: 29%;
+    }
+    @include resp.respond-to(xxl) {
+      top: 25%;
+      left: 34%;
+    }
+    @include resp.respond-to(xxxl) {
+      top: 29%;
+      left: 42%;
     }
     img {
       width: auto;
@@ -215,31 +508,76 @@
       @include resp.respond-to(xs) {
         height: 54px;
       }
+      @include resp.respond-to(xxxl) {
+        height: 92px;
+      }
     }
-  }
-  .col-1 {
-    width: calc(100% / 12);
-    margin-left: calc(100% / 12 * 4);
   }
   .justify-end {
     justify-content: end;
-    .col .sec01_content_title {
+    .sec01_content_title {
       text-align: left;
-      position: relative;
-      top: 50%;
-      @include resp.respond-to(xs) {
-        margin: 3.375rem 0;
-        position: inherit;
-      }
       p {
         color: #262425;
         font-size: var.get-font-size(b2);
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
+        position: absolute;
+        top: 50%;
+        right: 8%;
         @include resp.respond-to(xs) {
           font-size: 1rem;
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
+          top: 28%;
+          right: 0;
+          padding: 0 1rem;
+        }
+        @include resp.respond-to(sm) {
+          font-size: 1rem;
+          font-weight: var.$font-weight-light;
+          line-height: var.$line-height-160;
+          top: 28%;
+          right: 0;
+          padding: 0 2.125rem;
+        }
+        @include resp.respond-to(md) {
+          font-size: var.get-font-size(b4);
+          font-weight: var.$font-weight-light;
+          line-height: var.$line-height-160;
+          top: 28%;
+          right: 9%;
+          padding: 0 2.5rem;
+        }
+        @include resp.respond-to(lg) {
+          font-size: var.get-font-size(h5, xs);
+          font-weight: var.$font-weight-light;
+          line-height: var.$line-height-160;
+          top: 28%;
+          right: 0%;
+          padding: 0 2rem;
+        }
+        @include resp.respond-to(xl) {
+          font-weight: var.$font-weight-light;
+          line-height: var.$line-height-160;
+          top: 28%;
+          right: 0%;
+          padding: 0 2.875rem;
+        }
+        @include resp.respond-to(xxl) {
+          font-weight: var.$font-weight-light;
+          line-height: var.$line-height-160;
+          top: 33%;
+          right: 2%;
+          padding: 0 3.5rem;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: var.get-font-size(b2);
+          font-weight: var.$font-weight-light;
+          line-height: var.$line-height-160;
+          top: 38%;
+          right: 3%;
+          padding: 0 1.625rem;
         }
       }
     }
