@@ -40,4 +40,34 @@ new fullpage('#fullpage', {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      0: {
+        slidesPerView: 3,
+        spaceBetween: 26,
+      },
+      576: {
+        slidesPerView: 3,
+        spaceBetween: 26,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1200: {
+        slidesPerView: 2.7,
+        spaceBetween: 30,
+      },
+      1400: {
+        slidesPerView: 2.78,
+        spaceBetween: 30,
+      },
+      1580: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
  });
