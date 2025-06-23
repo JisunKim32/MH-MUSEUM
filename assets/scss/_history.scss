@@ -51,14 +51,22 @@
          }
       }
       .history-select__bar {
-         display: flex;
-         justify-content: right;
-         margin-bottom: map-get(var.$spacers, 13);
+         display: none;
+         @include resp.respond-to(lg) {
+            justify-content: right;
+            margin-bottom: map-get(var.$spacers, 13);
+         }
       }
       .sec01__content {
          display: flex;
          flex-direction: column;
          gap: 147px 0;
+         @include resp.respond-to(sm) {
+            gap: 80px 0;
+         }
+         @include resp.respond-to(md) {
+            gap: 60px 0;
+         }
          @include resp.respond-to(lg) {
             flex-direction: row;
             justify-content: space-between;
@@ -73,78 +81,171 @@
             line-height: var.$line-height-120;
             letter-spacing: var.$letter-spacing-3;
             color: transparent;
-            -webkit-text-stroke: 1px var.$color-white;
+            -webkit-text-stroke: 0.7px var.$color-white;
             display: inline-block;
             text-align: center;
+            @include resp.respond-to(sm) {
+               font-size: 70px;
+            }
+            @include resp.respond-to(md) {
+               font-size: 76px;
+            }
             @include resp.respond-to(lg) {
+               font-size: 100px;
+               -webkit-text-stroke: 1px var.$color-white;
+            }
+            @include resp.respond-to(xxl) {
                font-size: var.get-font-size(t2, default);
             }
          }
       }
       .main-content {
-         max-width: 306px;
+         max-width: 1184px;
+         // max-width: 342px;
          width: 100%;
          align-items: center;
          overflow: hidden;
          position: relative;
 
          @include resp.respond-to(lg) {
+            max-width: 652px;
+         }
+         @include resp.respond-to(xl) {
+            max-width: 800px;
+         }
+         @include resp.respond-to(xxl) {
+            max-width: 950px;
+         }
+         @include resp.respond-to(xxxl) {
             max-width: 1184px;
          }
 
          .mySwiper {
-            max-width: 306px;
+            max-width: 950px;
+            // max-width: 342px;
             width: 100%;
+            // overflow: hidden;
 
             @include resp.respond-to(lg) {
+               max-width: 488px;
+            }
+            @include resp.respond-to(xl) {
+               max-width: 636px;
+            }
+            @include resp.respond-to(xxl) {
+               max-width: 750px;
+            }
+            @include resp.respond-to(xxxl) {
                max-width: 950px;
             }
          }
 
          .swiper-box {
-            max-width: 306px;
+            // max-width: 342px;
             width: 100%;
             text-decoration: none;
+            margin: 0;
+            // overflow: hidden;
             @include resp.respond-to(lg) {
+               max-width: 488px;
+               margin: 0 auto;
+            }
+            @include resp.respond-to(xl) {
+               max-width: 636px;
+            }
+            @include resp.respond-to(xxl) {
+               max-width: 750px;
+            }
+            @include resp.respond-to(xxxl) {
                max-width: 950px;
             }
             .swiper-slide {
-               max-width: 138px;
+               max-width: 158px;
                width: 100% !important;
+               @include resp.respond-to(sm) {
+                  max-width: 255px;
+               }
+               @include resp.respond-to(md) {
+                  max-width: 220px;
+               }
+               @include resp.respond-to(md) {
+                  max-width: 220px;
+               }
                @include resp.respond-to(lg) {
+                  max-width: 229px;
+               }
+               @include resp.respond-to(xl) {
+                  max-width: 212px;
+               }
+               @include resp.respond-to(xxl) {
+                  max-width: 250px;
+               }
+               @include resp.respond-to(xxxl) {
                   max-width: 290px;
                }
                .slide__content-title {
                   span {
                      font-family: var.$font-point;
                      font-size: var.get-font-size(t2, xs);
-                     font-weight: var.$font-weight-regular;
+                     font-weight: var.$font-weight-light;
                      line-height: var.$line-height-120;
                      letter-spacing: var.$letter-spacing-3;
                      color: transparent;
-                     -webkit-text-stroke: 1px var.$color-white;
+                     -webkit-text-stroke: 0.7px var.$color-white;
                      display: flex;
                      justify-content: left;
                      padding: map-get(var.$spacers, 4) 0;
+                     @include resp.respond-to(sm) {
+                        padding: map-get(var.$spacers, 5) 0;
+                        font-size: 66px
+                     }
+                     @include resp.respond-to(md) {
+                        padding: map-get(var.$spacers, 5) 0;
+                        font-size: 58px
+                     }
                      @include resp.respond-to(lg) {
-                        font-size: var.get-font-size(t3, default);
+                        // font-size: 60px;
+                        font-size: 70px;
+                        font-weight: var.$font-weight-regular;
                         padding: map-get(var.$spacers, 8) 0;
+                        -webkit-text-stroke: 1px var.$color-white;
+                     }
+                     @include resp.respond-to(xxl) {
+                        font-size: 82px;
+                     }
+                     @include resp.respond-to(xxxl) {
+                        font-size: var.get-font-size(t3, default);
                      }
                   }
                   &::before {
                      content: "";
                      display: block;
-                     width: 138px;
+                     width: 158px;
                      height: 1px;
                      background-color: var.$color-white;
+                     @include resp.respond-to(sm) {
+                        width: 230px;
+                     }
+                     @include resp.respond-to(md) {
+                        width: 220px;
+                     }
                      @include resp.respond-to(lg) {
+                        width: 229px;
+                     }
+                     @include resp.respond-to(xl) {
+                        width: 212px;
+                     }
+                     @include resp.respond-to(xxl) {
+                        width: 250px;
+                     }
+                     @include resp.respond-to(xxxl) {
                         width: 290px;
                      }
                   }
                   &::after {
                      content: "";
                      display: block;
-                     width: 56px;
+                     width: 76px;
                      height: 1px;
                      background-color: var.$color-white;
                      @include resp.respond-to(lg) {
