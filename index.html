@@ -20,14 +20,33 @@
             <img src="assets/images/desktop_logo_white.svg" alt="logo-white" />
           </a>
         </div>
-        <nav class="nav_menu">
+
+        <!-- 1. 데스크톱용 내비게이션 메뉴 (평소에 보임) -->
+        <nav class="nav_menu desktop-nav">
           <ul class="d-flex">
             <li><a href="#" class="menu-history">History</a></li>
             <li><a href="#" class="menu-notice">Notice</a></li>
           </ul>
         </nav>
+
+        <!-- 햄버거 버튼 (모바일에서만 보임) -->
+        <div class="menu-wrap">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
       </div>
     </header>
+
+    <!-- 2. 모바일용 오버레이 메뉴 (햄버거 클릭 시 보임) -->
+    <div class="menu_overlay">
+      <nav class="nav_menu mobile-nav">
+        <ul class="d-flex">
+          <li><a href="#" class="menu-history">History</a></li>
+          <li><a href="#" class="menu-notice">Notice</a></li>
+        </ul>
+      </nav>
+    </div>
     <!-- header dark -->
     <div id="fullpage">
       <section class="section">
@@ -44,7 +63,7 @@
                   <p>한국 현대사를 담은 온라인 뮤지엄</p>
                 </div>
               </div>
-              <div class="col-2 scroll_down_btn">
+              <div class="col-12 scroll_down_btn">
                 <p>Scroll Down</p>
                 <div class="scroll_img">
                   <img
@@ -78,16 +97,17 @@
               </div>
             </div>
             <div class="row justify-end">
-              <div class="col-12">
+              <div class="col-6">
                 <div class="sec01_content_title">
                   <p>
                     MH Museum은 Modern History라는 의미를 담고 있습니다.<br /><br />2000년부터
                     2020년까지 대한민국의 가장 뜨거웠던 소식을 기억하는 디지털
-                    히스토리 뮤지엄으로, 각 해에 가장 큰 세 가지 이슈를 선별하여
-                    그 시대의 향기와 흐름을 감각적으로 담아냈습니다.<br /><br />단순히
-                    정보를 소개하는 것이 아닌, 지나간 시간과 감정에 공감할 수
-                    있도록 감각적인 비주얼과 직관적인 사용자 경험을 통하여
-                    역사를 어렵지 않게, 하지만 깊이 있게 마주할 수 있도록
+                    히스토리 뮤지엄으로,<br />
+                    각 해에 가장 큰 세 가지 이슈를 선별하여 그 시대의 향기와
+                    흐름을 감각적으로 담아냈습니다.<br /><br />단순히 정보를
+                    소개하는 것이 아닌, 지나간 시간과 감정에 공감할 수 있도록
+                    감각적인 비주얼과 직관적인 사<br />용자 경험을 통하여 역사를
+                    어렵지 않게, 하지만 깊이 있게 마주할 수 있도록
                     하였습니다.<br /><br />MH Museum은 과거를 새롭게 바라보는
                     시선으로, 오늘날 우리에게 잊지 말아야 할 이야기를 건넵니다.
                   </p>
