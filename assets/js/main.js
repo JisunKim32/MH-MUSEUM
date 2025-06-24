@@ -15,6 +15,38 @@ new fullpage('#fullpage', {
   // normalScrollElements: '.section-normal'
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const logoLink = document.getElementById('logo-link');
+  if (logoLink) {
+    logoLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (typeof fullpage_api !== 'undefined') {
+        fullpage_api.moveTo(1);
+      } else {
+        document
+          .getElementById('fullpage')
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+  // logo 누르면 첫번째 섹션으로 이동
+  const topBtn = document.querySelector('.top_btn'); //
+
+  if (topBtn) {
+    topBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (typeof fullpage_api !== 'undefined') {
+        fullpage_api.moveTo(1);
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }
+    });
+  }
+});
+// button 누르면 첫번째 섹션으로 이동
 const menuWrap = document.querySelector('.menu-wrap');
 const menuOverlay = document.querySelector('.menu_overlay');
 const mobileNav = document.querySelector('.nav_menu.mobile-nav');
