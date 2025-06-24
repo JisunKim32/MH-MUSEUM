@@ -1,7 +1,7 @@
 @use 'variables' as var;
+@use 'responsitve' as resp;
 @import 'common';
 
-// header
 .history_detail_header,
 .notice_header,
 .history_header,
@@ -13,12 +13,39 @@
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 900;
-
+  z-index: 100;
+  @include resp.respond-to(xs) {
+    height: 80px;
+  }
+  @include resp.respond-to(lg) {
+  }
+  @include resp.respond-to(xl) {
+  }
+  @include resp.respond-to(xxxl) {
+    height: 100px;
+  }
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .d-logo {
+    img {
+      width: 100%;
+      @include resp.respond-to(xs) {
+        width: 72%;
+      }
+      @include resp.respond-to(lg) {
+        width: 85%;
+      }
+      @include resp.respond-to(xl) {
+        width: 90%;
+      }
+      @include resp.respond-to(xxl) {
+        width: 100%;
+      }
+    }
   }
 
   .nav_menu {
@@ -42,16 +69,80 @@
         }
 
         a {
-          font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+          font-size: var.get-font-size(b3);
           font-weight: var.$font-weight-light;
         }
         .menu-history {
-          padding-right: 24px;
+          padding-right: 1.5rem;
         }
         .menu-notice {
-          padding-left: 24px;
+          padding-left: 1.5rem;
         }
       }
+    }
+  }
+
+  // 햄버거 버튼 스타일 (공통)
+  .menu-wrap {
+    display: none;
+    width: 19px;
+    height: 19px;
+    position: relative;
+    cursor: pointer;
+    z-index: 101;
+
+    .line {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      border-radius: 2px;
+      left: 0;
+      transition: all 0.3s ease;
+      transform-origin: 50% 50%;
+    }
+
+    .line:first-child {
+      top: 0;
+      transition: 0.3s;
+    }
+    .line:nth-child(2) {
+      top: 9px;
+      transform: none;
+    }
+    .line:last-child {
+      top: 18px;
+      transition: 0.3s;
+    }
+  }
+
+  // 햄버거 클릭 시 X 모양 변환 (공통)
+  .menu-wrap.open {
+    .line:first-child {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .line:nth-child(2) {
+      opacity: 0;
+    }
+    .line:last-child {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+
+  @include resp.respond-to(xs) {
+    .nav_menu.desktop-nav {
+      display: none;
+    }
+    .menu-wrap {
+      display: block;
+    }
+  }
+
+  @include resp.respond-to(lg) {
+    .nav_menu.desktop-nav {
+      display: block;
+    }
+    .menu-wrap {
+      display: none;
     }
   }
 }
@@ -59,27 +150,29 @@
 .history_detail_header,
 .notice_header {
   background-color: var.$color-secondary;
-  .container {
-    justify-content: space-between;
-  }
+
   .nav_menu {
     ul {
       li {
         &:not(:last-child)::after {
           background-color: rgba(var.$color-primary, 0.5);
         }
-
         a {
           color: var.$color-primary;
         }
       }
     }
   }
+  .menu-wrap {
+    .line {
+      background-color: var.$color-primary;
+    }
+  }
 }
+
 .main_header_dark,
 .history_header {
   background-color: transparent;
-  color: var.$color-secondary;
 
   .nav_menu {
     ul {
@@ -87,13 +180,79 @@
         &:not(:last-child)::after {
           background-color: rgba(var.$color-secondary, 0.5);
         }
-
         a {
           color: var.$color-secondary;
         }
       }
     }
   }
+  .menu-wrap {
+    .line {
+      background-color: var.$color-secondary;
+    }
+  }
+}
+
+.menu_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  .nav_menu.mobile-nav {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    z-index: 201;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      position: relative;
+      &::after {
+        content: none !important;
+      }
+    }
+
+    a {
+      color: var.$color-white;
+      font-size: var.get-font-size(b3);
+      font-weight: var.$font-weight-light;
+      line-height: var.$line-height-160;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #c3c2be;
+      }
+    }
+    .menu-history {
+      margin-bottom: 3.625rem;
+    }
+  }
+}
+
+.menu_overlay.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 // notice/news tab_btn
@@ -128,7 +287,7 @@
   .d-btn {
     padding: 1.125rem 5.5rem;
     font-family: var.$font-body;
-    font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+    font-size: var.get-font-size(b3);
     border-radius: 50px;
     line-height: var.$line-height-160;
     cursor: pointer;
@@ -153,7 +312,7 @@
 
   .t-btn p {
     font-family: var.$font-body;
-    font-size: map-get(map-get(var.$font-sizes, default), 'b2');
+    font-size: var.get-font-size(b2);
     color: var.$color-primary;
     font-weight: var.$font-weight-medium;
     margin: 0;
@@ -183,8 +342,28 @@
     width: 100%;
     height: auto;
     padding-top: 3.375rem;
-    margin-bottom: 5.75rem;
     text-align: left;
+    img {
+      width: 180px;
+      @include resp.respond-to(xs) {
+        width: 122px;
+        margin-bottom: 62px;
+      }
+      @include resp.respond-to(sm) {
+      }
+      @include resp.respond-to(md) {
+      }
+      @include resp.respond-to(lg) {
+      }
+      @include resp.respond-to(xl) {
+      }
+      @include resp.respond-to(xxl) {
+      }
+      @include resp.respond-to(xxxl) {
+        width: 180px;
+        margin-bottom: map-get(var.$spacers, 20);
+      }
+    }
   }
 
   .f_bottom_content {
@@ -197,6 +376,15 @@
     list-style: none;
     margin: 0;
     flex-wrap: wrap;
+    @include resp.respond-to(xs) {
+      margin-bottom: map-get(var.$spacers, 6);
+    }
+    @include resp.respond-to(sm) {
+      margin-bottom: map-get(var.$spacers, 3);
+    }
+    @include resp.respond-to(xxxl) {
+      margin: 0;
+    }
 
     li {
       font-size: map-get(map-get(var.$font-sizes, default), 'b5');
@@ -204,7 +392,14 @@
       font-weight: var.$font-weight-light;
       position: relative;
       padding-right: map-get(var.$spacers, 4);
-
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(b2, xs);
+        padding-right: map-get(var.$spacers, 1);
+      }
+      @include resp.respond-to(xxxl) {
+        font-size: map-get(map-get(var.$font-sizes, default), 'b5');
+        padding-right: map-get(var.$spacers, 4);
+      }
       &.phone {
         padding-left: 0;
       }
@@ -220,6 +415,33 @@
         height: 12px;
         background-color: rgba(var.$color-primary, 0.5);
         z-index: 1;
+        @include resp.respond-to(xs) {
+          height: 9px;
+          right: 4%;
+        }
+        @include resp.respond-to(xxxl) {
+          height: 12px;
+          right: 8%;
+        }
+      }
+      &:last-child {
+        @include resp.respond-to(xs) {
+          margin-top: map-get(var.$spacers, 1);
+        }
+        @include resp.respond-to(sm) {
+          margin-top: 0;
+        }
+      }
+
+      @include resp.respond-to(xs) {
+        &:nth-child(2)::after {
+          content: none;
+        }
+      }
+      @include resp.respond-to(sm) {
+        &:nth-child(2)::after {
+          content: '';
+        }
       }
     }
   }
@@ -228,12 +450,28 @@
     padding: map-get(var.$spacers, 1) 0;
     margin-bottom: 1.813rem;
     text-align: left;
+    @include resp.respond-to(xs) {
+      margin-bottom: map-get(var.$spacers, 7);
+      padding: 0;
+    }
+    @include resp.respond-to(xxxl) {
+      padding: map-get(var.$spacers, 1) 0;
+      margin-bottom: 1.813rem;
+    }
 
     h5 {
       font-size: map-get(map-get(var.$font-sizes, default), 'b5');
       line-height: var.$line-height-140;
       font-weight: var.$font-weight-light;
       letter-spacing: var.$letter-spacing-3;
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(b3, xs);
+        line-height: var.$line-height-150;
+      }
+      @include resp.respond-to(xxxl) {
+        font-size: map-get(map-get(var.$font-sizes, default), 'b5');
+        line-height: var.$line-height-140;
+      }
     }
   }
 
@@ -243,5 +481,11 @@
     right: 0.5%;
     bottom: 10.5%;
     background-color: transparent;
+    @include resp.respond-to(xs) {
+      display: none;
+    }
+    @include resp.respond-to(lg) {
+      display: block;
+    }
   }
 }

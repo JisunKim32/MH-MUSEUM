@@ -16,12 +16,12 @@
     <header class="main_header_dark">
       <div class="container">
         <div class="d-logo">
-          <a href="#">
+          <a href="#" id="logo-link">
             <img src="assets/images/desktop_logo_white.svg" alt="logo-white" />
           </a>
         </div>
 
-        <!-- 1. 데스크톱용 내비게이션 메뉴 (평소에 보임) -->
+        <!-- desktop nav_menu -->
         <nav class="nav_menu desktop-nav">
           <ul class="d-flex">
             <li><a href="#" class="menu-history">History</a></li>
@@ -29,7 +29,7 @@
           </ul>
         </nav>
 
-        <!-- 햄버거 버튼 (모바일에서만 보임) -->
+        <!-- hamburger button -->
         <div class="menu-wrap">
           <span class="line"></span>
           <span class="line"></span>
@@ -38,7 +38,7 @@
       </div>
     </header>
 
-    <!-- 2. 모바일용 오버레이 메뉴 (햄버거 클릭 시 보임) -->
+    <!-- mobile menu_overlay -->
     <div class="menu_overlay">
       <nav class="nav_menu mobile-nav">
         <ul class="d-flex">
@@ -118,7 +118,7 @@
         </div>
       </section>
       <!-- main_section01 finish -->
-      <section class="section">
+      <section class="section sec02">
         <div class="main_section02">
           <div class="container">
             <div class="sec02_wrap">
@@ -173,26 +173,25 @@
         </div>
       </section>
       <!-- main_section02 finish -->
-      <section class="section">
+      <section class="section sec03">
         <div class="main_section03">
           <div class="container">
             <div class="main_content">
               <div class="row">
-                <div class="col-12 d-flex align-item-center">
-                  <!-- 이 div가 N-logo와 ews/otice를 묶는 그룹입니다. -->
+                <div class="col-12 d-flex sec03_wrap">
                   <div class="d-flex align-item-center">
-                    <div class="main_section03_title">
+                    <div class="main_section03_title d-flex">
                       <img
                         src="assets/images/N-logo-white.svg"
                         alt="N-logo-white"
                       />
-                    </div>
-                    <div class="main_section03_text_title">
-                      <span class="news_main_title">ews</span>
-                      <span class="notice_main_title">otice</span>
+                      <div class="main_section03_text_title">
+                        <span class="news_main_title">ews</span>
+                        <span class="notice_main_title">otice</span>
+                      </div>
                     </div>
                   </div>
-                  <!-- 이 div가 sec02_bar와 View More를 묶는 bar_title 그룹입니다. -->
+
                   <div class="bar_title">
                     <img
                       src="assets/images/sec02_bar.svg"
