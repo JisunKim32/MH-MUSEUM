@@ -3,9 +3,6 @@
 @use 'common' as com;
 @use 'component' as cp;
 
-.notice_header {
-  position: sticky;
-}
 // === News-select start===
 .News-select__ {
   padding: map-get(var.$spacers, 8) 0;
@@ -609,6 +606,7 @@
         tbody {
           tr {
             box-sizing: border-box;
+            cursor: pointer;
             &:hover {
               background-color: var.$color-gray-200;
             }
