@@ -224,11 +224,17 @@
       @include resp.respond-to(xs) {
         margin-top: 15.625rem;
       }
+      @include resp.respond-to(sm) {
+        margin-top: map-get(var.$spacers, 28);
+      }
       @include resp.respond-to(lg) {
-        margin-top: map-get(var.$spacers, 15);
+        margin-top: map-get(var.$spacers, 25);
+      }
+      @include resp.respond-to(xxl) {
+        margin-top: map-get(var.$spacers, 23);
       }
       @include resp.respond-to(xxxl) {
-        margin-top: map-get(var.$spacers, 18);
+        margin-top: map-get(var.$spacers, 22);
       }
       .circle_img {
         width: 100%;
@@ -251,7 +257,7 @@
             width: 500px;
           }
           @include resp.respond-to(xxl) {
-            width: 635px;
+            width: 600px;
           }
           @include resp.respond-to(xxxl) {
             width: 635px;
@@ -287,9 +293,6 @@
           @include resp.respond-to(xxl) {
             font-size: var.get-font-size(h3);
           }
-          @include resp.respond-to(xxxl) {
-            font-size: var.get-font-size(h3);
-          }
         }
 
         h2 {
@@ -314,9 +317,6 @@
           @include resp.respond-to(xxl) {
             font-size: var.get-font-size(h3);
           }
-          @include resp.respond-to(xxxl) {
-            font-size: var.get-font-size(h3);
-          }
         }
 
         p {
@@ -331,10 +331,6 @@
             font-size: var.get-font-size(b2, xs);
             padding-top: map-get(var.$spacers, 3);
           }
-          @include resp.respond-to(md) {
-            font-size: var.get-font-size(b1, xs);
-            padding-top: map-get(var.$spacers, 3);
-          }
           @include resp.respond-to(lg) {
             font-size: var.get-font-size(b4);
             padding-top: map-get(var.$spacers, 4);
@@ -344,11 +340,9 @@
             padding-top: map-get(var.$spacers, 5);
           }
           @include resp.respond-to(xxl) {
-            font-size: var.get-font-size(b3);
             padding-top: map-get(var.$spacers, 6);
           }
           @include resp.respond-to(xxxl) {
-            font-size: var.get-font-size(b3);
             padding-top: 3rem;
           }
         }
@@ -361,17 +355,20 @@
       @include resp.respond-to(xs) {
         margin-top: map-get(var.$spacers, 29);
       }
+      @include resp.respond-to(sm) {
+        margin-top: map-get(var.$spacers, 25);
+      }
+      @include resp.respond-to(md) {
+        margin-top: map-get(var.$spacers, 20);
+      }
       @include resp.respond-to(lg) {
         margin-top: map-get(var.$spacers, 18);
       }
       @include resp.respond-to(xl) {
-        margin-top: map-get(var.$spacers, 9);
-      }
-      @include resp.respond-to(xxl) {
-        margin-top: map-get(var.$spacers, 5);
+        margin-top: map-get(var.$spacers, 15);
       }
       @include resp.respond-to(xxxl) {
-        margin-top: 1.75rem;
+        margin-top: map-get(var.$spacers, 8);
       }
       p {
         font-family: var.$font-body;
@@ -383,20 +380,8 @@
         @include resp.respond-to(xs) {
           font-size: var.get-font-size(b2, xs);
         }
-        @include resp.respond-to(sm) {
-          font-size: var.get-font-size(b2, xs);
-        }
-        @include resp.respond-to(md) {
-          font-size: var.get-font-size(b2, xs);
-        }
         @include resp.respond-to(lg) {
-          font-size: var.get-font-size(b2, xs);
-        }
-        @include resp.respond-to(xl) {
-          font-size: var.get-font-size(b2, xs);
-        }
-        @include resp.respond-to(xxl) {
-          font-size: var.get-font-size(b2, xs);
+          font-size: var.get-font-size(b1, xs);
         }
         @include resp.respond-to(xxxl) {
           font-size: var.get-font-size(b4);
@@ -440,10 +425,10 @@
         font-size: var.get-font-size(t3, xs);
       }
       @include resp.respond-to(lg) {
-        font-size: var.get-font-size(t2, xs);
+        font-size: var.get-font-size(h3);
       }
       @include resp.respond-to(xl) {
-        font-size: var.get-font-size(p1, xs);
+        font-size: var.get-font-size(h1);
       }
       @include resp.respond-to(xxl) {
         font-size: var.get-font-size(t4);
@@ -458,22 +443,22 @@
       font-weight: var.$font-weight-bold;
       letter-spacing: var.$letter-spacing-3;
       line-height: var.$line-height-120;
-      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-width: 0.7px;
       -webkit-text-stroke-color: var.$color-black;
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(h1, xs);
-        -webkit-text-stroke-width: 0.7px;
+      }
+      @include resp.respond-to(sm) {
+        font-size: var.get-font-size(t3, xs);
       }
       @include resp.respond-to(md) {
-        font-size: var.get-font-size(t3, xs);
-        -webkit-text-stroke-width: 0.7px;
+        font-size: var.get-font-size(t2, xs);
       }
       @include resp.respond-to(lg) {
-        font-size: var.get-font-size(t2, xs);
-        -webkit-text-stroke-width: 1px;
+        font-size: var.get-font-size(h3);
       }
       @include resp.respond-to(xl) {
-        font-size: var.get-font-size(p1, xs);
+        font-size: var.get-font-size(h1);
       }
       @include resp.respond-to(xxl) {
         font-size: var.get-font-size(t4);
@@ -483,35 +468,43 @@
       }
     }
   }
+
   .sec01_bar {
     position: absolute;
-    top: 38%;
-    left: 42%;
+    top: 39%;
+    left: 41%;
     @include resp.respond-to(xs) {
       top: 32%;
       left: 50%;
     }
+    @include resp.respond-to(md) {
+      top: 34%;
+      left: 40%;
+    }
     @include resp.respond-to(lg) {
-      top: 21%;
-      left: 34%;
+      top: 36%;
+      left: 21%;
     }
     @include resp.respond-to(xl) {
-      top: 21%;
-      left: 29%;
+      top: 37%;
+      left: 33%;
     }
     @include resp.respond-to(xxl) {
-      top: 25%;
+      top: 36%;
       left: 34%;
     }
     @include resp.respond-to(xxxl) {
-      top: 38%;
-      left: 42%;
+      top: 39%;
+      left: 41%;
     }
     img {
       width: auto;
       height: auto;
       @include resp.respond-to(xs) {
         height: 54px;
+      }
+      @include resp.respond-to(lg) {
+        height: 70px;
       }
       @include resp.respond-to(xxxl) {
         height: 92px;
@@ -528,8 +521,8 @@
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
         position: absolute;
-        top: 44%;
-        right: 3%;
+        top: 53%;
+        right: 5%;
         @include resp.respond-to(xs) {
           font-size: 1rem;
           font-weight: var.$font-weight-light;
@@ -542,7 +535,7 @@
           font-size: 1rem;
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 28%;
+          top: 43%;
           right: 0;
           padding: 0 2.125rem;
         }
@@ -550,7 +543,7 @@
           font-size: var.get-font-size(b4);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 28%;
+          top: 44%;
           right: 9%;
           padding: 0 2.5rem;
         }
@@ -558,21 +551,21 @@
           font-size: var.get-font-size(h5, xs);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 28%;
+          top: 50%;
           right: 0%;
           padding: 0 2rem;
         }
         @include resp.respond-to(xl) {
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 28%;
+          top: 50%;
           right: 0%;
           padding: 0 2.875rem;
         }
         @include resp.respond-to(xxl) {
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 33%;
+          top: 50%;
           right: 2%;
           padding: 0 3.5rem;
         }
@@ -580,8 +573,8 @@
           font-size: var.get-font-size(b2);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 50%;
-          right: 3%;
+          top: 53%;
+          right: 5%;
           padding: 0 1.625rem;
         }
       }
@@ -592,8 +585,14 @@
 // main_section02
 .sec02 {
   background-color: var.$color-primary;
-  padding-top: map-get(var.$spacers, 13);
+  padding-top: map-get(var.$spacers, 19);
   text-align: left;
+  @include resp.respond-to(xs) {
+    padding-top: map-get(var.$spacers, 10);
+  }
+  @include resp.respond-to(xxxl) {
+    padding-top: map-get(var.$spacers, 19);
+  }
   .main_section02 {
     .justify-between {
       justify-content: space-between;
@@ -622,7 +621,7 @@
           font-weight: var.$font-weight-bold;
           letter-spacing: var.$letter-spacing-3;
           line-height: var.$line-height-120;
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           -webkit-text-stroke-color: var.$color-secondary;
           color: transparent;
           @include resp.respond-to(xs) {
@@ -639,13 +638,13 @@
           }
           @include resp.respond-to(lg) {
             font-size: var.get-font-size(t1, xs);
-            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-width: 0.7px;
             padding-top: map-get(var.$spacers, 9);
             padding-left: 0.5rem;
           }
           @include resp.respond-to(xxl) {
             font-size: var.get-font-size(h1);
-            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-width: 0.7px;
             padding-top: map-get(var.$spacers, 9);
             padding-left: 0.5rem;
           }
@@ -660,23 +659,27 @@
         width: auto;
         height: auto;
         margin: 0;
+        @include resp.respond-to(xs) {
+          margin-top: map-get(var.$spacers, 24);
+        }
+
+        @include resp.respond-to(xxxl) {
+          margin: 0;
+        }
         img {
           width: 424px;
           @include resp.respond-to(xs) {
             width: 162px;
           }
-          @include resp.respond-to(xxxl) {
+          @include resp.respond-to(xs) {
+            width: 330px;
+          }
+          @include resp.respond-to(lg) {
+            width: 400px;
+          }
+          @include resp.respond-to(xl) {
             width: 424px;
           }
-        }
-        @include resp.respond-to(xs) {
-          margin-top: map-get(var.$spacers, 24);
-        }
-        @include resp.respond-to(lg) {
-          margin-top: map-get(var.$spacers, 16);
-        }
-        @include resp.respond-to(xxxl) {
-          margin: 0;
         }
       }
     }
@@ -720,7 +723,7 @@
         font-size: 8rem;
         letter-spacing: var.$letter-spacing-3;
         line-height: var.$line-height-140;
-        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-width: 0.7px;
         -webkit-text-stroke-color: var.$color-secondary;
         color: transparent;
         padding: 1.75rem 0;
@@ -737,17 +740,17 @@
         }
         @include resp.respond-to(lg) {
           font-size: var.get-font-size(t3);
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: map-get(var.$spacers, 6) 0;
         }
         @include resp.respond-to(xxl) {
           font-size: var.get-font-size(t2);
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: map-get(var.$spacers, 6) 0;
         }
         @include resp.respond-to(xxxl) {
           font-size: 8rem;
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: 1.75rem 0;
         }
       }
@@ -757,12 +760,24 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: map-get(var.$spacers, 15);
+      @include resp.respond-to(xs) {
+        margin-bottom: map-get(var.$spacers, 8);
+      }
+      @include resp.respond-to(md) {
+      }
+      @include resp.respond-to(lg) {
+      }
+      @include resp.respond-to(xxl) {
+      }
+      @include resp.respond-to(xxxl) {
+        margin-bottom: map-get(var.$spacers, 15);
+      }
       .letter-spacing-8 {
         font-family: var.$font-point;
         font-size: 8rem;
         letter-spacing: var.$letter-spacing-8;
         line-height: var.$line-height-140;
-        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-width: 0.7px;
         -webkit-text-stroke-color: var.$color-secondary;
         padding: 1.75rem 0;
         color: transparent;
@@ -779,17 +794,17 @@
         }
         @include resp.respond-to(lg) {
           font-size: var.get-font-size(t3);
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: map-get(var.$spacers, 6) 0;
         }
         @include resp.respond-to(xxl) {
           font-size: var.get-font-size(t2);
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: map-get(var.$spacers, 6) 0;
         }
         @include resp.respond-to(xxxl) {
           font-size: 8rem;
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: 1.75rem 0;
         }
       }
@@ -798,7 +813,7 @@
         font-size: 8rem;
         letter-spacing: var.$letter-spacing-3;
         line-height: var.$line-height-140;
-        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-width: 0.7px;
         -webkit-text-stroke-color: var.$color-secondary;
         padding: 1.75rem 0;
         @include resp.respond-to(xs) {
@@ -812,17 +827,17 @@
         }
         @include resp.respond-to(lg) {
           font-size: var.get-font-size(t3);
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: map-get(var.$spacers, 6) 0;
         }
         @include resp.respond-to(xxl) {
           font-size: var.get-font-size(t2);
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: map-get(var.$spacers, 6) 0;
         }
         @include resp.respond-to(xxxl) {
           font-size: 8rem;
-          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-width: 0.7px;
           padding: 1.75rem 0;
         }
       }
@@ -833,8 +848,17 @@
 // main_section02 finish
 .sec03 {
   background-color: var.$color-primary;
-  padding-top: map-get(var.$spacers, 13);
-
+  padding-top: map-get(var.$spacers, 15);
+  @include resp.respond-to(xs) {
+    padding-top: map-get(var.$spacers, 8);
+  }
+  @include resp.respond-to(lg) {
+  }
+  @include resp.respond-to(xxl) {
+  }
+  @include resp.respond-to(xxxl) {
+    padding-top: map-get(var.$spacers, 15);
+  }
   .main_section03 {
     .sec03_wrap {
       align-items: center;
@@ -843,14 +867,14 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 1.375rem; // 위아래 간격 벌리기
+        gap: 0.125rem;
         margin-top: map-get(var.$spacers, 8);
       }
-      @include resp.respond-to(xxxl) {
+      @include resp.respond-to(lg) {
         align-items: center;
         justify-content: space-between;
         flex-direction: row;
-        margin-top: map-get(var.$spacers, 15);
+        margin: 0;
       }
     }
   }
@@ -868,14 +892,18 @@
   .main_section03_title {
     width: 100%;
     img {
+      width: 123px;
       @include resp.respond-to(xs) {
         width: 66px;
       }
-      @include resp.respond-to(md) {
+      @include resp.respond-to(sm) {
+        width: 70px;
       }
       @include resp.respond-to(lg) {
+        width: 80px;
       }
-      @include resp.respond-to(xxl) {
+      @include resp.respond-to(xl) {
+        width: 100px;
       }
       @include resp.respond-to(xxxl) {
         width: 123px;
@@ -893,24 +921,19 @@
       font-weight: var.$font-weight-bold;
       letter-spacing: var.$letter-spacing-3;
       line-height: var.$line-height-120;
-      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-width: 0.7px;
       -webkit-text-stroke-color: var.$color-secondary;
       color: transparent;
       @include resp.respond-to(xs) {
         padding-left: map-get(var.$spacers, 1);
         font-size: var.get-font-size(t4, xs);
         line-height: var.$line-height-140;
-        -webkit-text-stroke-width: 0.7px;
       }
-      @include resp.respond-to(md) {
-        font-size: var.get-font-size(h2);
+      @include resp.respond-to(sm) {
+        font-size: var.get-font-size(t3, xs);
       }
-      @include resp.respond-to(lg) {
-        font-size: var.get-font-size(t3);
-        -webkit-text-stroke-width: 1px;
-      }
-      @include resp.respond-to(xxl) {
-        font-size: var.get-font-size(t2);
+      @include resp.respond-to(xl) {
+        font-size: var.get-font-size(h3);
       }
       @include resp.respond-to(xxxl) {
         padding-left: map-get(var.$spacers, 4);
@@ -928,29 +951,34 @@
     height: auto;
     margin: 0;
     @include resp.respond-to(xs) {
-      padding-left: 11.063rem;
+      margin-left: 48vw;
+    }
+    @include resp.respond-to(sm) {
+      margin-left: 60vw;
     }
     @include resp.respond-to(md) {
+      margin-left: 68vw;
     }
     @include resp.respond-to(lg) {
+      margin-top: map-get(var.$spacers, 11);
+      margin-left: 25vw;
+    }
+    @include resp.respond-to(xl) {
+      margin-left: 30vw;
     }
     @include resp.respond-to(xxl) {
+      margin-left: 35vw;
     }
     @include resp.respond-to(xxxl) {
-      padding: 0;
+      margin-top: map-get(var.$spacers, 11);
     }
+
     .sec02_bar {
       width: 424px;
       @include resp.respond-to(xs) {
         width: 162px;
       }
-      @include resp.respond-to(md) {
-      }
       @include resp.respond-to(lg) {
-      }
-      @include resp.respond-to(xxl) {
-      }
-      @include resp.respond-to(xxxl) {
         width: 424px;
       }
     }
@@ -973,11 +1001,8 @@
       @include resp.respond-to(xs) {
         width: 40px;
       }
-      @include resp.respond-to(md) {
-      }
       @include resp.respond-to(lg) {
-      }
-      @include resp.respond-to(xxl) {
+        width: 45px;
       }
       @include resp.respond-to(xxxl) {
         width: 52px;
@@ -991,6 +1016,12 @@
       color: var.$color-white;
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(b2, xs);
+      }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(b1, xs);
+      }
+      @include resp.respond-to(xl) {
+        font-size: var.get-font-size(b4);
       }
       @include resp.respond-to(xxxl) {
         font-size: var.get-font-size(b3);
@@ -1016,10 +1047,7 @@
       flex-direction: column;
       align-items: center;
 
-      .news_content {
-        width: 100%;
-      }
-
+      .news_content,
       .notice_content {
         width: 100%;
       }
@@ -1037,7 +1065,7 @@
       }
     }
   }
-  @include resp.respond-to(md) {
+  @include resp.respond-to(lg) {
     .news_content,
     .notice_content {
       .row {
@@ -1055,15 +1083,22 @@
 
   .news_title,
   .notice_title {
-    padding-top: map-get(var.$spacers, 18);
+    padding-top: map-get(var.$spacers, 13);
     padding-bottom: map-get(var.$spacers, 3);
     justify-content: space-between;
     @include resp.respond-to(xs) {
       padding-top: 0;
       padding-bottom: map-get(var.$spacers, 6);
     }
+    @include resp.respond-to(lg) {
+      padding-top: map-get(var.$spacers, 10);
+    }
+    @include resp.respond-to(xl) {
+      padding-top: map-get(var.$spacers, 24);
+      padding-bottom: map-get(var.$spacers, 9);
+    }
     @include resp.respond-to(xxxl) {
-      padding-top: map-get(var.$spacers, 18);
+      padding-top: map-get(var.$spacers, 13);
       padding-bottom: map-get(var.$spacers, 3);
     }
 
@@ -1078,6 +1113,12 @@
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(h4, xs);
       }
+      @include resp.respond-to(xl) {
+        font-size: var.get-font-size(b1);
+      }
+      @include resp.respond-to(xxl) {
+        font-size: var.get-font-size(h5);
+      }
       @include resp.respond-to(xxxl) {
         font-size: var.get-font-size(h4);
       }
@@ -1086,6 +1127,15 @@
       width: 575px;
       @include resp.respond-to(xs) {
         width: 230px;
+      }
+      @include resp.respond-to(lg) {
+        width: 300px;
+      }
+      @include resp.respond-to(xl) {
+        width: 400px;
+      }
+      @include resp.respond-to(xxl) {
+        width: 450px;
       }
       @include resp.respond-to(xxxl) {
         width: 575px;
@@ -1097,14 +1147,21 @@
   .notice_text {
     justify-content: space-between;
     align-items: center;
-    padding: map-get(var.$spacers, 5) 0;
+    padding: map-get(var.$spacers, 6) 0;
     white-space: nowrap;
     @include resp.respond-to(xs) {
-      padding: map-get(var.$spacers, 6) 0;
+      padding-top: 0;
+    }
+    @include resp.respond-to(xxl) {
+      padding: map-get(var.$spacers, 3) 0;
+    }
+    @include resp.respond-to(xxl) {
+      padding: map-get(var.$spacers, 4) 0;
     }
     @include resp.respond-to(xxxl) {
-      padding: map-get(var.$spacers, 5) 0;
+      padding: map-get(var.$spacers, 6) 0;
     }
+
     h1 {
       font-family: var.$font-body;
       font-size: var.get-font-size(b3);
@@ -1113,6 +1170,9 @@
       line-height: var.$line-height-160;
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(b2, xs);
+      }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(b1, xs);
       }
       @include resp.respond-to(xxxl) {
         font-size: var.get-font-size(b3);
@@ -1128,8 +1188,30 @@
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(b3, xs);
       }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(b2, xs);
+      }
       @include resp.respond-to(xxxl) {
         font-size: var.get-font-size(b4);
+      }
+    }
+  }
+  .p-b-44 {
+    @include resp.respond-to(xs) {
+      padding-bottom: map-get(var.$spacers, 8);
+    }
+    @include resp.respond-to(xxl) {
+      padding: map-get(var.$spacers, 4) 0;
+    }
+    @include resp.respond-to(xxxl) {
+      padding-bottom: map-get(var.$spacers, 5);
+    }
+    .p-b-36 {
+      @include resp.respond-to(xs) {
+        padding-bottom: map-get(var.$spacers, 6);
+      }
+      @include resp.respond-to(xxxl) {
+        padding-bottom: 0;
       }
     }
   }

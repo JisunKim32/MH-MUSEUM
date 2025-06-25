@@ -17,13 +17,10 @@
   @include resp.respond-to(xs) {
     height: 80px;
   }
-  @include resp.respond-to(lg) {
-  }
   @include resp.respond-to(xl) {
-  }
-  @include resp.respond-to(xxxl) {
     height: 100px;
   }
+
   .container {
     display: flex;
     align-items: center;
@@ -71,6 +68,13 @@
         a {
           font-size: var.get-font-size(b3);
           font-weight: var.$font-weight-light;
+
+          @include resp.respond-to(lg) {
+            font-size: var.get-font-size(b4);
+          }
+          @include resp.respond-to(xl) {
+            font-size: var.get-font-size(b3);
+          }
         }
         .menu-history {
           padding-right: 1.5rem;
@@ -305,6 +309,7 @@
   .t-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     padding: 0.625rem 1rem 0.625rem 2.5rem;
     background-color: transparent;
@@ -316,6 +321,27 @@
     color: var.$color-primary;
     font-weight: var.$font-weight-medium;
     margin: 0;
+    @include resp.respond-to(lg) {
+      font-size: var.get-font-size(b4);
+    }
+    @include resp.respond-to(xxxl) {
+      font-size: var.get-font-size(b2);
+    }
+  }
+  .t-icon {
+    width: 100%;
+    img {
+      width: 47px;
+      @include resp.respond-to(lg) {
+        width: 35px;
+      }
+      @include resp.respond-to(xxl) {
+        width: 40px;
+      }
+      @include resp.respond-to(xxxl) {
+        width: 47px;
+      }
+    }
   }
 }
 // footer
@@ -348,16 +374,6 @@
       @include resp.respond-to(xs) {
         width: 122px;
         margin-bottom: 62px;
-      }
-      @include resp.respond-to(sm) {
-      }
-      @include resp.respond-to(md) {
-      }
-      @include resp.respond-to(lg) {
-      }
-      @include resp.respond-to(xl) {
-      }
-      @include resp.respond-to(xxl) {
       }
       @include resp.respond-to(xxxl) {
         width: 180px;
@@ -484,6 +500,7 @@
     @include resp.respond-to(xs) {
       display: none;
     }
+
     @include resp.respond-to(lg) {
       display: block;
     }
