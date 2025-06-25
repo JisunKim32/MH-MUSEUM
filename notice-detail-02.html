@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>notice-detail</title>
+    <title>notice-detail-02</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.17/fullpage.css"
@@ -17,14 +17,16 @@
     <header class="history_detail_header notice_header">
       <div class="container">
         <div class="d-logo">
-          <a href="#">
+          <a href="/index.html">
             <img src="assets/images/desktop_logo_dark.svg" alt="logo-dark" />
           </a>
         </div>
         <nav class="nav_menu">
           <ul class="d-flex">
-            <li><a href="#" class="menu-history">History</a></li>
-            <li><a href="#" class="menu-notice">Notice</a></li>
+            <li>
+              <a href="/history-select.html" class="menu-history">History</a>
+            </li>
+            <li><a href="/news-select.html" class="menu-notice">Notice</a></li>
           </ul>
         </nav>
       </div>
@@ -35,37 +37,47 @@
         <!-- Notice-select-detail__title-content -->
         <div class="Notice-detail__title-content row">
           <div class="title col-8 m-auto">
-            <h2>MH뮤지엄 ‘새로운 온라인 뮤지엄'의 기준을 제시합니다.</h2>
+            <h2>[공지] MH뮤지엄 정식 오픈 안내</h2>
           </div>
           <div class="date col-8 m-auto d-flex align-item-center">
             <span>Notice</span>
-            <span>2025.01.26</span>
+            <span>2025.02.05</span>
           </div>
         </div>
         <!-- Notice-select-detail_textarea -->
         <div class="Notice-detail__textarea row">
           <div class="text-form col-8 m-auto">
-            <span class="text-title">
-              『그룹 RWA 산출 적정성 검증 프로젝트』 업체 선정 공고(안)
-            </span>
+            <span class="text-title"> 안녕하세요, MH뮤지엄입니다. </span>
             <div class="text">
               <p>
-                <strong
-                  >1. 제 목 : 『그룹 RWA 산출 적정성 검증 프로젝트』 업체 선정
-                  공고</strong
-                >
-              </p>
-              <br />
-              <p>
-                <strong>2. 일 정  </strong>(당사 사정에 따라 변경될 수 있음)
+                MH뮤지엄은 대한민국의 근현대사를 온라인으로 체험하고, 배우고,
+                공유할 수 있도록 기획된 디지털 역사 뮤지엄입니다. 2025년 01월
+                3일, MH뮤지엄이 드디어 정식으로 오픈하게 되어 여러분께 기쁜
+                소식을 전하게 되었습니다.
                 <br />
-                가. 입찰참가신청서 및 제반서류 접수마감일 : 2025. 6. 13(금)
-                17:00
                 <br />
-                - 접수장소 : 서울시 중구 청계천로 86(장교동) 엔타스빌딩 12층
+                MH뮤지엄은 근현대사를 시대별로 구성하여, 사료 중심의 전시와
+                인터랙티브 콘텐츠, 그리고 다양한 기획 프로그램을 제공합니다.
+                사용자 여러분은 언제 어디서든 웹사이트를 통해 전시를 관람할 수
+                있으며, 특정 주제에 대한 맞춤형 전시와 멀티미디어 자료도
+                지속적으로 업데이트될 예정입니다.
                 <br />
-                나. 입찰일자 : 2025. 6. 17(화) 15:00 <br />
-                - 입찰장소 : 제안서 접수 후 별도 통지 <br />
+                <br />
+                특히, 오픈을 기념하여 첫 기획전시를 운영 중입니다. 이 전시는
+                해방, 전쟁, 산업화, 민주화 등의 주요 시대를 중심으로 구성되어
+                있으며, 사진, 영상, 오디오 기록물 등 다양한 형태의 자료를 통해
+                역사의 흐름을 생생하게 체험하실 수 있습니다.
+                <br />
+                <br />
+                MH뮤지엄은 단순한 전시 공간을 넘어, 시민들과 함께 역사를
+                기록하고 나누는 ‘열린 기억의 플랫폼’을 지향합니다. 앞으로도
+                다양한 콘텐츠와 프로그램으로 여러분을 찾아뵐 예정이니 많은
+                관심과 방문 부탁드립니다.
+                <br />
+                <br />
+                감사합니다.<br />
+                <br />
+                MH뮤지엄 드림
               </p>
               <div class="stack-l"></div>
             </div>
@@ -74,8 +86,11 @@
         <!-- Notice-select-detail__text-next -->
         <div class="Notice-detail__text-next row">
           <div class="post-link col-8 m-auto">
-            <a href="#" class="previous-post d-flex align-item-center">
-              <span class="prev-title">이전글</span>
+            <a
+              href="/notice-detail-01.html"
+              class="previous-post d-flex align-item-center"
+            >
+              <span class="prev-title" onclick="">이전글</span>
               <span class="prev-text"
                 >MH뮤지엄 ‘새로운 온라인 뮤지엄'의 기준을 제시합니다.</span
               >
@@ -86,7 +101,9 @@
         <!-- Notice-detail__detail-btn -->
         <div class="Notice-detail__detail-btn row">
           <div class="detail_btn col-12 m-auto align-item-center">
-            <button class="d-btn">목록보기</button>
+            <button onclick="location.href='/notice-select.html'" class="d-btn">
+              목록보기
+            </button>
           </div>
         </div>
       </div>

@@ -10,6 +10,7 @@ $letter-spacing-8: 0.08em;
 // line-height
 $line-height-120: 1.2;
 $line-height-140: 1.4;
+$line-height-150: 1.5;
 $line-height-160: 1.6;
 
 // Font Sizes Map
@@ -193,7 +194,7 @@ $breakpoints: (
   // Extra large devices
   xxl: 1400px,
   // Extra extra large
-  xxxl: 1580px // Extra extra extra large,,,,
+  xxxl: 1580px // Extra extra extra large,,,,,
 );
 
 // 맵에서 폰트 사이즈 값을 가져오는 함수
