@@ -775,7 +775,7 @@
       border-top: 2px solid var.$color-primary;
       border-bottom: 1px solid var.$color-gray-500;
       .text-form__img {
-        padding-top: map-get(var.$spacers, 7);
+        padding: map-get(var.$spacers, 7) 0;
         img {
           width: 100%;
         }
