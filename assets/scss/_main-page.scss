@@ -601,20 +601,29 @@
         width: 100%;
         img {
           width: 82px;
+          height: 130px;
           @include resp.respond-to(xs) {
             width: 50px;
+            height: 80px;
+          }
+          @include resp.respond-to(sm) {
+            width: 55px;
+            height: 100px;
           }
           @include resp.respond-to(lg) {
-            width: 60px;
+            width: 65px;
+            height: 130px;
           }
           @include resp.respond-to(xxl) {
-            width: 70px;
+            width: 82px;
           }
           @include resp.respond-to(xxxl) {
             width: 82px;
           }
         }
         span {
+          position: relative;
+          display: inline-block;
           padding-top: 3rem;
           padding-left: map-get(var.$spacers, 4);
           font-size: 5.375rem;
@@ -624,34 +633,65 @@
           -webkit-text-stroke-width: 0.7px;
           -webkit-text-stroke-color: var.$color-secondary;
           color: transparent;
+
+          background: linear-gradient(
+            90deg,
+            var.$color-white 50%,
+            transparent 50%
+          );
+          background-size: 200% 100%;
+          background-position: right bottom;
+          -webkit-background-clip: text;
+          background-clip: text;
+          transition: background-position 0.7s cubic-bezier(0.55, 0, 0.1, 1),
+            -webkit-text-stroke 0.3s;
+
+          &:hover {
+            background-position: left bottom;
+            &::after {
+              transform: scaleX(1);
+            }
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -5%;
+            left: 7%;
+            width: 90%;
+            height: 1px;
+            background-color: var.$color-white;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.7s cubic-bezier(0.55, 0, 0.1, 1);
+          }
+
           @include resp.respond-to(xs) {
             font-size: var.get-font-size(t2, xs);
             -webkit-text-stroke-width: 0.7px;
             padding-top: map-get(var.$spacers, 6);
             padding-left: 0.5rem;
           }
+          @include resp.respond-to(sm) {
+            padding-top: map-get(var.$spacers, 5);
+            padding-left: map-get(var.$spacers, 2);
+            font-size: 66px;
+          }
           @include resp.respond-to(md) {
-            font-size: var.get-font-size(h3);
-            -webkit-text-stroke-width: 0.7px;
-            padding-top: map-get(var.$spacers, 6);
-            padding-left: 0.5rem;
+            font-size: 58px;
+            padding-top: map-get(var.$spacers, 5);
           }
           @include resp.respond-to(lg) {
-            font-size: var.get-font-size(t1, xs);
-            -webkit-text-stroke-width: 0.7px;
-            padding-top: map-get(var.$spacers, 9);
-            padding-left: 0.5rem;
+            font-size: 70px;
+            padding-top: map-get(var.$spacers, 8);
           }
           @include resp.respond-to(xxl) {
-            font-size: var.get-font-size(h1);
-            -webkit-text-stroke-width: 0.7px;
-            padding-top: map-get(var.$spacers, 9);
-            padding-left: 0.5rem;
+            font-size: 82px;
           }
           @include resp.respond-to(xxxl) {
-            font-size: 5.375rem;
             padding-top: 3rem;
             padding-left: map-get(var.$spacers, 4);
+            font-size: var.get-font-size(t3, default);
           }
         }
       }
