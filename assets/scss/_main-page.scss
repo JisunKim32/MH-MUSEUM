@@ -8,190 +8,191 @@
 .fp-table {
   justify-content: inherit;
 }
-.main_header_dark {
-  z-index: 10001;
-  .d-logo {
-    img {
-      width: 100%;
-      @include resp.respond-to(xs) {
-        width: 72%;
-      }
-      @include resp.respond-to(sm) {
-        width: 72%;
-      }
-      @include resp.respond-to(md) {
-        width: 72%;
-      }
-      @include resp.respond-to(lg) {
-        width: 85%;
-      }
-      @include resp.respond-to(xl) {
-        width: 90%;
-      }
-      @include resp.respond-to(xxl) {
-        width: 100%;
-      }
-      @include resp.respond-to(xxxl) {
-        width: 100%;
-      }
-    }
-  }
+// .main_header_dark {
+//   z-index: 100;
+//   position: relative;
 
-  // 데스크톱용 nav_menu 스타일
-  .nav_menu.desktop-nav {
-    ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+//   .d-logo {
+//     img {
+//       width: 100%;
+//       @include resp.respond-to(xs) {
+//         width: 72%;
+//       }
+//       @include resp.respond-to(lg) {
+//         width: 85%;
+//       }
+//       @include resp.respond-to(xl) {
+//         width: 90%;
+//       }
+//       @include resp.respond-to(xxl) {
+//         width: 100%;
+//       }
+//     }
+//   }
 
-      li {
-        position: relative;
-        &:not(:last-child)::after {
-          content: '';
-          position: absolute;
-          right: 0%;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 1px;
-          height: 15px;
-          background-color: rgba(var.$color-secondary, 0.5); // 구분선 색상
-        }
-        a {
-          font-size: map-get(map-get(var.$font-sizes, default), 'b3');
-          font-weight: var.$font-weight-light;
-          color: var.$color-white; // 텍스트 색상
-        }
-        .menu-history {
-          padding-right: 24px;
-        }
-        .menu-notice {
-          padding-left: 24px;
-        }
-      }
-    }
-  }
+//   // 데스크톱용 nav_menu 스타일
+//   .nav_menu.desktop-nav {
+//     ul {
+//       display: flex;
+//       list-style: none;
+//       margin: 0;
+//       padding: 0;
 
-  .menu-wrap {
-    display: none;
-    width: 19px;
-    height: 19px;
-    position: relative;
-    cursor: pointer;
-    z-index: 10000;
+//       li {
+//         position: relative;
+//         &:not(:last-child)::after {
+//           content: '';
+//           position: absolute;
+//           right: 0%;
+//           top: 50%;
+//           transform: translateY(-50%);
+//           width: 1px;
+//           height: 15px;
+//           background-color: rgba(var.$color-secondary, 0.5); // 구분선 색상
+//         }
+//         a {
+//           font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+//           font-weight: var.$font-weight-light;
+//           color: var.$color-white; // 텍스트 색상
+//         }
+//         .menu-history {
+//           padding-right: 1.5rem;
+//         }
+//         .menu-notice {
+//           padding-left: 1.5rem;
+//         }
+//       }
+//     }
+//   }
 
-    .line {
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      background-color: var.$color-secondary;
-      border-radius: 2px;
-      left: 0;
-      transition: all 0.3s ease;
-      transform-origin: 50% 50%;
-    }
+//   .menu-wrap {
+//     display: none;
+//     width: 19px;
+//     height: 19px;
+//     position: relative;
+//     cursor: pointer;
+//     z-index: 101;
 
-    .line:first-child {
-      top: 0;
-      transition: 0.3s;
-    }
-    .line:nth-child(2) {
-      top: 9px;
-      transform: none;
-    }
-    .line:last-child {
-      top: 18px;
-      transition: 0.3s;
-    }
-  }
+//     .line {
+//       position: absolute;
+//       width: 100%;
+//       height: 1px;
+//       background-color: var.$color-secondary;
+//       border-radius: 2px;
+//       left: 0;
+//       transition: all 0.3s ease;
+//       transform-origin: 50% 50%;
+//     }
 
-  // 햄버거 클릭 시 X 모양 변환
-  .menu-wrap.open {
-    .line:first-child {
-      transform: translateY(9px) rotate(45deg);
-    }
-    .line:nth-child(2) {
-      opacity: 0;
-    }
-    .line:last-child {
-      transform: translateY(-9px) rotate(-45deg);
-    }
-  }
+//     .line:first-child {
+//       top: 0;
+//       transition: 0.3s;
+//     }
+//     .line:nth-child(2) {
+//       top: 9px;
+//       transform: none;
+//     }
+//     .line:last-child {
+//       top: 18px;
+//       transition: 0.3s;
+//     }
+//   }
 
-  // 768px 이하 (모바일) 미디어 쿼리
-  @media (max-width: 768px) {
-    .nav_menu.desktop-nav {
-      display: none;
-    }
-    .menu-wrap {
-      display: block;
-    }
-  }
-}
+//   // 햄버거 클릭 시 X 모양 변환
+//   .menu-wrap.open {
+//     .line:first-child {
+//       transform: translateY(9px) rotate(45deg);
+//     }
+//     .line:nth-child(2) {
+//       opacity: 0;
+//     }
+//     .line:last-child {
+//       transform: translateY(-9px) rotate(-45deg);
+//     }
+//   }
 
-// menu_overlay 스타일
-.menu_overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 9998;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+//   // 반응형 헤더
+//   @include resp.respond-to(xs) {
+//     .nav_menu.desktop-nav {
+//       display: none;
+//     }
+//     .menu-wrap {
+//       display: block;
+//     }
+//   }
+//   @include resp.respond-to(lg) {
+//     .nav_menu.desktop-nav {
+//       display: block;
+//     }
+//     .menu-wrap {
+//       display: none;
+//     }
+//   }
+// }
 
-  // 모바일용 nav_menu 스타일
-  .nav_menu.mobile-nav {
-    position: absolute;
-    top: 14%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 8px;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+// // menu_overlay 스타일
+// .menu_overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 0.6);
+//   z-index: 200;
+//   visibility: hidden;
+//   opacity: 0;
+//   transition: opacity 0.3s ease, visibility 0.3s ease;
 
-    ul {
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-    }
+//   // 모바일용 nav_menu 스타일
+//   .nav_menu.mobile-nav {
+//     position: absolute;
+//     top: 14%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     border-radius: 8px;
+//     z-index: 201;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
 
-    li {
-      position: relative;
-      &::after {
-        content: none !important;
-      }
-    }
+//     ul {
+//       flex-direction: column;
+//       align-items: center;
+//       padding: 0;
+//       margin: 0;
+//     }
 
-    a {
-      color: var.$color-white;
-      font-size: map-get(map-get(var.$font-sizes, default), 'b3');
-      font-weight: var.$font-weight-light;
-      line-height: var.$line-height-160;
-      text-decoration: none;
-      display: block;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      &:hover {
-        color: #c3c2be;
-      }
-    }
-    .menu-history {
-      margin-bottom: 3.625rem;
-    }
-  }
-}
+//     li {
+//       position: relative;
+//       &::after {
+//         content: none !important;
+//       }
+//     }
 
-.menu_overlay.active {
-  visibility: visible;
-  opacity: 1;
-}
+//     a {
+//       color: var.$color-white;
+//       font-size: map-get(map-get(var.$font-sizes, default), 'b3');
+//       font-weight: var.$font-weight-light;
+//       line-height: var.$line-height-160;
+//       text-decoration: none;
+//       display: block;
+//       cursor: pointer;
+//       transition: color 0.3s ease;
+//       &:hover {
+//         color: #c3c2be;
+//       }
+//     }
+//     .menu-history {
+//       margin-bottom: 3.625rem;
+//     }
+//   }
+// }
+
+// .menu_overlay.active {
+//   visibility: visible;
+//   opacity: 1;
+// }
 
 // header finish
 // main_section
@@ -203,6 +204,7 @@
     overflow: hidden;
     text-align: center;
     height: 937px;
+    background-color: var.$color-black;
     .row {
       @include resp.respond-to(xs) {
         gap: 0;
@@ -460,12 +462,15 @@
       -webkit-text-stroke-color: var.$color-black;
       @include resp.respond-to(xs) {
         font-size: var.get-font-size(h1, xs);
+        -webkit-text-stroke-width: 0.7px;
       }
       @include resp.respond-to(md) {
         font-size: var.get-font-size(t3, xs);
+        -webkit-text-stroke-width: 0.7px;
       }
       @include resp.respond-to(lg) {
         font-size: var.get-font-size(t2, xs);
+        -webkit-text-stroke-width: 1px;
       }
       @include resp.respond-to(xl) {
         font-size: var.get-font-size(p1, xs);
@@ -480,10 +485,10 @@
   }
   .sec01_bar {
     position: absolute;
-    top: 29%;
+    top: 38%;
     left: 42%;
     @include resp.respond-to(xs) {
-      top: 21%;
+      top: 32%;
       left: 50%;
     }
     @include resp.respond-to(lg) {
@@ -499,7 +504,7 @@
       left: 34%;
     }
     @include resp.respond-to(xxxl) {
-      top: 29%;
+      top: 38%;
       left: 42%;
     }
     img {
@@ -523,13 +528,13 @@
         font-weight: var.$font-weight-light;
         line-height: var.$line-height-160;
         position: absolute;
-        top: 50%;
-        right: 8%;
+        top: 44%;
+        right: 3%;
         @include resp.respond-to(xs) {
           font-size: 1rem;
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 28%;
+          top: 42%;
           right: 0;
           padding: 0 1rem;
         }
@@ -575,7 +580,7 @@
           font-size: var.get-font-size(b2);
           font-weight: var.$font-weight-light;
           line-height: var.$line-height-160;
-          top: 38%;
+          top: 50%;
           right: 3%;
           padding: 0 1.625rem;
         }
@@ -585,98 +590,302 @@
 }
 // main_section01 finish
 // main_section02
-.main_section02 {
+.sec02 {
   background-color: var.$color-primary;
-  padding-top: map-get(var.$spacers, 15);
+  padding-top: map-get(var.$spacers, 13);
   text-align: left;
-  .justify-between {
-    justify-content: space-between;
-    align-items: center;
-    .h-logo-white {
-      span {
-        padding-top: 3rem;
-        padding-left: map-get(var.$spacers, 4);
-        font-size: 5.375rem;
-        font-weight: var.$font-weight-bold;
-        letter-spacing: var.$letter-spacing-3;
-        line-height: var.$line-height-120;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: var.$color-secondary;
-        color: transparent;
+  .main_section02 {
+    .justify-between {
+      justify-content: space-between;
+      align-items: center;
+      .h-logo-white {
+        width: 100%;
+        img {
+          width: 82px;
+          @include resp.respond-to(xs) {
+            width: 50px;
+          }
+          @include resp.respond-to(lg) {
+            width: 60px;
+          }
+          @include resp.respond-to(xxl) {
+            width: 70px;
+          }
+          @include resp.respond-to(xxxl) {
+            width: 82px;
+          }
+        }
+        span {
+          padding-top: 3rem;
+          padding-left: map-get(var.$spacers, 4);
+          font-size: 5.375rem;
+          font-weight: var.$font-weight-bold;
+          letter-spacing: var.$letter-spacing-3;
+          line-height: var.$line-height-120;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: var.$color-secondary;
+          color: transparent;
+          @include resp.respond-to(xs) {
+            font-size: var.get-font-size(t2, xs);
+            -webkit-text-stroke-width: 0.7px;
+            padding-top: map-get(var.$spacers, 6);
+            padding-left: 0.5rem;
+          }
+          @include resp.respond-to(md) {
+            font-size: var.get-font-size(h3);
+            -webkit-text-stroke-width: 0.7px;
+            padding-top: map-get(var.$spacers, 6);
+            padding-left: 0.5rem;
+          }
+          @include resp.respond-to(lg) {
+            font-size: var.get-font-size(t1, xs);
+            -webkit-text-stroke-width: 1px;
+            padding-top: map-get(var.$spacers, 9);
+            padding-left: 0.5rem;
+          }
+          @include resp.respond-to(xxl) {
+            font-size: var.get-font-size(h1);
+            -webkit-text-stroke-width: 1px;
+            padding-top: map-get(var.$spacers, 9);
+            padding-left: 0.5rem;
+          }
+          @include resp.respond-to(xxxl) {
+            font-size: 5.375rem;
+            padding-top: 3rem;
+            padding-left: map-get(var.$spacers, 4);
+          }
+        }
+      }
+      .sec02_bar {
+        width: auto;
+        height: auto;
+        margin: 0;
+        img {
+          width: 424px;
+          @include resp.respond-to(xs) {
+            width: 162px;
+          }
+          @include resp.respond-to(xxxl) {
+            width: 424px;
+          }
+        }
         @include resp.respond-to(xs) {
-          font-size: var.get-font-size(b3, xs);
-          padding-top: 1.688rem;
+          margin-top: map-get(var.$spacers, 24);
+        }
+        @include resp.respond-to(lg) {
+          margin-top: map-get(var.$spacers, 16);
         }
         @include resp.respond-to(xxxl) {
-          font-size: var.get-font-size(b3);
-          padding-top: 1.688rem;
+          margin: 0;
         }
       }
     }
-    .sec02_bar {
-      width: auto;
-      height: auto;
-      margin: 0;
+    .History_arrow_right {
+      img {
+        width: 52px;
+        @include resp.respond-to(xs) {
+          width: 40px;
+        }
+        @include resp.respond-to(md) {
+          width: 43px;
+        }
+        @include resp.respond-to(lg) {
+          width: 46px;
+        }
+        @include resp.respond-to(xxl) {
+          width: 50px;
+        }
+        @include resp.respond-to(xxxl) {
+          width: 52px;
+        }
+      }
     }
-  }
-  .history_box01 {
-    border-top: 1px solid var.$color-secondary;
-    border-bottom: 1px solid var.$color-secondary;
-    justify-content: space-between;
-    margin-top: 8.625rem;
-    align-items: center;
-    h1 {
-      font-family: var.$font-point;
-      font-size: 8rem;
-      letter-spacing: var.$letter-spacing-3;
-      line-height: var.$line-height-140;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: var.$color-secondary;
-      color: transparent;
-      padding: 1.75rem 0;
-      font-weight: normal;
+    .history_box01 {
+      border-top: 1px solid var.$color-secondary;
+      border-bottom: 1px solid var.$color-secondary;
+      justify-content: space-between;
+      margin-top: 8.625rem;
+      align-items: center;
+      @include resp.respond-to(xs) {
+        margin-top: map-get(var.$spacers, 26);
+      }
+      @include resp.respond-to(lg) {
+        margin-top: map-get(var.$spacers, 23);
+      }
+      @include resp.respond-to(xxxl) {
+        margin-top: 8.625rem;
+      }
+      span {
+        font-family: var.$font-point;
+        font-size: 8rem;
+        letter-spacing: var.$letter-spacing-3;
+        line-height: var.$line-height-140;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var.$color-secondary;
+        color: transparent;
+        padding: 1.75rem 0;
+        font-weight: normal;
+        @include resp.respond-to(xs) {
+          font-size: var.get-font-size(t3, xs);
+          -webkit-text-stroke-width: 0.7px;
+          padding: map-get(var.$spacers, 8) 0;
+        }
+        @include resp.respond-to(md) {
+          font-size: var.get-font-size(h2);
+          -webkit-text-stroke-width: 0.7px;
+          padding: map-get(var.$spacers, 8) 0;
+        }
+        @include resp.respond-to(lg) {
+          font-size: var.get-font-size(t3);
+          -webkit-text-stroke-width: 1px;
+          padding: map-get(var.$spacers, 6) 0;
+        }
+        @include resp.respond-to(xxl) {
+          font-size: var.get-font-size(t2);
+          -webkit-text-stroke-width: 1px;
+          padding: map-get(var.$spacers, 6) 0;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: 8rem;
+          -webkit-text-stroke-width: 1px;
+          padding: 1.75rem 0;
+        }
+      }
     }
-  }
-  .history_box02 {
-    border-bottom: 1px solid var.$color-secondary;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: map-get(var.$spacers, 15);
-    h1 {
-      font-family: var.$font-point;
-      font-size: 8rem;
-      letter-spacing: var.$letter-spacing-8;
-      line-height: var.$line-height-140;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: var.$color-secondary;
-      padding: 1.75rem 0;
-      color: transparent;
-      font-weight: normal;
-    }
-    span {
-      font-family: var.$font-point;
-      font-size: 8rem;
-      letter-spacing: var.$letter-spacing-3;
-      line-height: var.$line-height-140;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: var.$color-secondary;
-      padding: 1.75rem 0;
+    .history_box02 {
+      border-bottom: 1px solid var.$color-secondary;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: map-get(var.$spacers, 15);
+      .letter-spacing-8 {
+        font-family: var.$font-point;
+        font-size: 8rem;
+        letter-spacing: var.$letter-spacing-8;
+        line-height: var.$line-height-140;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var.$color-secondary;
+        padding: 1.75rem 0;
+        color: transparent;
+        font-weight: normal;
+        @include resp.respond-to(xs) {
+          font-size: var.get-font-size(t3, xs);
+          -webkit-text-stroke-width: 0.7px;
+          padding: map-get(var.$spacers, 8) 0;
+        }
+        @include resp.respond-to(md) {
+          font-size: var.get-font-size(h2);
+          -webkit-text-stroke-width: 0.7px;
+          padding: map-get(var.$spacers, 8) 0;
+        }
+        @include resp.respond-to(lg) {
+          font-size: var.get-font-size(t3);
+          -webkit-text-stroke-width: 1px;
+          padding: map-get(var.$spacers, 6) 0;
+        }
+        @include resp.respond-to(xxl) {
+          font-size: var.get-font-size(t2);
+          -webkit-text-stroke-width: 1px;
+          padding: map-get(var.$spacers, 6) 0;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: 8rem;
+          -webkit-text-stroke-width: 1px;
+          padding: 1.75rem 0;
+        }
+      }
+      span {
+        font-family: var.$font-point;
+        font-size: 8rem;
+        letter-spacing: var.$letter-spacing-3;
+        line-height: var.$line-height-140;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var.$color-secondary;
+        padding: 1.75rem 0;
+        @include resp.respond-to(xs) {
+          font-size: var.get-font-size(t3, xs);
+          -webkit-text-stroke-width: 0.7px;
+        }
+        @include resp.respond-to(md) {
+          font-size: var.get-font-size(h2);
+          -webkit-text-stroke-width: 0.7px;
+          padding: map-get(var.$spacers, 8) 0;
+        }
+        @include resp.respond-to(lg) {
+          font-size: var.get-font-size(t3);
+          -webkit-text-stroke-width: 1px;
+          padding: map-get(var.$spacers, 6) 0;
+        }
+        @include resp.respond-to(xxl) {
+          font-size: var.get-font-size(t2);
+          -webkit-text-stroke-width: 1px;
+          padding: map-get(var.$spacers, 6) 0;
+        }
+        @include resp.respond-to(xxxl) {
+          font-size: 8rem;
+          -webkit-text-stroke-width: 1px;
+          padding: 1.75rem 0;
+        }
+      }
     }
   }
 }
+
 // main_section02 finish
-.main_section03 {
+.sec03 {
   background-color: var.$color-primary;
-  padding-top: map-get(var.$spacers, 15);
-  .align-item-center {
-    align-items: center;
-    justify-content: space-between;
+  padding-top: map-get(var.$spacers, 13);
+
+  .main_section03 {
+    .sec03_wrap {
+      align-items: center;
+      justify-content: space-between;
+      @include resp.respond-to(xs) {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1.375rem; // 위아래 간격 벌리기
+        margin-top: map-get(var.$spacers, 8);
+      }
+      @include resp.respond-to(xxxl) {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: map-get(var.$spacers, 15);
+      }
+    }
   }
+
   .main_content {
-    padding-bottom: 5.875rem;
+    margin-bottom: 5.875rem;
+    @include resp.respond-to(xs) {
+      margin-bottom: map-get(var.$spacers, 8);
+    }
+    @include resp.respond-to(xxxl) {
+      margin-bottom: 5.875rem;
+    }
   }
+
+  .main_section03_title {
+    width: 100%;
+    img {
+      @include resp.respond-to(xs) {
+        width: 66px;
+      }
+      @include resp.respond-to(md) {
+      }
+      @include resp.respond-to(lg) {
+      }
+      @include resp.respond-to(xxl) {
+      }
+      @include resp.respond-to(xxxl) {
+        width: 123px;
+      }
+    }
+  }
+
   .main_section03_text_title {
     text-align: left;
+
     .news_main_title,
     .notice_main_title {
       padding-left: map-get(var.$spacers, 4);
@@ -687,6 +896,27 @@
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: var.$color-secondary;
       color: transparent;
+      @include resp.respond-to(xs) {
+        padding-left: map-get(var.$spacers, 1);
+        font-size: var.get-font-size(t4, xs);
+        line-height: var.$line-height-140;
+        -webkit-text-stroke-width: 0.7px;
+      }
+      @include resp.respond-to(md) {
+        font-size: var.get-font-size(h2);
+      }
+      @include resp.respond-to(lg) {
+        font-size: var.get-font-size(t3);
+        -webkit-text-stroke-width: 1px;
+      }
+      @include resp.respond-to(xxl) {
+        font-size: var.get-font-size(t2);
+      }
+      @include resp.respond-to(xxxl) {
+        padding-left: map-get(var.$spacers, 4);
+        line-height: var.$line-height-120;
+        font-size: 5.375rem;
+      }
     }
     span {
       display: block;
@@ -694,24 +924,86 @@
   }
 
   .bar_title {
-    flex-direction: column;
-
-    img {
-      width: auto;
-      height: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+    @include resp.respond-to(xs) {
+      padding-left: 11.063rem;
     }
+    @include resp.respond-to(md) {
+    }
+    @include resp.respond-to(lg) {
+    }
+    @include resp.respond-to(xxl) {
+    }
+    @include resp.respond-to(xxxl) {
+      padding: 0;
+    }
+    .sec02_bar {
+      width: 424px;
+      @include resp.respond-to(xs) {
+        width: 162px;
+      }
+      @include resp.respond-to(md) {
+      }
+      @include resp.respond-to(lg) {
+      }
+      @include resp.respond-to(xxl) {
+      }
+      @include resp.respond-to(xxxl) {
+        width: 424px;
+      }
+    }
+  }
 
-    .view_btn {
-      justify-content: end;
-      align-items: center;
+  .view_btn {
+    justify-content: end;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 3.938rem;
+
+    @include resp.respond-to(xs) {
+      margin-top: map-get(var.$spacers, 4);
+    }
+    @include resp.respond-to(xxxl) {
       margin-top: 1.75rem;
-
-      h2 {
-        padding-right: map-get(var.$spacers, 3);
-        font-family: var.$font-body;
+    }
+    img {
+      width: 52px;
+      @include resp.respond-to(xs) {
+        width: 40px;
+      }
+      @include resp.respond-to(md) {
+      }
+      @include resp.respond-to(lg) {
+      }
+      @include resp.respond-to(xxl) {
+      }
+      @include resp.respond-to(xxxl) {
+        width: 52px;
+      }
+    }
+    h2 {
+      padding-right: map-get(var.$spacers, 3);
+      font-family: var.$font-body;
+      font-size: var.get-font-size(b3);
+      font-weight: var.$font-weight-extralight;
+      color: var.$color-white;
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(b2, xs);
+      }
+      @include resp.respond-to(xxxl) {
         font-size: var.get-font-size(b3);
-        font-weight: var.$font-weight-extralight;
-        color: var.$color-white;
+      }
+    }
+  }
+
+  .news_content,
+  .notice_content {
+    .row {
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        display: none;
       }
     }
   }
@@ -719,31 +1011,61 @@
   .content_wrapper {
     justify-content: space-between;
     align-items: flex-start;
+
+    @include resp.respond-to(xs) {
+      flex-direction: column;
+      align-items: center;
+
+      .news_content {
+        width: 100%;
+      }
+
+      .notice_content {
+        width: 100%;
+      }
+    }
+
+    @include resp.respond-to(lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .news_content,
+      .notice_content {
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include resp.respond-to(md) {
+    .news_content,
+    .notice_content {
+      .row {
+        &:nth-of-type(4),
+        &:nth-of-type(5) {
+          display: flex;
+        }
+      }
+    }
   }
 
   .news_text_wrap {
     justify-content: space-between;
   }
 
-  .news_title {
-    padding-top: 8.625rem;
-    padding-bottom: map-get(var.$spacers, 3);
-    justify-content: space-between;
-
-    h1 {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(h4);
-      font-weight: var.$font-weight-medium;
-      color: var.$color-secondary;
-      letter-spacing: var.$letter-spacing-3;
-      line-height: var.$line-height-160;
-      margin-right: map-get(var.$spacers, 7);
-    }
-  }
+  .news_title,
   .notice_title {
-    padding-top: 8.625rem;
+    padding-top: map-get(var.$spacers, 18);
     padding-bottom: map-get(var.$spacers, 3);
     justify-content: space-between;
+    @include resp.respond-to(xs) {
+      padding-top: 0;
+      padding-bottom: map-get(var.$spacers, 6);
+    }
+    @include resp.respond-to(xxxl) {
+      padding-top: map-get(var.$spacers, 18);
+      padding-bottom: map-get(var.$spacers, 3);
+    }
 
     h1 {
       font-family: var.$font-body;
@@ -753,43 +1075,48 @@
       letter-spacing: var.$letter-spacing-3;
       line-height: var.$line-height-160;
       margin-right: map-get(var.$spacers, 7);
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(h4, xs);
+      }
+      @include resp.respond-to(xxxl) {
+        font-size: var.get-font-size(h4);
+      }
+    }
+    img {
+      width: 575px;
+      @include resp.respond-to(xs) {
+        width: 230px;
+      }
+      @include resp.respond-to(xxxl) {
+        width: 575px;
+      }
     }
   }
 
-  .news_text {
-    justify-content: space-between;
-    align-items: center;
-    padding: 2.063rem 0;
-    white-space: nowrap;
-
-    h1 {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(b3);
-      font-weight: var.$font-weight-regular;
-      color: var.$color-secondary;
-      line-height: var.$line-height-160;
-    }
-
-    p {
-      font-family: var.$font-body;
-      font-size: var.get-font-size(b4);
-      font-weight: var.$font-weight-light;
-      color: #717171;
-      line-height: var.$line-height-160;
-    }
-  }
-
+  .news_text,
   .notice_text {
     justify-content: space-between;
     align-items: center;
-    padding: 2.063rem 0;
+    padding: map-get(var.$spacers, 5) 0;
     white-space: nowrap;
+    @include resp.respond-to(xs) {
+      padding: map-get(var.$spacers, 6) 0;
+    }
+    @include resp.respond-to(xxxl) {
+      padding: map-get(var.$spacers, 5) 0;
+    }
     h1 {
       font-family: var.$font-body;
       font-size: var.get-font-size(b3);
       font-weight: var.$font-weight-regular;
       color: var.$color-secondary;
       line-height: var.$line-height-160;
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(b2, xs);
+      }
+      @include resp.respond-to(xxxl) {
+        font-size: var.get-font-size(b3);
+      }
     }
 
     p {
@@ -798,6 +1125,12 @@
       font-weight: var.$font-weight-light;
       color: #717171;
       line-height: var.$line-height-160;
+      @include resp.respond-to(xs) {
+        font-size: var.get-font-size(b3, xs);
+      }
+      @include resp.respond-to(xxxl) {
+        font-size: var.get-font-size(b4);
+      }
     }
   }
 }
