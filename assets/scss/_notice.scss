@@ -211,9 +211,19 @@
       flex-wrap: wrap;
       gap: 2rem 1rem;
       box-sizing: border-box;
+      .news-item.show {
+        opacity: 1;
+        height: auto;
+        display: block;
+      }
       .news-item {
         flex: 1 1 100%;
         max-width: 100%;
+        display: none;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, height 0.3s ease;
         a {
           .card-news-img {
             width: 100%;
@@ -607,6 +617,13 @@
           tr {
             box-sizing: border-box;
             cursor: pointer;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            &.show {
+              display: table-row;
+              opacity: 1;
+            }
             &:hover {
               background-color: var.$color-gray-200;
             }
@@ -618,6 +635,7 @@
               font-weight: var.$font-weight-light;
               color: var.$color-primary;
               line-height: var.$line-height-160;
+
               @include resp.respond-to(xl) {
                 padding: map-get(var.$spacers, 5) 0;
                 // 폰트
