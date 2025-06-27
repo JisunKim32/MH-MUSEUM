@@ -207,11 +207,12 @@
   z-index: 200;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transform: translateY(-100%);
+  transition: opacity 0.5s ease-out, transform 0.8s ease-out, visibility 0.8s;
 
   .nav_menu.mobile-nav {
     position: absolute;
-    top: 14%;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 8px;
@@ -249,7 +250,7 @@
       }
     }
     .menu-history {
-      margin-bottom: 3.625rem;
+      margin-bottom: 2.625rem;
     }
   }
 }
@@ -257,6 +258,7 @@
 .menu_overlay.active {
   visibility: visible;
   opacity: 1;
+  transform: translateY(0);
 }
 
 // notice/news tab_btn
@@ -497,6 +499,7 @@
     right: 0.5%;
     bottom: 10.5%;
     background-color: transparent;
+    cursor: pointer;
     @include resp.respond-to(xs) {
       display: none;
     }
