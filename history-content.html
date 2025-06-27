@@ -22,29 +22,56 @@
    <!-- === header === -->
    <header class="main_header_dark history_header">
       <div class="container">
-         <div class="d-logo">
-            <a href="index.html">
-               <img src="assets/images/desktop_logo_white.svg" alt="logo-white" />
-            </a>
-         </div>
-         <nav class="nav_menu">
-            <ul class="d-flex">
-               <li><a href="history-select.html" class="menu-history">History</a></li>
-               <li><a href="news-select.html" class="menu-notice">Notice</a></li>
-            </ul>
-         </nav>
+        <div class="d-logo">
+          <a href="#" id="logo-link">
+            <img src="assets/images/desktop_logo_white.svg" alt="logo-white" />
+          </a>
+        </div>
+
+        <!-- desktop nav_menu -->
+        <nav class="nav_menu desktop-nav">
+          <ul class="d-flex">
+            <li>
+              <a href="/history-select.html" class="menu-history">History</a>
+            </li>
+            <li><a href="/news-select.html" class="menu-notice">Notice</a></li>
+          </ul>
+        </nav>
+
+        <!-- hamburger button -->
+        <div class="menu-wrap">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
       </div>
-   </header>
+    </header>
+
+    <!-- mobile menu_overlay -->
+    <div class="menu_overlay">
+      <nav class="nav_menu mobile-nav">
+        <ul class="d-flex">
+          <li>
+            <a href="history-select.html" class="menu-history">History</a>
+          </li>
+          <li><a href="news-select.html" class="menu-notice">Notice</a></li>
+        </ul>
+      </nav>
+    </div>
    <!-- === header end === -->
 
+
+   <!-- === menu === -->
    <ul id="menu" class="menu">
       <li data-menuanchor="firstPage" class="active"><a href="#firstPage">제 1차 남북정상회담</a></li>
       <li data-menuanchor="secondPage"><a href="#secondPage">벤처 열풍과 IT 버블</a></li>
       <li data-menuanchor="thirdPage"><a href="#thirdPage">DJ, 노벨평화상 수상</a></li>
       <li data-menuanchor="footerPage"><a href="#footerPage">DJ, 노벨평화상 수상</a></li>
    </ul>
+   <!-- === menu end === -->
 
-   <!-- === fullpage === -->
+
+   <!-- === fullpage history-content === -->
    <div id="fullpage" class="history-content">
       <section class="section history-content__sec01">
          <div class="section-inner">

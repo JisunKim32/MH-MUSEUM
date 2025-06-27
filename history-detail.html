@@ -20,22 +20,44 @@
 
 <body>
    <!-- === header === -->
-   <header class="history_detail_header">
+   <header class="history_detail_header notice_header">
       <div class="container">
-         <div class="d-logo">
-            <a href="index.html">
-               <img src="assets/images/desktop_logo_dark.svg" alt="logo-dark" />
-            </a>
-         </div>
-         <nav class="nav_menu">
-            <ul class="d-flex">
-               <li><a href="history-select.html" class="menu-history">History</a></li>
-               <li><a href="news-select.html" class="menu-notice">Notice</a></li>
-            </ul>
-         </nav>
+        <div class="d-logo">
+          <a href="#" id="logo-link">
+            <img src="assets/images/desktop_logo_dark.svg" alt="logo-dark" />
+          </a>
+        </div>
+
+        <!-- desktop nav_menu -->
+        <nav class="nav_menu desktop-nav">
+          <ul class="d-flex">
+            <li><a href="#" class="menu-history">History</a></li>
+            <li><a href="#" class="menu-notice">Notice</a></li>
+          </ul>
+        </nav>
+
+        <!-- hamburger button -->
+        <div class="menu-wrap">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
       </div>
-   </header>
+    </header>
+
+    <!-- mobile menu_overlay -->
+    <div class="menu_overlay">
+      <nav class="nav_menu mobile-nav">
+        <ul class="d-flex">
+          <li>
+            <a href="/history-select.html" class="menu-history">History</a>
+          </li>
+          <li><a href="/news-select.html" class="menu-notice">Notice</a></li>
+        </ul>
+      </nav>
+    </div>
    <!-- === header end === -->
+
 
 
    <!-- === sec01 === -->
@@ -136,6 +158,7 @@
    <!-- === Jquery === -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <!-- === main js === -->
+    <script src="assets/js/menu.js"></script>
    <script src="assets/js/history.js"></script>
 </body>
 

@@ -122,13 +122,13 @@ body.page-fullscroll {
                }
 
                .content-title {
+                  transition: opacity 0.4s ease-in-out;
                   @include resp.respond-to(xxl) {
                      position: absolute;
                      top: 50%;
                      left: 50%;
                      transform: translate(-50%, -50%);
                      width: 100%;
-                     transition: opacity 0.4s ease-in-out;
                   }
 
                   span {
@@ -155,7 +155,10 @@ body.page-fullscroll {
                         font-size: var.get-font-size(t2, default);
                      }
                      .ls-10 {
-                        letter-spacing: 0.7375rem;
+                        letter-spacing: var.$letter-spacing-8;
+                        @include resp.respond-to(xxl) {
+                           letter-spacing: 0.7375rem;
+                        }
                      }
                   }
                }
@@ -192,6 +195,7 @@ body.page-fullscroll {
                .mySwiper {
                   max-width: 950px;
                   width: 100%;
+                  transition: opacity 0.4s ease-in-out;
                   @include resp.respond-to(lg) {
                      max-width: 488px;
                   }
@@ -206,7 +210,6 @@ body.page-fullscroll {
                      transform: translateX(-50%);
                      width: 100%;
                      height: 100%;
-                     transition: opacity 0.4s ease-in-out;
                   }
                   @include resp.respond-to(xxxl) {
                      max-width: 950px;
@@ -253,7 +256,10 @@ body.page-fullscroll {
                         }
                         .slide__content-title {
                            .ls-10 {
-                              letter-spacing: 0.7375rem;
+                              letter-spacing: var.$letter-spacing-8;
+                              @include resp.respond-to(xxl) {
+                                 letter-spacing: 0.7375rem;
+                              }
                            }
                            span {
                               display: inline-block;

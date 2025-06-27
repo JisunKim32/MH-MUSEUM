@@ -13,23 +13,46 @@
    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<header class="main_header_dark history_header">
 <body class="page-fullscroll">
    <!-- === header === -->
+   <header class="main_header_dark history_header">
       <div class="container">
          <div class="d-logo">
-            <a href="index.html">
+            <a href="index.html" id="logo-link">
                <img src="assets/images/desktop_logo_white.svg" alt="logo-white" />
             </a>
          </div>
-         <nav class="nav_menu">
+
+         <!-- desktop nav_menu -->
+         <nav class="nav_menu desktop-nav">
             <ul class="d-flex">
-               <li><a href="history-select.html" class="menu-history">History</a></li>
-               <li><a href="news-select.html" class="menu-notice">Notice</a></li>
+               <li>
+                  <a href="/history-select.html" class="menu-history">History</a>
+               </li>
+               <li><a href="/news-select.html" class="menu-notice">Notice</a></li>
             </ul>
          </nav>
+
+         <!-- hamburger button -->
+         <div class="menu-wrap">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+         </div>
       </div>
    </header>
+
+   <!-- mobile menu_overlay -->
+   <div class="menu_overlay">
+      <nav class="nav_menu mobile-nav">
+         <ul class="d-flex">
+            <li>
+               <a href="history-select.html" class="menu-history">History</a>
+            </li>
+            <li><a href="news-select.html" class="menu-notice">Notice</a></li>
+         </ul>
+      </nav>
+   </div>
    <!-- === header end === -->
 
 
