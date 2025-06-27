@@ -39,377 +39,380 @@
 // === header end ===
 
 // === history-select ===
-.history-select {
-   background: var.$color-primary;
+body.page-fullscroll {
+   height: 100vh;
+   overflow-x: hidden;
 
-   .fp-table {
-      flex-direction: row;
-   }
+   .history-select {
+      width: 100vw;
+      min-height: 100vh;
+      background: var.$color-primary;
 
-   &__sec01 {
-      // justify-content: first baseline;
-      .section-inner {
+      .footer_main_content {
+         position: fixed;
+         left: 0;
+         right: 0;
+         bottom: -307.78px;
+         width: 100vw;
+         height: 307.78px;
+         z-index: 100;
+         transition: bottom 0.7s cubic-bezier(0.55, 0, 0.1, 1);
+      }
+
+      &__sec01 {
+         transition: transform 0.7s cubic-bezier(0.55, 0, 0.1, 1);
+         min-height: 100vh;
+         width: 100vw;
          display: flex;
          align-items: center;
          justify-content: center;
-         height: 100%;
-      }
 
-      .container {
-         // margin: 87px auto;
-         margin: 0 auto;
-         width: 100%;
-         .row {
-            gap: 0;
-         }
-      }
-      .history-select__bar {
-         display: none;
-         @include resp.respond-to(lg) {
+         .section-inner {
             display: flex;
-            justify-content: right;
-            margin-bottom: map-get(var.$spacers, 13);
-         }
-      }
-      .sec01__content {
-         width: 100%;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         gap: 147px 0;
-         @include resp.respond-to(sm) {
-            gap: 80px 0;
-         }
-         @include resp.respond-to(md) {
-            gap: 60px 0;
-         }
-         @include resp.respond-to(lg) {
-            flex-direction: row;
-            justify-content: space-between;
-            // align-items: center;
-         }
-         // @include resp.respond-to(xxl) {
-         //    display: grid;
-         //    grid-template-columns: 250px 1fr; // 1열 250px, 2열 나머지 모두
-         //    gap: 0; // grid 사용 시 gap 초기화
-         // }
-
-         .content-title-wrapper {
-            position: relative;
-            max-width: 292px;
-            width: 100%;
-            @include resp.respond-to(xxl) {
-               // min-width: 200px;
-               min-height: 250px;
-               height: 100%;
-               // flex: 0 0 250px; // 너비를 고정값으로 설정 (필요시 값 조절)
-               // text-align: center; // 내부 텍스트 중앙 정렬
-            }
-            .content-title {
-               @include resp.respond-to(xxl) {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  width: 100%;
-                  // transition: opacity 0.4s ease-in-out;
-               }
-               // &.title01 {
-               //    opacity: 1;
-               //    pointer-events: auto;
-               //    // transition: opacity 0.4s ease;
-               // }
-      
-               // &.title02 {
-               //    opacity: 0;
-               //    pointer-events: none;
-               //    // transition: opacity 0.4s ease;
-               // }
-               span {
-                  font-family: var.$font-point;
-                  font-size: var.get-font-size(t1, xs);
-                  font-weight: var.$font-weight-regular;
-                  line-height: var.$line-height-120;
-                  letter-spacing: var.$letter-spacing-3;
-                  color: transparent;
-                  -webkit-text-stroke: 0.7px var.$color-white;
-                  display: inline-block;
-                  text-align: center;
-                  @include resp.respond-to(sm) {
-                     font-size: 70px;
-                  }
-                  @include resp.respond-to(md) {
-                     font-size: 76px;
-                  }
-                  @include resp.respond-to(lg) {
-                     font-size: 100px;
-                     -webkit-text-stroke: 1px var.$color-white;
-                  }
-                  @include resp.respond-to(xxl) {
-                     font-size: var.get-font-size(t2, default);
-                  }
-                  .ls-10{
-                     letter-spacing: 0.7375rem;
-                  }
-               }
-            }
-         }
-
-         .main-content {
-            max-width: 1184px;
-            // max-width: 342px;
-            width: 100%;
             align-items: center;
-            overflow: hidden;
-            position: relative;
-            min-height: 400px;
-            // display: flex;
-            // justify-content: center;
-            // &.swiper01 {
-            //    opacity: 1;
-            //    pointer-events: auto;
-            //    // transition: opacity 0.4s ease;
-            // }
+            justify-content: center;
+            height: 100%;
+         }
 
-            // &.swiper02 {
-            //    opacity: 0;
-            //    pointer-events: none;
-            //    // transition: opacity 0.4s ease;
-            //    // swiper01과 동일한 반응형 스타일 적용
-            // }
+         .container {
+            margin: 0 auto;
+            width: 100%;
 
+            .row {
+               gap: 0;
+            }
+         }
+
+         .history-select__bar {
+            display: none;
             @include resp.respond-to(lg) {
-               max-width: 652px;
+               display: flex;
+               justify-content: right;
+               margin-bottom: map-get(var.$spacers, 18);
             }
-            @include resp.respond-to(xl) {
-               max-width: 800px;
+            img {
+               width: 60%;
             }
-            @include resp.respond-to(xxl) {
-               max-width: 950px;
-               // flex: 1;
+         }
+
+         .sec01__content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 147px 0;
+
+            @include resp.respond-to(sm) {
+               gap: 80px 0;
             }
-            @include resp.respond-to(xxxl) {
-               max-width: 1184px;
+            @include resp.respond-to(md) {
+               gap: 60px 0;
+            }
+            @include resp.respond-to(lg) {
+               flex-direction: row;
+               justify-content: space-between;
             }
 
-            .mySwiper {
-               max-width: 950px;
-               // max-width: 342px;
+            .content-title-wrapper {
+               position: relative;
+               max-width: 292px;
                width: 100%;
-               // overflow: hidden;
+               @include resp.respond-to(xxl) {
+                  min-height: 250px;
+                  height: 100%;
+               }
 
+               .content-title {
+                  @include resp.respond-to(xxl) {
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     transform: translate(-50%, -50%);
+                     width: 100%;
+                     transition: opacity 0.4s ease-in-out;
+                  }
+
+                  span {
+                     font-family: var.$font-point;
+                     font-size: var.get-font-size(t1, xs);
+                     font-weight: var.$font-weight-regular;
+                     line-height: var.$line-height-120;
+                     letter-spacing: var.$letter-spacing-3;
+                     color: transparent;
+                     -webkit-text-stroke: 0.7px var.$color-white;
+                     display: inline-block;
+                     text-align: center;
+                     @include resp.respond-to(sm) {
+                        font-size: 70px;
+                     }
+                     @include resp.respond-to(md) {
+                        font-size: 76px;
+                     }
+                     @include resp.respond-to(lg) {
+                        font-size: 100px;
+                        -webkit-text-stroke: 1px var.$color-white;
+                     }
+                     @include resp.respond-to(xxl) {
+                        font-size: var.get-font-size(t2, default);
+                     }
+                     .ls-10 {
+                        letter-spacing: 0.7375rem;
+                     }
+                  }
+               }
+            }
+
+            .main-content {
+               max-width: 1184px;
+               width: 100%;
+               align-items: center;
+               overflow: hidden;
+               position: relative;
+               min-height: 227px;
+               @include resp.respond-to(sm) {
+                  min-height: 262px;
+               }
+               @include resp.respond-to(md) {
+                  min-height: 252px;
+               }
                @include resp.respond-to(lg) {
-                  max-width: 488px;
+                  max-width: 652px;
+                  min-height: 333px;
                }
                @include resp.respond-to(xl) {
-                  max-width: 636px;
+                  max-width: 800px;
                }
                @include resp.respond-to(xxl) {
-                  max-width: 750px;
-                  position: absolute;
-                  top: 0;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  width: 100%;
-                  height: 100%;
-                  // transition: opacity 0.4s ease-in-out;
+                  max-width: 950px;
+                  min-height: 400px;
                }
                @include resp.respond-to(xxxl) {
-                  max-width: 950px;
+                  max-width: 1184px;
                }
 
-               .swiper-box {
-                  // max-width: 342px;
+               .mySwiper {
+                  max-width: 950px;
                   width: 100%;
-                  text-decoration: none;
-                  margin: 0;
-                  // overflow: hidden;
                   @include resp.respond-to(lg) {
                      max-width: 488px;
-                     margin: 0 auto;
                   }
                   @include resp.respond-to(xl) {
                      max-width: 636px;
                   }
                   @include resp.respond-to(xxl) {
                      max-width: 750px;
-                     // display: flex;
-                     // justify-content: center;
+                     position: absolute;
+                     top: 0;
+                     left: 50%;
+                     transform: translateX(-50%);
+                     width: 100%;
+                     height: 100%;
+                     transition: opacity 0.4s ease-in-out;
                   }
                   @include resp.respond-to(xxxl) {
                      max-width: 950px;
                   }
-                  .swiper-slide {
-                     max-width: 158px;
-                     width: 100% !important;
-                     @include resp.respond-to(sm) {
-                        max-width: 255px;
-                     }
-                     @include resp.respond-to(md) {
-                        max-width: 220px;
-                     }
-                     @include resp.respond-to(md) {
-                        max-width: 220px;
-                     }
+
+                  .swiper-box {
+                     width: 100%;
+                     text-decoration: none;
+                     margin: 0;
                      @include resp.respond-to(lg) {
-                        max-width: 229px;
+                        max-width: 488px;
+                        margin: 0 auto;
                      }
                      @include resp.respond-to(xl) {
-                        max-width: 212px;
+                        max-width: 636px;
                      }
                      @include resp.respond-to(xxl) {
-                        max-width: 250px;
+                        max-width: 750px;
                      }
                      @include resp.respond-to(xxxl) {
-                        max-width: 290px;
+                        max-width: 950px;
                      }
-                     .slide__content-title {
-                        // .ls-10{
-                        //    letter-spacing: 0.7375rem;
-                        // }
-                        span {
-                           display: inline-block;
-                           color: transparent;
-                           font-family: var.$font-point;
-                           font-size: var.get-font-size(t2, xs);
-                           font-weight: var.$font-weight-light;
-                           line-height: var.$line-height-120;
-                           // letter-spacing: var.$letter-spacing-3;
-                           letter-spacing: 0.7375rem;
-                           padding: map-get(var.$spacers, 4) 0;
-   
-                           // 기본: 아웃라인만
-                           -webkit-text-stroke: 0.7px var.$color-white;
-                           background: linear-gradient(90deg, var.$color-white 50%, transparent 50%);
-                           background-size: 200% 100%;
-                           background-position: right bottom; // ← 기본값(오른쪽이 채워지지 않은 상태)
-                           -webkit-background-clip: text;
-                           background-clip: text;
-                           transition:
-                              background-position 0.7s cubic-bezier(0.55, 0, 0.1, 1),
-                              -webkit-text-stroke 0.3s;
-   
-                           &:hover {
-                              background-position: left bottom; // ← 왼→오로 채워짐
-                              //  -webkit-text-stroke: 0;
-                           }
-                           @include resp.respond-to(sm) {
-                              padding: map-get(var.$spacers, 5) 0;
-                              font-size: 66px;
-                           }
-                           @include resp.respond-to(md) {
-                              padding: map-get(var.$spacers, 5) 0;
-                              font-size: 58px;
-                           }
-                           @include resp.respond-to(lg) {
-                              // font-size: 60px;
-                              font-size: 70px;
-                              font-weight: var.$font-weight-regular;
-                              padding: map-get(var.$spacers, 8) 0;
-                              -webkit-text-stroke: 1px var.$color-white;
-                           }
-                           @include resp.respond-to(xxl) {
-                              font-size: 82px;
-                           }
-                           @include resp.respond-to(xxxl) {
-                              font-size: var.get-font-size(t3, default);
-                           }
+
+                     .swiper-slide {
+                        max-width: 158px;
+                        width: 100% !important;
+                        @include resp.respond-to(sm) {
+                           max-width: 255px;
                         }
-                        &::before {
-                           content: "";
-                           display: block;
-                           width: 158px;
-                           height: 1px;
-                           background-color: var.$color-white;
-                           @include resp.respond-to(sm) {
-                              width: 230px;
-                           }
-                           @include resp.respond-to(md) {
-                              width: 220px;
-                           }
-                           @include resp.respond-to(lg) {
-                              width: 229px;
-                           }
-                           @include resp.respond-to(xl) {
-                              width: 212px;
-                           }
-                           @include resp.respond-to(xxl) {
-                              width: 250px;
-                           }
-                           @include resp.respond-to(xxxl) {
-                              width: 290px;
-                           }
+                        @include resp.respond-to(md) {
+                           max-width: 220px;
                         }
-                        &::after {
-                           content: "";
-                           display: block;
-                           width: 76px;
-                           height: 1px;
-                           background-color: var.$color-white;
-                           @include resp.respond-to(lg) {
-                              width: 81px;
-                           }
-                        }
-                     }
-                     .slide__content-body {
-                        padding-top: 30px;
                         @include resp.respond-to(lg) {
-                           padding-top: 47px;
+                           max-width: 229px;
                         }
-                        p {
-                           font-family: var.$font-body;
-                           font-size: var.get-font-size(b2, xs);
-                           font-weight: var.$font-weight-light;
-                           line-height: var.$line-height-120;
-                           letter-spacing: var.$letter-spacing-3;
-                           color: var.$color-white;
-                           text-align: left;
-                           padding-bottom: map-get(var.$spacers, 3);
-                           @include resp.respond-to(lg) {
-                              font-size: var.get-font-size(b3, default);
+                        @include resp.respond-to(xl) {
+                           max-width: 212px;
+                        }
+                        @include resp.respond-to(xxl) {
+                           max-width: 250px;
+                        }
+                        @include resp.respond-to(xxxl) {
+                           max-width: 290px;
+                        }
+                        .slide__content-title {
+                           .ls-10 {
+                              letter-spacing: 0.7375rem;
                            }
-                           &:last-child {
-                              padding-bottom: 0;
+                           span {
+                              display: inline-block;
+                              color: transparent;
+                              font-family: var.$font-point;
+                              font-size: var.get-font-size(t2, xs);
+                              font-weight: var.$font-weight-light;
+                              line-height: var.$line-height-120;
+                              letter-spacing: var.$letter-spacing-3;
+                              padding: map-get(var.$spacers, 4) 0;
+                              -webkit-text-stroke: 0.7px var.$color-white;
+                              background: linear-gradient(90deg, var.$color-white 50%, transparent 50%);
+                              background-size: 200% 100%;
+                              background-position: right bottom;
+                              -webkit-background-clip: text;
+                              background-clip: text;
+                              transition:
+                                 background-position 0.7s cubic-bezier(0.55, 0, 0.1, 1),
+                                 -webkit-text-stroke 0.3s;
+
+                              &:hover {
+                                 background-position: left bottom;
+                              }
+                              @include resp.respond-to(sm) {
+                                 padding: map-get(var.$spacers, 5) 0;
+                                 font-size: 66px;
+                              }
+                              @include resp.respond-to(md) {
+                                 padding: map-get(var.$spacers, 5) 0;
+                                 font-size: 58px;
+                              }
+                              @include resp.respond-to(lg) {
+                                 font-size: 70px;
+                                 font-weight: var.$font-weight-regular;
+                                 padding: map-get(var.$spacers, 8) 0;
+                                 -webkit-text-stroke: 1px var.$color-white;
+                              }
+                              @include resp.respond-to(xxl) {
+                                 font-size: 82px;
+                              }
+                              @include resp.respond-to(xxxl) {
+                                 font-size: var.get-font-size(t3, default);
+                              }
+                           }
+                           &::before {
+                              content: "";
+                              display: block;
+                              width: 158px;
+                              height: 1px;
+                              background-color: var.$color-white;
+                              @include resp.respond-to(sm) {
+                                 width: 230px;
+                              }
+                              @include resp.respond-to(md) {
+                                 width: 220px;
+                              }
+                              @include resp.respond-to(lg) {
+                                 width: 229px;
+                              }
+                              @include resp.respond-to(xl) {
+                                 width: 212px;
+                              }
+                              @include resp.respond-to(xxl) {
+                                 width: 250px;
+                              }
+                              @include resp.respond-to(xxxl) {
+                                 width: 290px;
+                              }
+                           }
+                           &::after {
+                              content: "";
+                              display: block;
+                              width: 76px;
+                              height: 1px;
+                              background-color: var.$color-white;
+                              @include resp.respond-to(lg) {
+                                 width: 81px;
+                              }
+                           }
+                        }
+                        .slide__content-body {
+                           padding-top: 30px;
+                           @include resp.respond-to(lg) {
+                              padding-top: 47px;
+                           }
+                           p {
+                              font-family: var.$font-body;
+                              font-size: var.get-font-size(b2, xs);
+                              font-weight: var.$font-weight-light;
+                              line-height: var.$line-height-120;
+                              letter-spacing: var.$letter-spacing-3;
+                              color: var.$color-white;
+                              text-align: left;
+                              padding-bottom: map-get(var.$spacers, 3);
+                              @include resp.respond-to(lg) {
+                                 font-size: var.get-font-size(b3, default);
+                              }
+                              &:last-child {
+                                 padding-bottom: 0;
+                              }
                            }
                         }
                      }
                   }
                }
-            }
-
-            button {
-               display: none;
-               max-width: 52px;
-               width: 100%;
-               background: none;
-               border: none;
-               @include resp.respond-to(lg) {
-                  display: block;
-               }
-
-            }
-            .swiper-button-next {
-               &::after {
+               button {
                   display: none;
+                  max-width: 52px;
+                  width: 100%;
+                  background: none;
+                  border: none;
+                  @include resp.respond-to(lg) {
+                     display: block;
+                  }
+               }
+               .swiper-button-next {
+                  &::after {
+                     display: none;
+                  }
+               }
+               .swiper-button-prev {
+                  &::after {
+                     display: none;
+                  }
+               }
+
+               .content-title:not(.active),
+               .mySwiper:not(.active) {
+                  display: none;
+                  @include resp.respond-to(xxl) {
+                     display: block;
+                     opacity: 0;
+                     pointer-events: none;
+                  }
                }
             }
-            .swiper-button-prev {
-               &::after {
-                  display: none;
-               }
+         }
+
+         .content-title:not(.active),
+         .mySwiper:not(.active) {
+            display: none;
+            @include resp.respond-to(xxl) {
+               display: block;
+               opacity: 0;
+               pointer-events: none;
             }
          }
       }
+   }
+}
 
-      // xxl 미만에서는 비활성 콘텐츠를 그냥 보이지 않게 처리
-      .content-title:not(.active),
-      .mySwiper:not(.active) {
-         display: none;
-         @include resp.respond-to(xxl) {
-            display: block; // 또는 flex 등 원래 속성으로 복원
-            opacity: 0;
-            pointer-events: none;
-         }
+body.footer-on {
+   .history-select {
+      .footer_main_content {
+         bottom: 0;
+      }
+      .history-select__sec01 {
+         transform: translateY(-307.78px);
+         transition: transform 0.7s cubic-bezier(0.55, 0, 0.1, 1);
       }
    }
 }
@@ -470,7 +473,7 @@
          width: 74px;
          height: 2px;
          background-color: var.$color-white;
-         
+
          z-index: 151;
          transform: scaleX(0);
          transform-origin: left;
@@ -484,7 +487,6 @@
          a {
             color: var.$color-white;
             transition: color 0.3s ease-in-out;
-
          }
          &::after {
             transform: scaleX(1);
@@ -508,6 +510,7 @@
 
       .section-inner {
          padding-bottom: 147px;
+         height: 100%;
          @include resp.respond-to(sm) {
             padding-bottom: 100px;
          }
@@ -590,7 +593,7 @@
                   width: 52px;
                   height: 52px;
                }
-               img{
+               img {
                   width: 100%;
                }
             }
@@ -599,6 +602,7 @@
    }
 }
 // === history-content end ===
+
 
 // === history-detail ===
 .history_detail_header {
@@ -627,22 +631,30 @@
       padding-top: 158px;
    }
 
-   &__content{
+   &__content {
       display: flex;
       flex-direction: column;
       gap: 24px 0;
+      height: calc(100vh - 100px);
 
       @include resp.respond-to(lg) {
          flex-direction: row;
          justify-content: space-between;
+         height: calc(882px - 130px);
+      }
+      @include resp.respond-to(xl) {
+         height: calc(937px - 158px);
+      }
+      @include resp.respond-to(xxl) {
+         height: calc(100vh - 158px);
       }
       .left-content {
-         // max-width: 680px;
          width: 100%;
+         flex-shrink: 0;
          @include resp.respond-to(lg) {
-            width: calc(50% - 3.125rem); // gap의 절반을 뺌
-            }
-      
+            width: calc(50% - 3.125rem);
+         }
+
          .content-title {
             display: flex;
             justify-content: space-between;
@@ -687,7 +699,7 @@
                display: flex;
                align-items: center;
                gap: 0 16px;
-   
+
                @include resp.respond-to(md) {
                   font-size: 18px;
                   line-height: var.$line-height-160;
@@ -698,14 +710,14 @@
                @include resp.respond-to(xxl) {
                   font-size: var.get-font-size(b1, default);
                }
-   
+
                &::before {
                   content: "";
                   display: block;
                   width: 20px;
                   height: 1px;
                   background-color: var.$color-primary;
-   
+
                   @include resp.respond-to(lg) {
                      width: 42px;
                   }
@@ -716,26 +728,28 @@
             width: 100%;
          }
       }
-   
-      .center-line{
+
+      .center-line {
          display: none;
 
          @include resp.respond-to(lg) {
             display: flex;
             justify-content: center;
-            
+
             &::after {
                content: "";
                display: block;
                width: 1px;
                height: 100%;
-               // margin-left: 50px;
-               background-color: rgba(var.$color-primary, 0.2);            
+               background-color: rgba(var.$color-primary, 0.2);
             }
          }
       }
-   
+
       .right-content {
+         display: flex;
+         flex-direction: column;
+         min-height: 0;
          @include resp.respond-to(lg) {
             max-width: calc(50% - 3.125rem);
             width: 100%;
@@ -745,12 +759,26 @@
             padding-top: 107px;
          }
          @include resp.respond-to(xxl) {
-            padding-top: 155px;
+            padding-top: 142px;
          }
          @include resp.respond-to(xxxl) {
             padding-top: 152px;
          }
          .content-text {
+            flex: 1;
+            overflow-y: auto;
+            @media (max-width: 375px) and (max-height: 667px) {
+               max-height: calc(100vh - 400px);
+            }
+            @media (max-height: 700px) {
+               max-height: calc(100vh - 350px);
+            }
+            @include resp.respond-to(sm) {
+               width: 100%;
+            }
+            @include resp.respond-to(lg) {
+               overflow-y: hidden;
+            }
             p {
                font-family: var.$font-body;
                font-size: var.get-font-size(b1, xs);
