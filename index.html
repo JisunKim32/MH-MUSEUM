@@ -3,7 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="title" content="온라인 현대 박물관" />
+    <meta name="robots" content="index,nofollow" />
+    <meta
+      name="description"
+      content="온라인 현대 박물관에서 현대사의 흐름과 트렌드를 쉽고 흥미롭게 만나보세요."
+    />
+    <meta
+      name="keywords"
+      content="온라인, 현대, 박물관, 역사, 트렌드, 정보, 공유"
+    />
+
+    <meta
+      property="og:url"
+      content="https://lustrous-rabanadas-16ec32.netlify.app/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="온라인 현대 박물관" />
+    <meta
+      property="og:description"
+      content="온라인 현대 박물관에서 현대사의 흐름과 트렌드를 쉽고 흥미롭게 만나보세요."
+    />
+    <meta property="og:image" content="/assets/images/og-image.png" />
+
+    <meta
+      http-equiv="refresh"
+      content="5;url=https://lustrous-rabanadas-16ec32.netlify.app/"
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="온라인 현대 박물관" />
+    <meta
+      name="twitter:description"
+      content="온라인 현대 박물관에서 현대사의 흐름과 트렌드를 쉽고 흥미롭게 만나보세요."
+    />
+    <meta name="twitter:image" content="/assets/images/og-image.png" /> -->
+
     <title>main page</title>
+    <!-- Google Tag Manager -->
+    <!-- <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PPQSF5VR');
+    </script> -->
+    <!-- End Google Tag Manager -->
+    <!-- <meta
+      name="google-site-verification"
+      content="NXu_RXjFz4EUbOOZ_-NMmt5iZTPaRQpcVEeycrsX3R4"
+    /> -->
+    <!-- google -->
+
+    <!-- bing -->
+    <!-- <meta name="msvalidate.01" content="34BE6421C1FB261F0EA96CB6B2C5575D" /> -->
+    <!-- naver -->
+    <!-- <meta
+      name="naver-site-verification"
+      content="5a129757906bb8c7aef6cbe1b65f2b89679aee60"
+    /> -->
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.17/fullpage.css"
@@ -13,6 +77,23 @@
   </head>
 
   <body>
+    <!-- <ul style="display: none">
+      <li><a href="https://section.blog.naver.com/">네이버 블로그</a></li>
+      <li><a href="https://www.instagram.com/">인스타그램</a></li>
+      <li><a href="https://x.com/login?lang=ko">트위터</a></li>
+      <li><a href="https://www.facebook.com/?locale=ko_KR">페이스북</a></li>
+      <li><a href="https://kr.pinterest.com/">핀터레스트</a></li>
+    </ul> -->
+    <!-- Google Tag Manager (noscript) -->
+    <!-- <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PPQSF5VR"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript> -->
+    <!-- End Google Tag Manager (noscript) -->
     <header class="main_header_dark">
       <div class="container">
         <div class="d-logo">
@@ -24,8 +105,42 @@
         <!-- desktop nav_menu -->
         <nav class="nav_menu desktop-nav">
           <ul class="d-flex">
-            <li><a href="#" class="menu-history">History</a></li>
-            <li><a href="#" class="menu-notice">Notice</a></li>
+            <li>
+              <a href="/history-select.html" class="menu-history">History</a>
+            </li>
+            <li>
+              <a href="/notice-select.html" class="menu-notice">Notice</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- hamburger button -->
+        <div class="menu-wrap">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </div>
+    </header>
+    <!-- header dark finish -->
+    <!-- 두 번째 헤더: 디테일/노티스 (밝은 배경, 어두운 로고) -->
+    <header class="history_detail_header notice_header">
+      <div class="container">
+        <div class="d-logo">
+          <a href="#" id="logo-link">
+            <img src="assets/images/desktop_logo_dark.svg" alt="logo-dark" />
+          </a>
+        </div>
+
+        <!-- desktop nav_menu -->
+        <nav class="nav_menu desktop-nav">
+          <ul class="d-flex">
+            <li>
+              <a href="/history-select.html" class="menu-history">History</a>
+            </li>
+            <li>
+              <a href="/notice-select.html" class="menu-notice">Notice</a>
+            </li>
           </ul>
         </nav>
 
@@ -38,16 +153,18 @@
       </div>
     </header>
 
-    <!-- mobile menu_overlay -->
+    <!-- mobile menu_overlay: 헤더 바깥에 독립적으로 위치 -->
     <div class="menu_overlay">
       <nav class="nav_menu mobile-nav">
         <ul class="d-flex">
-          <li><a href="#" class="menu-history">History</a></li>
-          <li><a href="#" class="menu-notice">Notice</a></li>
+          <li>
+            <a href="/history-select.html" class="menu-history">History</a>
+          </li>
+          <li><a href="/notice-select.html" class="menu-notice">Notice</a></li>
         </ul>
       </nav>
     </div>
-    <!-- header dark finish-->
+    <!-- header white finish-->
     <div id="fullpage">
       <section class="section">
         <div class="main_section">
@@ -104,7 +221,7 @@
                     각 해에 가장 큰 세 가지 이슈를 선별하여 그 시대의 향기와
                     흐름을 감각적으로 담아냈습니다.<br /><br />단순히 정보를
                     소개하는 것이 아닌, 지나간 시간과 감정에 공감할 수 있도록
-                    감각적인 비주얼과 직관적인 사<br />용자 경험을 통하여 역사를
+                    감각적인 비주얼과 직관적인<br />사용자 경험을 통하여 역사를
                     어렵지 않게, 하지만 깊이 있게 마주할 수 있도록
                     하였습니다.<br /><br />MH Museum은 과거를 새롭게 바라보는
                     시선으로, 오늘날 우리에게 잊지 말아야 할 이야기를 건넵니다.
@@ -137,12 +254,18 @@
               <div class="row">
                 <div class="col-12">
                   <div class="history_box01 d-flex">
-                    <span>2000 - 2009</span>
+                    <a href="/history-select.html"><span>2000 - 2009</span></a>
                     <div class="History_arrow_right">
-                      <a href="#">
+                      <a href="/history-select.html">
                         <img
                           src="assets/images/icon/_History_arrow_right.svg"
                           alt="history_arrow_right"
+                          class="default-img"
+                        />
+                        <img
+                          src="assets/images/icon/_History_arrow_right_hover.svg"
+                          alt="history_arrow_right_hover"
+                          class="hover-img"
                         />
                       </a>
                     </div>
@@ -152,14 +275,22 @@
               <div class="row">
                 <div class="col-12">
                   <div class="history_box02 d-flex">
-                    <span class="letter-spacing-8"
-                      >2010<span> - 2020</span></span
+                    <a href="/history-select.html"
+                      ><span class="letter-spacing-8"
+                        >2010<span> - 2020</span></span
+                      ></a
                     >
                     <div class="History_arrow_right">
-                      <a href="#">
+                      <a href="/history-select.html">
                         <img
                           src="assets/images/icon/_History_arrow_right.svg"
                           alt="history_arrow_right"
+                          class="default-img"
+                        />
+                        <img
+                          src="assets/images/icon/_History_arrow_right_hover.svg"
+                          alt="history_arrow_right_hover"
+                          class="hover-img"
                         />
                       </a>
                     </div>
@@ -198,10 +329,16 @@
                     />
                     <div class="view_btn d-flex">
                       <h2>View More</h2>
-                      <a href="#">
+                      <a href="/news-select.html">
                         <img
                           src="assets/images/icon/_History_arrow_right.svg"
-                          alt="view_btn"
+                          alt="history_arrow_right"
+                          class="default-img"
+                        />
+                        <img
+                          src="assets/images/icon/_History_arrow_right_hover.svg"
+                          alt="history_arrow_right_hover"
+                          class="hover-img"
                         />
                       </a>
                     </div>
@@ -220,7 +357,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <a href="#">
+                      <a href="/news-select.html">
                         <div class="news_text d-flex p-b-44">
                           <h1>MH뮤지엄 ‘한국의 새로운 뮤지엄’ 제시…</h1>
                           <p>2025.05.03</p>
@@ -230,7 +367,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <a href="#">
+                      <a href="/news-select.html">
                         <div class="news_text d-flex p-b-36">
                           <h1>MH뮤지엄 ‘한국의 새로운 뮤지엄’ 제시…</h1>
                           <p>2025.05.03</p>
@@ -240,7 +377,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <a href="#">
+                      <a href="/news-select.html">
                         <div class="news_text d-flex">
                           <h1>MH뮤지엄 ‘한국의 새로운 뮤지엄’ 제시…</h1>
                           <p>2025.05.03</p>
@@ -250,7 +387,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <a href="#">
+                      <a href="/news-select.html">
                         <div class="news_text d-flex">
                           <h1>MH뮤지엄 ‘한국의 새로운 뮤지엄’ 제시…</h1>
                           <p>2025.05.03</p>
@@ -274,7 +411,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <a href="#">
+                      <a href="/notice-select.html">
                         <div class="notice_text d-flex p-b-44">
                           <h1>MH뮤지엄 ‘한국의 새로운 뮤지엄’ 제시…</h1>
                           <p>2025.05.03</p>
@@ -284,7 +421,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <a href="#">
+                      <a href="/notice-select.html">
                         <div class="notice_text d-flex p-b-36">
                           <h1>MH뮤지엄 ‘한국의 새로운 뮤지엄’ 제시…</h1>
                           <p>2025.05.03</p>
@@ -294,7 +431,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <a href="#">
+                      <a href="/notice-select.html">
                         <div class="notice_text d-flex">
                           <h1>MH뮤지엄 ‘한국의 새로운 뮤지엄’ 제시…</h1>
                           <p>2025.05.03</p>
@@ -304,7 +441,7 @@
                   </div>
                   <div class="row">
                     <div class="col-12">
-                      <a href="#">
+                      <a href="/notice-select.html">
                         <div class="notice_text d-flex">
                           <h1>MH뮤지엄 ‘한국의 새로운 뮤지엄’ 제시…</h1>
                           <p>2025.05.03</p>
@@ -374,5 +511,15 @@
       AOS.init();
     </script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/menu.js"></script>
+
+    <!-- <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+      if (!wcs_add) var wcs_add = {};
+      wcs_add['wa'] = '1ea86813499a7a';
+      if (window.wcs) {
+        wcs_do();
+      }
+    </script> -->
   </body>
 </html>

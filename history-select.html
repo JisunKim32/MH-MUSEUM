@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,42 +5,37 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>history-select</title>
-   <!-- === fullpage cdn === -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.17/fullpage.css" />
    <!-- === swiper cdn === -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
    <!-- === aos cdn === -->
    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-   <!-- === gsap cdn === -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" />
    <!-- === story.css === -->
    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<header class="main_header_dark history_header">
+<body class="page-fullscroll">
    <!-- === header === -->
-   <header class="main_header_dark history_header">
       <div class="container">
-        <div class="d-logo">
-          <a href="index.html">
-            <img src="assets/images/desktop_logo_white.svg" alt="logo-white" />
-          </a>
-        </div>
-        <nav class="nav_menu">
-          <ul class="d-flex">
-            <li><a href="history-select.html" class="menu-history">History</a></li>
-            <li><a href="news-select.html" class="menu-notice">Notice</a></li>
-          </ul>
-        </nav>
+         <div class="d-logo">
+            <a href="index.html">
+               <img src="assets/images/desktop_logo_white.svg" alt="logo-white" />
+            </a>
+         </div>
+         <nav class="nav_menu">
+            <ul class="d-flex">
+               <li><a href="history-select.html" class="menu-history">History</a></li>
+               <li><a href="news-select.html" class="menu-notice">Notice</a></li>
+            </ul>
+         </nav>
       </div>
-    </header>
+   </header>
    <!-- === header end === -->
 
 
-   <!-- === fullpage === -->
-   <div id="fullpage" class="history-select">
-      <section class="section history-select__sec01">
+   <!-- === main content === -->
+   <div class="history-select">
+      <div class="history-select__sec01" id="slide-1">
          <div class="section-inner">
             <div class="container">
                <div class="row">
@@ -49,24 +43,28 @@
                      <img src="assets/images/history-slsect_bar.svg" alt="">
                   </div>
                   <div class="col-12 sec01__content">
-                     <div class="content-title title01 active">
-                        <span>
-                           2000
-                           <br>
-                           |
-                           <br>
-                           2009
-                        </span>
+                     <div class="content-title-wrapper">
+                        <div class="content-title title01 active">
+                           <span>
+                              2000
+                              <br>
+                              |
+                              <br>
+                              2009
+                           </span>
+                        </div>
+                        <div class="content-title title02">
+                           <span>
+                              <span class="ls-10">
+                                 2010
+                              </span>
+                              <br>
+                              |
+                              <br>
+                              2020
+                           </span>
+                        </div>
                      </div>
-                     <!-- <div class="content-title title02">
-                        <span>
-                           2010
-                           <br>
-                           |
-                           <br>
-                           2020
-                        </span>
-                     </div> -->
                      <div class="main-content">
                         <div class="swiper mySwiper swiper01 active">
                            <div class="swiper-wrapper swiper-box">
@@ -190,29 +188,17 @@
                                     </div>
                                  </div>
                               </a>
-                              <a class="swiper-slide" href="history-content.html">
-                                 <div class="slide__content">
-                                    <div class="slide__content-title">
-                                       <span>2010</span>
-                                    </div>
-                                    <div class="slide__content-body">
-                                       <p>6.15 남북정상회담</p>
-                                       <p>벤처 열풍과 IT 버블</p>
-                                       <p>DJ, 노벨평화상 수상</p>
-                                    </div>
-                                 </div>
-                              </a>
                            </div>
                            <!-- <div class="swiper-button-next"></div>
-                           <div class="swiper-button-prev"></div> -->
+                        <div class="swiper-button-prev"></div> -->
                            <!-- <div class="swiper-pagination"></div> -->
                         </div>
-                        <!-- <div class="swiper mySwiper swiper02">
+                        <div class="swiper mySwiper swiper02">
                            <div class="swiper-wrapper swiper-box">
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2010</span>
+                                       <span class="ls-10">2010</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -224,7 +210,7 @@
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2011</span>
+                                       <span class="ls-10">2011</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -236,7 +222,7 @@
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2012</span>
+                                       <span class="ls-10">2012</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -248,7 +234,7 @@
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2013</span>
+                                       <span class="ls-10">2013</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -260,7 +246,7 @@
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2014</span>
+                                       <span class="ls-10">2014</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -272,7 +258,7 @@
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2015</span>
+                                       <span class="ls-10">2015</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -284,7 +270,7 @@
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2016</span>
+                                       <span class="ls-10">2016</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -296,7 +282,7 @@
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2017</span>
+                                       <span class="ls-10">2017</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -308,7 +294,7 @@
                               <a class="swiper-slide">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2018</span>
+                                       <span class="ls-10">2018</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -320,7 +306,7 @@
                               <a class="swiper-slide" href="history-content.html">
                                  <div class="slide__content">
                                     <div class="slide__content-title">
-                                       <span>2019</span>
+                                       <span class="ls-10">2019</span>
                                     </div>
                                     <div class="slide__content-body">
                                        <p>6.15 남북정상회담</p>
@@ -342,7 +328,10 @@
                                  </div>
                               </a>
                            </div>
-                        </div> -->
+                           <!-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div> -->
+                        </div>
                         <button class="swiper-button-next">
                            <img src="assets/images/icon/_History_arrow_right.svg" alt="">
                         </button>
@@ -354,9 +343,9 @@
                </div>
             </div>
          </div>
-      </section>
-      <footer class="section fp-auto-height footer_main_content">
-         <div class="myContent intro footer">
+      </div>
+      <footer class="footer_main_content">
+         <div class="centered intro footer">
             <div class="container">
                <div class="row footer__row">
                   <div class="col-3">
@@ -394,17 +383,17 @@
       </footer>
    </div>
 
+
+   <!-- === script === -->
+   <!-- === jQuery js === -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <!-- === swiper js === -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-   <!-- === fullpage js === -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.17/fullpage.js"></script>
-   <!-- GSAP -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <!-- === gsap js === -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-   <!-- === Jquery === -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <!-- === main js === -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+   <!-- === history js === -->
    <script src="assets/js/history.js"></script>
 </body>
 
