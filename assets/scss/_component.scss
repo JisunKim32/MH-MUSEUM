@@ -174,8 +174,8 @@
   }
 }
 
-.main_header_dark,
-.history_header {
+.history_header,
+.main_header_dark {
   background-color: transparent;
 
   .nav_menu {
@@ -196,7 +196,6 @@
     }
   }
 }
-
 .menu_overlay {
   position: fixed;
   top: 0;
@@ -207,12 +206,12 @@
   z-index: 200;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-100%);
-  transition: opacity 0.5s ease-out, transform 0.8s ease-out, visibility 0.8s;
+
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
 
   .nav_menu.mobile-nav {
     position: absolute;
-    top: 18%;
+    top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 8px;
@@ -250,7 +249,7 @@
       }
     }
     .menu-history {
-      margin-bottom: 2.625rem;
+      margin-bottom: 3.625rem;
     }
   }
 }
@@ -258,7 +257,7 @@
 .menu_overlay.active {
   visibility: visible;
   opacity: 1;
-  transform: translateY(0);
+  transition: opacity 0.3s ease, visibility 0s;
 }
 
 // notice/news tab_btn
@@ -323,26 +322,11 @@
     color: var.$color-primary;
     font-weight: var.$font-weight-medium;
     margin: 0;
-    @include resp.respond-to(lg) {
-      font-size: var.get-font-size(b4);
-    }
-    @include resp.respond-to(xxxl) {
-      font-size: var.get-font-size(b2);
-    }
   }
   .t-icon {
     width: 100%;
     img {
       width: 47px;
-      @include resp.respond-to(lg) {
-        width: 35px;
-      }
-      @include resp.respond-to(xxl) {
-        width: 40px;
-      }
-      @include resp.respond-to(xxxl) {
-        width: 47px;
-      }
     }
   }
 }

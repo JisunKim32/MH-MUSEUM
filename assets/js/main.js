@@ -3,16 +3,50 @@ new fullpage('#fullpage', {
   sectionSelector: '.section',
   scrollOverflow: false,
   navigation: false,
-  // 아래 옵션 추가: 이 섹션에서는 일반 스크롤 허용
   scrollingSpeed: 1000,
-  // 스크롤 속도
-  // responsiveWidth: 900,
-  // 해당 크기 일 때 autoScroll 비활성화
   parallax: true,
-  // 작은 화면에서 부드러운 스크롤링
   autoScrolling: true,
   fitToSection: true,
-  // normalScrollElements: '.section-normal'
+
+  onLeave: function (origin, destination, direction) {
+    const mainHeader = document.querySelector('.main_header_dark');
+    const detailHeader = document.querySelector(
+      '.history_detail_header.notice_header'
+    );
+
+    if (destination.index === 1) {
+      gsap.to(mainHeader, {
+        opacity: 0,
+        visibility: 'hidden',
+        zIndex: 999,
+        duration: 0.5,
+        ease: 'power2.inOut',
+      });
+      gsap.to(detailHeader, {
+        opacity: 1,
+        visibility: 'visible',
+        zIndex: 1000,
+        duration: 0.5,
+        ease: 'power2.inOut',
+      });
+    } else {
+      gsap.to(mainHeader, {
+        opacity: 1,
+        visibility: 'visible',
+        zIndex: 1000,
+        duration: 0.5,
+        ease: 'power2.inOut',
+      });
+
+      gsap.to(detailHeader, {
+        opacity: 0,
+        visibility: 'hidden',
+        zIndex: 999,
+        duration: 0.5,
+        ease: 'power2.inOut',
+      });
+    }
+  },
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -47,7 +81,3 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 // button 누르면 첫번째 섹션으로 이동
-const menuWrap = document.querySelector('.menu-wrap');
-const menuOverlay = document.querySelector('.menu_overlay');
-const mobileNav = document.querySelector('.nav_menu.mobile-nav');
-const body = document.body;
