@@ -52,3 +52,22 @@ document.addEventListener('click', (event) => {
     }
   }
 });
+
+let prevScroll = window.pageYOffset;
+const header = document.querySelector('.scroll_ani');
+
+window.addEventListener('scroll', () => {
+  let currentScroll = window.pageYOffset;
+
+  if (currentScroll > prevScroll && currentScroll > 100) {
+    // 스크롤 내릴 때 헤더 숨기기
+    header.classList.remove('show');
+    header.classList.add('hide');
+  } else {
+    // 스크롤 올릴 때 헤더 보이기
+    header.classList.remove('hide');
+    header.classList.add('show');
+  }
+
+  prevScroll = currentScroll;
+});
