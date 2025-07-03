@@ -13,7 +13,7 @@ body {
   .notice_header {
     opacity: 0;
   }
-  section {
+  .sec_height {
     height: 100vh;
     // 모바일 (xs: 0) - 375px 너비 기준 812px 높이
     @include resp.respond-to(xs) {
@@ -144,8 +144,6 @@ body {
         margin: auto;
         img {
           width: 635px;
-          animation: rotateCircle 15s linear infinite; /* 회전 애니메이션 적용 */
-          transform-origin: center center; /* 회전 중심을 이미지 중앙으로 설정 */
           @include resp.respond-to(xs) {
             width: 276px;
           }
