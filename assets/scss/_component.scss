@@ -150,33 +150,7 @@
     }
   }
 }
-.scroll_ani {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: white;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  z-index: 1000;
-}
 
-.scroll_ani.hide {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-.scroll_ani.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-@keyframes fixed-ani {
-  0% {
-    transform: translateY(-80px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 .history_detail_header,
 .notice_header {
   background-color: var.$color-secondary;
@@ -279,7 +253,24 @@
     }
   }
 }
+.scroll_ani {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
 
+.scroll_ani.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.scroll_ani.show {
+  transform: translateY(0);
+  opacity: 1;
+}
 .menu_overlay.active {
   visibility: visible;
   opacity: 1;

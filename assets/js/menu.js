@@ -59,7 +59,7 @@ const header = document.querySelector('.scroll_ani');
 window.addEventListener('scroll', () => {
   let currentScroll = window.pageYOffset;
 
-  if (currentScroll > prevScroll && currentScroll > 100) {
+  if (currentScroll > prevScroll && currentScroll > 80) {
     // 스크롤 내릴 때 헤더 숨기기
     header.classList.remove('show');
     header.classList.add('hide');
@@ -71,3 +71,22 @@ window.addEventListener('scroll', () => {
 
   prevScroll = currentScroll;
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const topBtn = document.querySelector('.top_btn'); //
+
+  if (topBtn) {
+    topBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (typeof fullpage_api !== 'undefined') {
+        fullpage_api.moveTo(1);
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }
+    });
+  }
+});
+// button 누르면 첫번째 섹션으로 이동
