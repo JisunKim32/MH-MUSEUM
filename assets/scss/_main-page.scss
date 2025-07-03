@@ -56,17 +56,6 @@ body {
 
 // header finish
 // main_section
-
-/* 원형 SVG 회전 애니메이션 정의 */
-@keyframes rotateCircle {
-  from {
-    transform: rotate(0deg); /* 0도에서 시작 */
-  }
-  to {
-    transform: rotate(360deg); /* 360도까지 회전 */
-  }
-}
-
 .section {
   .main_section {
     font-family: var.$font-body;
@@ -351,7 +340,13 @@ body {
       margin-top: 9.75rem;
     }
     @include resp.respond-to(md) {
-      margin-top: 10.75rem;
+      margin-top: 13.75rem;
+    }
+    @include resp.respond-to(lg) {
+      margin-top: 7.75rem;
+    }
+    @include resp.respond-to(xl) {
+      margin-top: 9.75rem;
     }
     @include resp.respond-to(xxxl) {
       margin-top: 7.938rem;
@@ -425,11 +420,11 @@ body {
       left: 50%;
     }
     @include resp.respond-to(md) {
-      top: 41%;
+      top: 43%;
       left: 30%;
     }
     @include resp.respond-to(lg) {
-      top: 43%;
+      top: 40%;
       left: 32%;
     }
     @include resp.respond-to(xl) {
@@ -437,7 +432,7 @@ body {
       left: 33%;
     }
     @include resp.respond-to(xxl) {
-      top: 41%;
+      top: 40%;
       left: 34%;
     }
     @include resp.respond-to(xxxl) {
@@ -842,6 +837,7 @@ body {
         }
         @include resp.respond-to(md) {
           font-size: var.get-font-size(h2);
+          padding: map-get(var.$spacers, 8) 0;
         }
         @include resp.respond-to(lg) {
           font-size: var.get-font-size(h1);
@@ -913,6 +909,7 @@ body {
         @include resp.respond-to(md) {
           font-size: var.get-font-size(h2);
           padding: 0;
+          margin-left: map-get(var.$spacers, 3);
         }
         @include resp.respond-to(lg) {
           font-size: var.get-font-size(h1);
