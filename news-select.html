@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- header white -->
-    <!-- 두 번째 헤더: 디테일/노티스 (밝은 배경, 어두운 로고) -->
     <header class="history_detail_header notice_header scroll_ani">
       <div class="container">
         <div class="d-logo">
@@ -21,7 +19,6 @@
             <img src="assets/images/desktop_logo_dark.svg" alt="logo-dark" />
           </a>
         </div>
-
         <!-- desktop nav_menu -->
         <nav class="nav_menu desktop-nav">
           <ul class="d-flex">
@@ -33,7 +30,6 @@
             </li>
           </ul>
         </nav>
-
         <!-- hamburger button -->
         <div class="menu-wrap">
           <span class="line"></span>
@@ -42,28 +38,18 @@
         </div>
       </div>
     </header>
-
-        <!-- desktop nav_menu -->
-        <nav class="nav_menu desktop-nav">
-          <ul class="d-flex">
-            <li>
-              <a href="/history-select.html" class="menu-history">History</a>
-            </li>
-            <li>
-              <a href="/notice-select.html" class="menu-notice">Notice</a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- hamburger button -->
-        <div class="menu-wrap">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </div>
-      </div>
-    </header>
-
+    <!-- mobile menu_overlay: 헤더 바깥에 독립적으로 위치 -->
+    <div class="menu_overlay">
+      <nav class="nav_menu mobile-nav">
+        <ul class="d-flex">
+          <li>
+            <a href="/history-select.html" class="menu-history">History</a>
+          </li>
+          <li><a href="/notice-select.html" class="menu-notice">Notice</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- header white finish-->
     <!-- News-select-page start -->
     <section class="News-select__">
       <div class="News-select__sec01 container">
