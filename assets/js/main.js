@@ -48,7 +48,6 @@ new fullpage('#fullpage', {
     }
   },
 });
-
 document.addEventListener('DOMContentLoaded', function () {
   const logoLink = document.getElementById('logo-link');
   if (logoLink) {
