@@ -1,5 +1,8 @@
 # 🏛 현대 온라인 박물관 MHMUSEUM
 
+<p align="center">
+  <img src="./assets/images/readme_title_img.png" alt="MHMUSEUM 대표 이미지" width="100%">
+</p>
 **배포 URL:** [https://mhmuseum.netlify.app/](https://mhmuseum.netlify.app/)
 
 ---
@@ -15,7 +18,7 @@
 
 |                    김지선                    |                      한현수                      |                     정수아                     |
 | :------------------------------------------: | :----------------------------------------------: | :--------------------------------------------: |
-| ![김지선](./assets/images/readme01_img.png)  |   ![한현수](./assets/images/readme02_img.png)    |  ![정수아](./assets/images/readme03_img.png)   |
+| ![김지선](./assets/images/readme03_img.png)  |   ![한현수](./assets/images/readme01_img.png)    |  ![정수아](./assets/images/readme02_img.png)   |
 | [@JisunKim32](https://github.com/JisunKim32) | [@hyunsoohan99](https://github.com/hyunsoohan99) | [@Jeongsua717](https://github.com/Jeongsua717) |
 
 ---
