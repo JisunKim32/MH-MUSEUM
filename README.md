@@ -1,20 +1,21 @@
-# MHMUSEUM
+# 현대 온라인 박물관 MHMUSEUM
+
+![MHMUSEUM 메인 이미지](./assets/images/readme_title_img.png)
+배포 URL: https://mhmuseum.netlify.app/
 
 # 프로젝트 소개
 
-- README는 책을 좋아하는 사람들이 자신의 책 취향을 공유하고, 다 읽은 책을 판매할 수 있는 SNS입니다.
-- 개인의 프로필 페이지에 좋아하는 구절 등 책에 대한 정보를 작성하고 판매하고 싶은 책을 등록할 수 있습니다.
-- 검색을 통해 책 취향이 비슷한 다른 유저들의 피드를 구경할 수 있습니다.
-- 다양한 유저들을 팔로우하며 마음에 드는 게시글에 좋아요를 누르거나 댓글을 작성할 수 있습니다.
+- 근현대사의 주요 사건을 한눈에 살펴볼 수 있는 온라인 뮤지엄 웹사이트입니다.
+  사용자 중심의 인터페이스와 시각적 흐름에 맞춘 스크롤 효과를 통해, 역사를 쉽고 흥미롭게 탐색할 수 있도록 설계했습니다.
 
 ---
 
 # 팀원 구성
 
-|                  정수아                  |                     한현수                     |                   김지선                   |
-| :--------------------------------------: | :--------------------------------------------: | :----------------------------------------: |
-|     ![정수아](이미지_링크_또는_경로)     |        ![한현수](이미지_링크_또는_경로)        |      ![김지선](이미지_링크_또는_경로)      |
-| [@yeon1615](https://github.com/yeon1615) | [@Cheorizzang](https://github.com/Cheorizzang) | [@heejiyang](https://github.com/heejiyang) |
+|                   김지선                    |                   한현수                    |                   정수아                    |
+| :-----------------------------------------: | :-----------------------------------------: | :-----------------------------------------: | :-: | -------------------------------- |
+| ![김지선](./assets/images/readme01_img.png) | ![한현수](./assets/images/readme02_img.png) | ![정수아](./assets/images/readme03_img.png) |
+|       (https://github.com/JisunKim32)       |                                             |      (https://github.com/hyunsoohan99)      |     | (https://github.com/Jeongsua717) |
 
 1. 개발 환경
    | 항목 | 사용 내용 |
@@ -30,9 +31,32 @@
 
 2. 채택한 개발 기술과 브랜치 전략
 3. 프로젝트 구조
-
-## 📁 프로젝트 구조
+   Team-Project_MH/
+   ├── .vscode/ # VSCode 설정
+   ├── assets/ # 정적 리소스 (CSS, JS, 이미지 등)
+   │ ├── css/
+   │ ├── images/
+   │ ├── js/
+   │ └── scss/
+   ├── component/ # 공통 컴포넌트
+   ├── news-detail/ # 뉴스 상세 페이지들
+   ├── notice-detail/ # 공지사항 상세 페이지들
+   ├── .gitignore
+   ├── history-content.html
+   ├── history-detail.html
+   ├── history-select.html
+   ├── index.html # 메인 페이지
+   ├── news-select.html # 뉴스 리스트 페이지
+   ├── notice-select.html # 공지 리스트 페이지
+   ├── README.md
+   ├── robots.txt # SEO 설정
+   └── sitemap.xml 4. 역할 분담
 
 4. 역할 분담
-
+   김지선: 자료조사, 기획서 작성, 보고서 작성, variables 파일 제작, 코딩, 디자인
+   한현수: 디자인 작업, common, responsive 파일 제작, 코딩, 기획서작성, 보고서 작성
+   정수아: 프론트엔드, common, responsive, component 파일 제작, 코딩, 디자인, 벤치마킹, 자료조사
 5. 개발 기간 및 작업 관리
+   전체 개발 기간 : 2025-06-10 ~ 2025-06-31
+   UI 구현 : 2025-06-17 ~ 2025-06-22
+   기능 구현 : 2025-06-23 ~ 2025-06-30
