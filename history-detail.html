@@ -11,31 +11,50 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
    <!-- === aos cdn === -->
    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-   <!-- === gsap cdn === -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" />
    <!-- === story.css === -->
    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
    <!-- === header === -->
-   <header class="history_detail_header">
+   <header class="history_detail_header notice_header">
       <div class="container">
-         <div class="d-logo">
-            <a href="index.html">
-               <img src="assets/images/desktop_logo_dark.svg" alt="logo-dark" />
-            </a>
-         </div>
-         <nav class="nav_menu">
-            <ul class="d-flex">
-               <li><a href="history-select.html" class="menu-history">History</a></li>
-               <li><a href="news-select.html" class="menu-notice">Notice</a></li>
-            </ul>
-         </nav>
+        <div class="d-logo">
+          <a href="#" id="logo-link">
+            <img src="assets/images/desktop_logo_dark.svg" alt="logo-dark" />
+          </a>
+        </div>
+
+        <!-- desktop nav_menu -->
+        <nav class="nav_menu desktop-nav">
+          <ul class="d-flex">
+            <li><a href="#" class="menu-history">History</a></li>
+            <li><a href="#" class="menu-notice">Notice</a></li>
+          </ul>
+        </nav>
+
+        <!-- hamburger button -->
+        <div class="menu-wrap">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
       </div>
-   </header>
+    </header>
+
+    <!-- mobile menu_overlay -->
+    <div class="menu_overlay">
+      <nav class="nav_menu mobile-nav">
+        <ul class="d-flex">
+          <li>
+            <a href="/history-select.html" class="menu-history">History</a>
+          </li>
+          <li><a href="/news-select.html" class="menu-notice">Notice</a></li>
+        </ul>
+      </nav>
+    </div>
    <!-- === header end === -->
+
 
 
    <!-- === sec01 === -->
@@ -44,18 +63,38 @@
          <div class="row history-detail__row">
             <div class="col-12 history-detail__content">
                <div class="left-content">
-                  <div class="content-title">
-                     <h1>2000</h1>
-                     <span>제 1차 남북정상회담</span>
+                  <div class="left-content-wrap content-01 active">
+                     <div class="content-title">
+                        <h1>2000</h1>
+                        <span>제 1차 남북정상회담</span>
+                     </div>
+                     <div class="content-img">
+                        <img src="assets/images/Content_page_img1.png" alt="">
+                     </div>
                   </div>
-                  <div class="content-img">
-                     <img src="assets/images/Content_page_img1.png" alt="">
+                  <div class="left-content-wrap content-02">
+                     <div class="content-title">
+                        <h1>2000</h1>
+                        <span>IT버블과 코스닥 급등락</span>
+                     </div>
+                     <div class="content-img">
+                        <img src="assets/images/Content_page_img1.png" alt="">
+                     </div>
+                  </div>
+                  <div class="left-content-wrap content-03">
+                     <div class="content-title">
+                        <h1>2002</h1>
+                        <span>새천년민주당 창당</span>
+                     </div>
+                     <div class="content-img">
+                        <img src="assets/images/Content_page_img1.png" alt="">
+                     </div>
                   </div>
                </div>
-               <div class="center-line"></div>
+               <!-- <div class="center-line"></div> -->
                <div class="right-content">
                   <div class="content-text">
-                     <p>
+                     <p class="content-text__01 ">
                         2000년 6월 13일부터 15일까지, 대한민국의 김대중 대통령과 북한의 김정일 국방위원장은 평양에서 역사적인 첫 남북 정상회담을 가졌다. 이는 남북이 분단된 이후
                         55년 만에 처음으로 두 정상이 직접 만나 대화를 나눈 자리로, 당시 한반도는 물론 전 세계의 이목이 집중되었다.
                         <br><br>
@@ -75,8 +114,52 @@
                         <br><br>
                         그럼에도 불구하고 6.15 남북 정상회담은 남북 관계사에 있어 전례 없는 대화의 시작이라는 점에서, 그리고 민족 간 화해와 평화를 향한 중요한 이정표로서 여전히 큰 역사적
                         의미를 지닌다.
-                        <br><br><br>
-                        <!-- <br><br><br> -->
+                     </p>
+                  </div>
+                  <div class="content-text">
+                     <p class="content-text__02">
+                        2000년 6월 13일부터 15일까지, 대한민국의 김대중 대통령과 북한의 김정일 국방위원장은 평양에서 역사적인 첫 남북 정상회담을 가졌다. 이는 남북이 분단된 이후
+                        55년 만에 처음으로 두 정상이 직접 만나 대화를 나눈 자리로, 당시 한반도는 물론 전 세계의 이목이 집중되었다.
+                        <br><br>
+                        정상회담의 가장 큰 성과는 바로 회담 마지막 날 발표된 **‘6.15 남북 공동선언’**이다. 이 선언에서 남북은 통일 문제를 우리 민족끼리 자주적으로 해결할 것,
+                        남북이 각각 제안한 통일 방안(남측의 연합제, 북측의 낮은 단계 연방제)에 공통점이 있다고 인정하며 상호 존중할 것, 이산가족 상봉을 추진할 것, 경제 협력을 포함한
+                        각종 교류를 확대할 것 등을 합의했다.
+                        <br><br>
+                        특히 김정일 국방위원장의 서울 답방 추진도 포함되어, 향후 지속적인 대화의 가능성을 보여주었다.
+                        <br><br>
+                        이 회담은 단순한 정치 이벤트를 넘어, 남북 관계의 전환점을 만든 획기적인 사건으로 평가된다. 실제로 이후 이산가족 상봉이 재개되었고, 남북 경제 협력의 상징인
+                        개성공단과 금강산 관광 사업이 본격화되는 계기가 되었다.
+                        <br><br>
+                        남북 간 신뢰를 쌓는 첫 걸음을 디뎠다는 점에서 큰 의미가 있으며, 김대중 대통령은 이 공로를 인정받아 2000년 노벨평화상을 수상했다.
+                        <br><br>
+                        하지만 한편으로는 김정일 위원장의 서울 답방이 실제로 이루어지지 않았고, 남북 간의 핵심 갈등 요소가 해소되지 않았다는 점에서 한계를 지닌다는 비판도 있다. 이후 정권
+                        교체와 함께 남북 관계가 다시 경색되는 등 지속적인 진전으로 이어지지는 못했다는 점도 아쉬움으로 남는다.
+                        <br><br>
+                        그럼에도 불구하고 6.15 남북 정상회담은 남북 관계사에 있어 전례 없는 대화의 시작이라는 점에서, 그리고 민족 간 화해와 평화를 향한 중요한 이정표로서 여전히 큰 역사적
+                        의미를 지닌다.
+                     </p>
+                  </div>
+                  <div class="content-text">
+                     <p class="content-text__03">
+                        2000년 6월 13일부터 15일까지, 대한민국의 김대중 대통령과 북한의 김정일 국방위원장은 평양에서 역사적인 첫 남북 정상회담을 가졌다. 이는 남북이 분단된 이후
+                        55년 만에 처음으로 두 정상이 직접 만나 대화를 나눈 자리로, 당시 한반도는 물론 전 세계의 이목이 집중되었다.
+                        <br><br>
+                        정상회담의 가장 큰 성과는 바로 회담 마지막 날 발표된 **‘6.15 남북 공동선언’**이다. 이 선언에서 남북은 통일 문제를 우리 민족끼리 자주적으로 해결할 것,
+                        남북이 각각 제안한 통일 방안(남측의 연합제, 북측의 낮은 단계 연방제)에 공통점이 있다고 인정하며 상호 존중할 것, 이산가족 상봉을 추진할 것, 경제 협력을 포함한
+                        각종 교류를 확대할 것 등을 합의했다.
+                        <br><br>
+                        특히 김정일 국방위원장의 서울 답방 추진도 포함되어, 향후 지속적인 대화의 가능성을 보여주었다.
+                        <br><br>
+                        이 회담은 단순한 정치 이벤트를 넘어, 남북 관계의 전환점을 만든 획기적인 사건으로 평가된다. 실제로 이후 이산가족 상봉이 재개되었고, 남북 경제 협력의 상징인
+                        개성공단과 금강산 관광 사업이 본격화되는 계기가 되었다.
+                        <br><br>
+                        남북 간 신뢰를 쌓는 첫 걸음을 디뎠다는 점에서 큰 의미가 있으며, 김대중 대통령은 이 공로를 인정받아 2000년 노벨평화상을 수상했다.
+                        <br><br>
+                        하지만 한편으로는 김정일 위원장의 서울 답방이 실제로 이루어지지 않았고, 남북 간의 핵심 갈등 요소가 해소되지 않았다는 점에서 한계를 지닌다는 비판도 있다. 이후 정권
+                        교체와 함께 남북 관계가 다시 경색되는 등 지속적인 진전으로 이어지지는 못했다는 점도 아쉬움으로 남는다.
+                        <br><br>
+                        그럼에도 불구하고 6.15 남북 정상회담은 남북 관계사에 있어 전례 없는 대화의 시작이라는 점에서, 그리고 민족 간 화해와 평화를 향한 중요한 이정표로서 여전히 큰 역사적
+                        의미를 지닌다.
                      </p>
                   </div>
                </div>
@@ -84,7 +167,6 @@
          </div>
       </div>
    </section>
-   <!-- === section end === -->
 
    <!-- === footer === -->
    <footer class="footer_main_content">
@@ -130,13 +212,13 @@
    <!-- === fullpage js === -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.17/fullpage.js"></script>
    <!-- GSAP -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>   
    <!-- === Jquery === -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <!-- === main js === -->
-   <script src="assets/js/history.js"></script>
+    <script src="assets/js/menu.js"></script>
+   <script src="assets/js/history-detail.js"></script>
 </body>
 
 </html>
