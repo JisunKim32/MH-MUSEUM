@@ -107,3 +107,36 @@ window.addEventListener('touchend', function (e) {
     }
     startY = null;
 }, { passive: false });
+
+
+// === modal ===
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('modal');
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+    const closeBtn = document.querySelector('.close-btn');
+    
+    // Show modal when page loads
+    function showModal() {
+        modal.classList.add('show');
+        modalBackdrop.classList.add('show');
+    }
+    
+    // Hide modal
+    function hideModal() {
+        modal.classList.remove('show');
+        modalBackdrop.classList.remove('show');
+    }
+    
+    // Show modal on page load
+    showModal();
+    
+    // Close modal when close button is clicked
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hideModal);
+    }
+    
+    // Close modal when backdrop is clicked
+    modalBackdrop.addEventListener('click', hideModal);
+});
+// === modal end ===
+
