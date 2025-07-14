@@ -509,99 +509,110 @@ body.footer-on {
    position: relative;
 
    &__sec01 {
-      background-image: url("../images/_Content_img1.png");
+      background-image: url("../images/content-img_2000-1.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+   }
+   &__sec02 {
+      background-image: url("../images/content-img_2000-2.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+   &__sec03 {
+      background-image: url("../images/content-img_2000-3.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+   .section-inner {
+      padding-bottom: 147px;
+      height: 100%;
+      @include resp.respond-to(sm) {
+         padding-bottom: 100px;
+      }
+      @include resp.respond-to(lg) {
+         padding-bottom: 0;
+      }
+   }
 
-      .section-inner {
-         padding-bottom: 147px;
-         height: 100%;
-         @include resp.respond-to(sm) {
-            padding-bottom: 100px;
-         }
-         @include resp.respond-to(lg) {
-            padding-bottom: 0;
-         }
+   .sec01__content {
+      display: flex;
+      flex-direction: column;
+      gap: 50px 0;
+      padding-bottom: 50px;
+      @include resp.respond-to(lg) {
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
       }
 
-      .sec01__content {
-         display: flex;
-         flex-direction: column;
-         gap: 50px 0;
-         padding-bottom: 50px;
-         @include resp.respond-to(lg) {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-         }
-
-         .content-title {
-            span {
-               font-family: var.$font-body;
-               font-size: var.get-font-size(t4, xs);
-               font-weight: var.$font-weight-medium;
-               line-height: var.$line-height-120;
-               letter-spacing: var.$letter-spacing-3;
-               color: var.$color-white;
-               @include resp.respond-to(md) {
-                  font-size: 45px;
-                  line-height: var.$line-height-140;
-               }
-               @include resp.respond-to(lg) {
-                  font-size: 55px;
-                  line-height: var.$line-height-140;
-               }
-               @include resp.respond-to(xl) {
-                  font-size: 66px;
-               }
-               @include resp.respond-to(xxl) {
-                  font-size: 76px;
-               }
-               @include resp.respond-to(xxxl) {
-                  font-size: var.get-font-size(t3, default);
-               }
-            }
-         }
-         .content-body {
+      .content-title {
+         span {
+            font-family: var.$font-body;
+            font-size: var.get-font-size(t4, xs);
+            font-weight: var.$font-weight-medium;
+            line-height: var.$line-height-120;
+            letter-spacing: var.$letter-spacing-3;
+            color: var.$color-white;
             @include resp.respond-to(md) {
-               width: 80%;
+               font-size: 45px;
+               line-height: var.$line-height-140;
             }
             @include resp.respond-to(lg) {
-               width: 45%;
+               font-size: 55px;
+               line-height: var.$line-height-140;
             }
             @include resp.respond-to(xl) {
-               width: 41.66667%;
-               // width: 636/1560=;
+               font-size: 66px;
             }
-            p {
-               font-family: var.$font-body;
-               font-size: var.get-font-size(b1, xs);
-               font-weight: var.$font-weight-thin;
-               line-height: var.$line-height-160;
-               color: var.$color-white;
-               @include resp.respond-to(lg) {
-                  font-size: var.get-font-size(b2, default);
-               }
+            @include resp.respond-to(xxl) {
+               font-size: 76px;
             }
-            .v-max {
-               height: 4vmax;
-               @include resp.respond-to(lg) {
-                  height: 5vmax;
-               }
+            @include resp.respond-to(xxxl) {
+               font-size: var.get-font-size(t3, default);
             }
-            button {
-               width: 40px;
-               height: 40px;
-               background: none;
-               border: none;
-               @include resp.respond-to(lg) {
-                  width: 52px;
-                  height: 52px;
-               }
-               img {
-                  width: 100%;
-               }
+         }
+      }
+      .content-body {
+         @include resp.respond-to(md) {
+            width: 80%;
+         }
+         @include resp.respond-to(lg) {
+            width: 45%;
+         }
+         @include resp.respond-to(xl) {
+            width: 41.66667%;
+            // width: 636/1560=;
+         }
+         p {
+            font-family: var.$font-body;
+            font-size: var.get-font-size(b1, xs);
+            font-weight: var.$font-weight-thin;
+            line-height: var.$line-height-160;
+            color: var.$color-white;
+            @include resp.respond-to(lg) {
+               font-size: var.get-font-size(b2, default);
+            }
+         }
+         .v-max {
+            height: 4vmax;
+            @include resp.respond-to(lg) {
+               height: 5vmax;
+            }
+         }
+         button {
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            @include resp.respond-to(lg) {
+               width: 52px;
+               height: 52px;
+            }
+            img {
+               width: 100%;
             }
          }
       }
@@ -940,3 +951,88 @@ body.footer-on {
    margin-top: -20px;
 }
 // === history-detail end ===
+
+// === modal ===
+.popup-modal {
+   opacity: 0;
+   visibility: hidden;
+   display: block;
+   transition: all 0.3s ease;
+   width: 700px;
+   height: 400px;
+   border: 1px solid var.$color-primary;
+   border-radius: 10px;
+   position: fixed;
+   z-index: 9999;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 30px;
+   background: var.$color-secondary;
+
+   &.show {
+      opacity: 1;
+      visibility: visible;
+   }
+
+   .modal__box {
+      border: none;
+      max-width: 700px;
+      max-height: 400px;
+      position: relative;
+      
+      .close-btn {
+         position: absolute;
+         top: 15px;
+         right: 5px;
+         font-size: 28px;
+         font-weight: var.$font-weight-bold;
+         color: var.$color-primary;
+         background: transparent;
+         border: none;
+         cursor: pointer;
+         padding: 0;
+         line-height: 1;
+      }
+
+      .modal__content__title {
+         margin-bottom: map-get(var.$spacers, 6);
+         h4 {
+            font-size: var.get-font-size(h3, default);
+            line-height: var.$line-height-160;
+            color: var.$color-black;
+            font-weight: var.$font-weight-semibold;
+            text-align: center;
+         }
+      }
+      
+      .modal__content__body {
+         p {
+            font-size: var.get-font-size(b1, default);
+            line-height: var.$line-height-160;
+            color: var.$color-primary;
+            text-align: center;
+         }
+      }
+   }
+}
+
+.modal-backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+   backdrop-filter: blur(5px);
+   z-index: 9998;
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.3s ease;
+   &.show {
+      opacity: 1;
+      visibility: visible;
+   }
+}
+// === modal end ===
+
