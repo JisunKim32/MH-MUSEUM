@@ -63,6 +63,7 @@ body.page-fullscroll {
          transition: transform 0.7s cubic-bezier(0.55, 0, 0.1, 1);
          min-height: 100vh;
          width: 100vw;
+         height: 100vh;
          display: flex;
          align-items: center;
          justify-content: center;
@@ -99,7 +100,7 @@ body.page-fullscroll {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 147px 0;
+            gap: 107px 0; // 147px
 
             @include resp.respond-to(sm) {
                gap: 80px 0;
@@ -432,7 +433,7 @@ body.footer-on {
 
 .menu {
    position: fixed;
-   bottom: 37px;
+   bottom: 30px;
    left: 16px;
    z-index: 99;
    display: flex;
@@ -527,7 +528,7 @@ body.footer-on {
       background-repeat: no-repeat;
    }
    .section-inner {
-      padding-bottom: 147px;
+      padding-bottom: 97px;
       height: 100%;
       @include resp.respond-to(sm) {
          padding-bottom: 100px;
@@ -540,8 +541,8 @@ body.footer-on {
    .sec01__content {
       display: flex;
       flex-direction: column;
-      gap: 50px 0;
-      padding-bottom: 50px;
+      gap: 30px 0;
+      // padding-bottom: 50px;
       @include resp.respond-to(lg) {
          flex-direction: row;
          justify-content: space-between;
@@ -597,9 +598,9 @@ body.footer-on {
             }
          }
          .v-max {
-            height: 4vmax;
+            height: 3vmax;
             @include resp.respond-to(lg) {
-               height: 5vmax;
+               height: 4vmax;
             }
          }
          button {
@@ -958,8 +959,8 @@ body.footer-on {
    visibility: hidden;
    display: block;
    transition: all 0.3s ease;
-   width: 700px;
-   height: 400px;
+   width: 340px;
+   height: 250px;
    border: 1px solid var.$color-primary;
    border-radius: 10px;
    position: fixed;
@@ -970,6 +971,11 @@ body.footer-on {
    padding: 30px;
    background: var.$color-secondary;
 
+   @include resp.respond-to(lg) {
+      width: 700px;
+      height: 400px;
+   }
+
    &.show {
       opacity: 1;
       visibility: visible;
@@ -977,16 +983,20 @@ body.footer-on {
 
    .modal__box {
       border: none;
-      max-width: 700px;
-      max-height: 400px;
+      max-width: 350px;
+      max-height: 250px;
       position: relative;
+      @include resp.respond-to(lg) {
+         max-width: 700px;
+         max-height: 400px;
+      }
       
       .close-btn {
          position: absolute;
          top: 15px;
          right: 5px;
          font-size: 28px;
-         font-weight: var.$font-weight-bold;
+         font-weight: var.$font-weight-regular;
          color: var.$color-primary;
          background: transparent;
          border: none;
@@ -998,20 +1008,26 @@ body.footer-on {
       .modal__content__title {
          margin-bottom: map-get(var.$spacers, 6);
          h4 {
-            font-size: var.get-font-size(h3, default);
+            font-size: var.get-font-size(h2, xs);
             line-height: var.$line-height-160;
             color: var.$color-black;
             font-weight: var.$font-weight-semibold;
             text-align: center;
+            @include resp.respond-to(lg) {
+               font-size: var.get-font-size(h3, default);
+            }
          }
       }
       
       .modal__content__body {
          p {
-            font-size: var.get-font-size(b1, default);
+            font-size: var.get-font-size(b2, xs);
             line-height: var.$line-height-160;
             color: var.$color-primary;
             text-align: center;
+            @include resp.respond-to(lg) {
+               font-size: var.get-font-size(b1, default);
+            }
          }
       }
    }
